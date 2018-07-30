@@ -28,3 +28,7 @@ Pseudo code
 			1. Output maxvaluue
 4. else:
 	a. Output "Array size is 0, not possible."
+
+
+
+
