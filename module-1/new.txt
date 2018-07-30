@@ -20,7 +20,7 @@ Pseudo code
 		  v. Add 1 to i
 
 	f. if size == 1:
-		i. Output "None"
+		i. output "None "
 	g. else:
 		i. if max == 1:
 			1. Output "None"
