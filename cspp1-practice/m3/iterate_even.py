@@ -8,8 +8,8 @@ print the even variables upto 10 and print goodbye
 #   print("print", N)
 #   N += 2
 #print("print Goodbye!")
-#using for loop
 
+#using for loop
 for N in range(2, 11, 2):
     print("print", N)
 print("print Goodbye!")
