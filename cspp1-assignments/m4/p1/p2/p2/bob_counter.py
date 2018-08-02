@@ -14,7 +14,7 @@ def main():
     '''
     str_input = input()
     sub_str = "bob"
-    bob_c= 0
+    bob_c = 0
     for var in range(len(str_input)-2):
         com = 0
         temp = var
