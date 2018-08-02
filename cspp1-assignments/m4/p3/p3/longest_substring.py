@@ -1,5 +1,5 @@
 '''
-@author : manojbandari 
+@author : manojbandari
 Assume s is a string of lower case characters.
 
 Write a program that prints the longest substring of s
@@ -24,7 +24,7 @@ def main():
     # remove pass and start your code here
     '''
     input_str = input()
-    temp_str = "" 
+    temp_str = ""
     for i in range(len(input_str)-1):
         sub_str = input_str[i]
         while i + 1 < len(input_str) and input_str[i] <= input_str[i+1]:
