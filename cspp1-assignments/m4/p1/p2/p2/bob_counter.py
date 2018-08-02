@@ -23,7 +23,7 @@ def main():
             check += 1
             temp += 1
             com += 1
-        if check == 3
+        if check == 3:
             bob_c += 1
     print(bob_c)
 
