@@ -25,7 +25,7 @@ def main():
     '''
     input_str = input()
     temp_str = "" 
-        for i in range(len(input_str)-1):
+    for i in range(len(input_str)-1):
         sub_str = input_str[i]
         while i + 1 < len(input_str) and input_str[i] <= input_str[i+1]:
             i += 1
