@@ -12,14 +12,16 @@
 # Output: 21950 is not a perfect cube
 '''
 def main():
+    '''
     # input is captured in s
     # watch out for the data type of value stored in s
     # your code starts here
+    '''
     cube_input = int(input())
-    g = 1
-    while (g**3) < cube_input:
-        g = g + 1
-    if int(g**3) == cube_input:
+    g_uess = 1
+    while (g_uess**3) < cube_input:
+        g_uess += 1
+    if int(g_uess**3) == cube_input:
         print(cube_input, "is a perfect cube")
     else:
         print(cube_input, "is not a perfect cube")
