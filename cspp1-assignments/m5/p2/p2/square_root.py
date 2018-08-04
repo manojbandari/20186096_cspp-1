@@ -28,5 +28,5 @@ def main():
         else:
             g_uess += s_tep
     print(str(g_uess))
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
