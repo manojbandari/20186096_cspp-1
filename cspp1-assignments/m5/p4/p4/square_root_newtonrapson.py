@@ -24,5 +24,5 @@ def main():
     print(str(g_uess))
 
 
-if __name__ s== "__main__":
+if __name__ == "__main__":
     main()
