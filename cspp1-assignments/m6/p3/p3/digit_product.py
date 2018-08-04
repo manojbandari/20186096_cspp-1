@@ -11,9 +11,9 @@ def main():
     int_input = int(input())
     i = int_input
     prod = 1
-    Flag = 0
+    flag = 0
     if i < 0:
-        Flag = 1
+        flag = 1
         i = abs(i)
     if i == 0:
         prod = 0
