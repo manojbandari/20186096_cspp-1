@@ -18,7 +18,7 @@ def main():
     # don't change these values
     '''
     e_psilon = 0.01
-    l_ower = 0.1
+    l_ower = 0.0
     num_input = int(input())
     h_igher = num_input
     bi_val = (h_igher + l_ower)/2.0
