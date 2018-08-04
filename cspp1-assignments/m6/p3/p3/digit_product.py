@@ -21,7 +21,7 @@ def main():
         temp = i % 10
         prod = prod * temp
         i = i // 10
-    if flag = 1
+    if flag == 1
         prod = -(prod)
     print(prod)
 if __name__ == "__main__":
