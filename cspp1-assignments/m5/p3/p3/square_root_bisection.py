@@ -18,7 +18,7 @@ def main():
     # don't change these values
     '''
     epsilon = 0.01
-    step = 0.1
+    l_ower = 0.1
     num_input = int(input())
     h_igher = num_input
     bi_val = (h_igher + l_ower)/2.0
@@ -30,5 +30,5 @@ def main():
         bi_val = (h_igher + l_ower)/2.0
     print(bi_val)
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
