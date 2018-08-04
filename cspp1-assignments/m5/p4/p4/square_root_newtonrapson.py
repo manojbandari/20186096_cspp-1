@@ -11,24 +11,18 @@
 # input: 49
 # output: 6.999999999999991
 '''
-
 def main():
     '''
     # epsilon and step are initialized
     # don't change these values
     '''
     e_psilon = 0.01
-    l_ower = 0.1
     num_input = int(input())
-    h_igher = num_input
-    bi_val = (h_igher + l_ower)/2.0
-    while abs(bi_val**2 - num_input) > e_psilon:
-        if bi_val**2 < num_input:
-            l_ower = bi_val
-        else:
-            h_igher = bi_val
-        bi_val = (h_igher + l_ower)/2.0
-    print(bi_val)
+    g_uess= num_input/2.0
+    while abs(g_uess*g_uess - num_input) >= e_psilon:
+        g_uess = g_uess - (((g_uess**2) - num_input)/(2*g_uess))
+    print(str(g_uess))
 
-if __name__ == "__main__":
+
+if __name__== "__main__":
     main()
