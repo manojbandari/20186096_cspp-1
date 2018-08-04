@@ -15,7 +15,7 @@ def main():
     if i < 0:
         Flag = 1
         i = abs(i)
-    if i =0:
+    if i == 0:
         prod = 0
     while i > 0:
         temp = i % 10
