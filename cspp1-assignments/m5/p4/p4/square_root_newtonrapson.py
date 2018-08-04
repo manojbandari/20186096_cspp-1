@@ -18,11 +18,11 @@ def main():
     '''
     e_psilon = 0.01
     num_input = int(input())
-    g_uess= num_input/2.0
+    g_uess = num_input/2.0
     while abs(g_uess*g_uess - num_input) >= e_psilon:
         g_uess = g_uess - (((g_uess**2) - num_input)/(2*g_uess))
     print(str(g_uess))
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
