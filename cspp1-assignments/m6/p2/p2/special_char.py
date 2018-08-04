@@ -12,16 +12,10 @@ def main():
     str_input = input()
     str_out = ""
     for i in str_input:
-        if i >= '0' and i <= '9':
-            str_out = str_out + i
-        elif i >= 'a' and i <= 'z':
-            str_out = str_out + i
-        elif i >= 'A' and i <= 'Z': 
-            str_out = str_out + i
-        else:
+        if i in "!@#$%^&*":
             str_out = str_out + " "
+        else:
+            str_out = str_out + i
     print(str_out)
-
-
 if __name__ == "__main__":
     main()
