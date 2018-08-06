@@ -29,14 +29,14 @@ At the end of 12 months, print out the remaining
 # Monthly interest rate= (Annual interest rate) / 12.0
 # Minimum monthly payment = (Minimum monthly payment rate) x (Previous balance)
 # Monthly unpaid balance = (Previous balance) - (Minimum monthly payment)
-# Updated balance each month = (Monthly unpaid balance)+ 
+# Updated balance each month = (Monthly unpaid balance)+
 Monthly interest rate x Monthly unpaid balance)
 
 
 def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
-    
+  
 '''
-def payingDebtOffInAYear(remaining_balance,annual_interest_rate,monthly_payment_rate):
+def paying_DebtOffInAYear(remaining_balance, annual_interest_rate,  monthly_payment_rate):
     '''
     function to print the remaining balance after one year
     '''
@@ -55,7 +55,7 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Remaining Balance:",payingDebtOffInAYear(data[0],data[1],data[2]))
+    print("Remaining balance:", (paying_DebtOffInAYear(data[0], data[1], data[2]))
 
 if __name__ == "__main__":
     main()
