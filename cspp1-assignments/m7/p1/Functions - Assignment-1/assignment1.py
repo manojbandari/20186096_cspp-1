@@ -34,20 +34,20 @@ Monthly interest rate x Monthly unpaid balance)
 
 
 def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
-  
+
 '''
-def paying_DebtOffInAYear(remaining_balance, annual_interest_rate,  monthly_payment_rate):
+def paying_debtoffinayear(remaining_balance, annual_interest_rate, monthly_payment_rate):
     '''
     function to print the remaining balance after one year
     '''
     for count in range(12):
         count = count + 1
-        monthly_interest_rate= annual_interest_rate/12.0
-        minimum_monthly_payment = monthly_payment_rate* remaining_balance
+        monthly_interest_rate = annual_interest_rate / 12.0
+        minimum_monthly_payment = monthly_payment_rate * remaining_balance
         unpaid_balance = remaining_balance - minimum_monthly_payment
-        remaining_balance = unpaid_balance + monthly_interest_rate*unpaid_balance
+        remaining_balance = unpaid_balance + monthly_interest_rate * unpaid_balance
     return round(remaining_balance, 2)
-    
+
 def main():
     '''
     main function
@@ -55,7 +55,7 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Remaining balance:", (paying_DebtOffInAYear(data[0], data[1], data[2])))
+    print("Remaining balance:", (paying_debtoffinayear(data[0], data[1], data[2])))
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
