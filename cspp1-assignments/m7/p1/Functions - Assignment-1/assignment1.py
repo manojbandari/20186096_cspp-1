@@ -46,7 +46,7 @@ def payingDebtOffInAYear(remaining_balance,annual_interest_rate,monthly_payment_
         minimum_monthly_payment = monthly_payment_rate* remaining_balance
         unpaid_balance = remaining_balance - minimum_monthly_payment
         remaining_balance = unpaid_balance + monthly_interest_rate*unpaid_balance
-    return round(remaining_balance,2)
+    return round(remaining_balance, 2)
     
 def main():
     '''
@@ -55,7 +55,7 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Remaining Balance:"payingDebtOffInAYear(data[0],data[1],data[2]))
+    print("Remaining Balance:",payingDebtOffInAYear(data[0],data[1],data[2]))
 
 if __name__ == "__main__":
     main()
