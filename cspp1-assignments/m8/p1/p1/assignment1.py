@@ -15,8 +15,9 @@ def factorial(fact_n):
     returns: a positive integer, the factorial of n.
     '''
     # Your code here
-   
-    if fact_n == 0 or fact_n == 1:
+
+    #if fact_n == 0 or fact_n == 1:
+    if fact_n in (0, 1):
         return 1
     return fact_n*factorial(fact_n-1)
 
