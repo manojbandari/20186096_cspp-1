@@ -25,7 +25,7 @@ def main():
     main functon
     '''
     a_input = input()
-    print(sumofdigits(int(a_input)))  
+    print(sumofdigits(int(a_input)))
 
 if __name__ == "__main__":
     main()
