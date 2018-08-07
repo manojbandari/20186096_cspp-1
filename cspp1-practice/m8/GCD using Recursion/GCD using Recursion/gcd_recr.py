@@ -11,6 +11,14 @@ def gcdRecur(a, b):
     returns: a positive integer, the greatest common divisor of a & b.
     '''
     # Your code here
+    if a%b==0:
+    	return b
+    elif b%a==0:
+    	return a
+    elif a>b:
+    	return gcdRecur(b,a%b)
+    else:
+    	return gcdRecur(a,b%a)
     
 
 
