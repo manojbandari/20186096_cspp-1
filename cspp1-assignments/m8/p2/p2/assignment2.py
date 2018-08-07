@@ -8,7 +8,7 @@ and returns the sum of digits of given number.
 # This function takes in one number and returns one number.
 '''
 
-def sumofdigits(cum_n):
+def sumofdigits(sum_n):
     '''
     n is positive Integer
 
