@@ -19,7 +19,7 @@ def is_word_guessed(secret_word, letters_guessed):
     if len(letters_guessed) == 0:
         return True
     for i in range(len(letters_guessed)):
-        if letters_guessed in secret_word:
+        if letters_guessed[i] in secret_word:
             x=x+1
     if x == len(secret_word):
         return True
