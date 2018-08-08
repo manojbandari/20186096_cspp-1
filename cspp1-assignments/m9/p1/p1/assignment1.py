@@ -1,4 +1,5 @@
 '''
+author : manojbandari
 Exercise: Assignment-1
 First, implement the function isWordGuessed that takes in two parameters -
 a string, secret_word, and a list of letters, letters_guessed. This function
@@ -15,7 +16,7 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-    x=0
+    #x=0
     for i in secret_word:
         if i not in letters_guessed:
             return False
