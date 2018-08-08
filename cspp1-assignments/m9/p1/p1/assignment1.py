@@ -16,15 +16,19 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     x=0
+    for i in secret_word:
+        if i not in letters_guessed:
+            return False
+        return True
     #if len(letters_guessed) == 0:
         #return True
-    for i in range(len(letters_guessed)):
-        if letters_guessed[i] in secret_word:
-            x=x+1
-    if x == len(secret_word):
-        return True
-    else:
-        return False
+    #for i in range(len(letters_guessed)):
+     #   if letters_guessed[i] in secret_word:
+      #      x=x+1
+    #if x == len(secret_word):
+    #    return True
+    #else:
+     #   return False
 def main():
     '''
     Main function for the program
@@ -39,10 +43,7 @@ def main():
     list1 = []
     for j in range(1, len(data)):
         list1.append(data[j][0])
-    if len(list1)==0:
-        print(True)
-    else:   
-        print(is_word_guessed(secret_word, list1))
+    print(is_word_guessed(secret_word, list1))
 
 if __name__ == "__main__":
     main()
