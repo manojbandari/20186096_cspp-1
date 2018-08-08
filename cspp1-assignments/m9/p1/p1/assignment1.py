@@ -40,7 +40,7 @@ def main():
     for j in range(1, len(data)):
         list1.append(data[j][0])
     if len(list1)==0:
-        print True
+        print(True)
     else:   
         print(is_word_guessed(secret_word, list1))
 
