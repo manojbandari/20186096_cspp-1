@@ -21,6 +21,8 @@ def is_word_guessed(secret_word, letters_guessed):
                 x=x+1
     if x == len(secret_word):
         return True
+    else:
+        return False
 def main():
     '''
     Main function for the program
