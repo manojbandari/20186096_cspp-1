@@ -17,6 +17,10 @@ def biggest(aDict):
             if len(aDict[i]) > maxi:
                 maxi = len(aDict[i])
                 ans=i
+        if ans==0 and maxi==0
+            ans=1
+            maxi=1
+
     return ans,maxi        
             
 
