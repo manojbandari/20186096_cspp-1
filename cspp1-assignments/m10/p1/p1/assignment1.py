@@ -16,7 +16,7 @@ def get_available_letters(letters_guessed):
     s_new=""
     string ="abcdefghijklmnopqrstuuvwxyz"
     for i in string:
-        if letters_guessed not in string:
+        if i not in letters_guessed:
             s_new= s_new + i
     return s_new
 
