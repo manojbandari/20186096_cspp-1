@@ -13,11 +13,11 @@ def get_available_letters(letters_guessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    s_new=""
-    string ="abcdefghijklmnopqrstuuvwxyz"
+    s_new = ""
+    string = "abcdefghijklmnopqrstuvwxyz"
     for i in string:
         if i not in letters_guessed:
-            s_new= s_new + i
+            s_new = s_new + i
     return s_new
 
 
