@@ -43,6 +43,9 @@ def is_word_guessed(secret_word, letters_guessed):
     #if new_list in secret_word:
      #   return "won the game"
     count = 0
+    if len(letters_guessed) == 1:
+        if letters_guessed[0] not in secret_word:
+            return False
     for i in letters_guessed:
         if i not in secret_word:
             count = count+1
