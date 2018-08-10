@@ -119,11 +119,11 @@ def hang_man(secret_word):
     print("I am thinking of a word that is", len(secret_word), "letters long.")
     guess = 8
     letters_guessed = " "
-    print(secret_word)
+    #print(secret_word)
     while True:
         print("-------------------------------------------------")
         print("You have  " + str(guess) + " guesses left.")
-        print(get_available_letters(letters_guessed))
+        print("Available letters:", get_available_letters(letters_guessed))
         char = input("please guess a character: ")
         if char in letters_guessed:
             print("Oops! You've already guessed that letter:",
