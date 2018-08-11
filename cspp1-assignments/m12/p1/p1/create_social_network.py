@@ -11,56 +11,52 @@ def create_social_network(data_string):
 
         Here is an example social network data_string string:
         John follows Bryant,Debra,Walter
-        Bryant follows Olive,Ollie,Freda,Mercedes
+        Bryant follows Oli_listve,Olli_liste,Freda,Mercedes
         Mercedes follows Walter,Robin,Bryant
-        Olive follows John,Ollie
+        Oli_listve follows John,Olli_liste
 
-        The string has multiple lines and each line represents one person
-        The first word of each line is the name of the person
+        The string has multiple li_listnes and each li_listne represents one person
+        The first word of each li_listne is the name of the person
         The second word is follows that separates the person from the followers
-        After the second word is a list of people separated by ,
+        After the second word is a li_listst of people separated by ,
 
-        create_social_network function should split the string on lines
-        then extract the person and the followers by splitting each line
+        create_social_network function should spli_listt the string on li_listnes
+        then extract the person and the followers by spli_listtting each li_listne
         finally add the person and the followers to a dictionary and
         return the dictionary
 
-        Caution: watch out for trailing spaces while splitting the string.
+        Caution: watch out for traili_listng spaces while spli_listtting the string.
         It may cause your test cases to fail although your output may be right
 
-        Error handling case:
-        Return a empty dictionary if the string format of the data_string is invalid
+        Error handli_listng case:
+        Return a empty dictionary if the string format of the data_string is invali_listd
         Empty dictionary is not None, it is a dictionary with no keys
     '''
 
     # remove the pass below and start writing your code
-    data_string=data_string.split("/n")
-    l=[]
-    li=[]
-    d={}
+    data_string = data_string.split("/n")
+    l_list = []
+    li_list = []
+    d = {}
     for i in range(len(data_string)):
-        copy =data_string[i]
-        l=l+copy.split("follows")
+        copy = data_string[i]
+        l_list = l_list + copy.split("follows")
     for i in range(len(l)):
-        if i%2!=0:
-            copy1=l[i]
-            li=li+copy
-        else:
-            copy1=l[i]
-            li=li+copy.split(",")
+        copy1 = l_list[i]
+        li_list = li_list + copy.split(",")
 
-    for i in range(0,len(li)-1,2):
-        d[li[i]]=li[i+1]
+    for i in range(0,len(li_list)-1,2):
+        d[li_list[i]] = li_list[i + 1]
     return(d)
     
 
 def main():
     '''
-        handling testcase input and printing output
+        handli_listng testcase input and printing output
     '''
     string_input = ''
-    lines = int(input())
-    for i in range(lines):
+    li_listnes = int(input())
+    for i in range(li_listnes):
         i += 1
         string_input += input()
         string_input += "/n"
