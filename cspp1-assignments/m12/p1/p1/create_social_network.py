@@ -36,16 +36,15 @@ def create_social_network(data_string):
     # remove the pass below and start writing your code
     data_string = data_string.split("/n")
     l_list = []
-    li_list = []
-    d = {}
+    dict_k = {}
     for i in range(len(data_string)):
         copy = data_string[i]
         l_list = l_list + copy.split("follows")
-    
 
-    for i in range(0,len(l_list)-2,2):
-        d[l_list[i]] = l_list[i + 1]
-    return(d)
+
+    for i in range(0, len(l_list)-2,2):
+        dict_k[l_list[i]] = l_list[i + 1]
+    return(dict_k)
     
 
 def main():
