@@ -43,7 +43,8 @@ def create_social_network(data_string):
         l=l+copy.split("follows")
     for i in range(len(l)):
         if i%2!=0:
-            li=li+l[i]
+            copy1=l[i]
+            li=li+copy
         else:
             copy1=l[i]
             li=li+copy.split(",")
