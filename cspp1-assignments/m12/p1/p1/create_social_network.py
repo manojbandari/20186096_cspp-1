@@ -35,10 +35,17 @@ def create_social_network(data_string):
 
     # remove the pass below and start writing your code
     data_string=data_string.split("/n")
-    dict_convert={}
+    l=[]
+    d={}
     for i in range(len(data_string)):
-        dict_convert=data_string
-    return dict_convert
+        copy =data_string[i]
+        l=l+copy.split("follows")
+    print(l)
+
+    for i in range(0,len(l)-1,2):
+        d[l[i]]=l[i+1]
+    return(d)
+    
 
 def main():
     '''
