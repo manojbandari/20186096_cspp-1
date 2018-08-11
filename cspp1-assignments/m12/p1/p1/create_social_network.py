@@ -36,6 +36,7 @@ def create_social_network(data_string):
     # remove the pass below and start writing your code
     data_string=data_string.split("/n")
     l=[]
+    li=[]
     d={}
     for i in range(len(data_string)):
         copy =data_string[i]
