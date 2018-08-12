@@ -6,7 +6,8 @@ and display that hand_dict to the user. We can also ask the user for a word (Pyt
 and score the word (using your getWordScore). However, at this point we have not written any code
 to verify that a word given by a player obeys the rules of the game.
 A valid word is in the word list;
-and it is composed entirely of letters from the current hand_dict. Implement the isValidWord function.
+and it is composed entirely of letters from the current hand_dict.
+Implement the isValidWord function.
 
 Testing: Make sure the test_isValidWord tests pass. In addition,
 you will want to test your implementation by calling it multiple
@@ -32,7 +33,7 @@ def is_valid_word(word_input, hand_dict, word_list):
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
     if word_input in word_list:
-        for i in word:
+        for i in word_input:
             if i in hand_dict and hand_dict[i] > 0:
                 count += 1
         if count == len(word_list):
@@ -53,7 +54,7 @@ def main():
     for i in range(n_len):
         i = input()
         l_list = i.split()
-        adict[l_list[0]] = int(l_list[1])
+        adict_dict[l_list[0]] = int(l_list[1])
     l2_list = input().split()
     print(is_valid_word(word_input, adict_dict, l2_list))
 
