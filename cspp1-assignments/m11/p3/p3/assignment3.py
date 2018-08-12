@@ -24,7 +24,7 @@ def is_valid_word(word_input, hand_dict, word_list):
     composed of letters in the hand_dict. Otherwise, returns False.
 
     Does not mutate hand_dict or wordList.
-   
+
     word: string
     hand_dict: dictionary (string -> int)
     wordList: list of lowercase strings
@@ -33,14 +33,12 @@ def is_valid_word(word_input, hand_dict, word_list):
     count = 0
     if word_input in word_list:
         for i in word:
-            if i in hand_dict and hand_dict[i]>0:
+            if i in hand_dict and hand_dict[i] > 0:
                 count += 1
         if count == len(word_list):
             return True
-        return False
 
-    else:
-        return False
+    return False
 
 
 
@@ -52,12 +50,12 @@ def main():
     word_input = input()
     n_len = int(input())
     adict_dict = {}
-    for i in range(n):
-        data = input()
-        l_list = data.split()
-        adict[l_list[0]]=int(l_list[1])
-    l2_list=input().split()
-    print(isValidWord(word_input,adict_dict,l2_list))
+    for i in range(n_len):
+        i = input()
+        l_list = i.split()
+        adict[l_list[0]] = int(l_list[1])
+    l2_list = input().split()
+    print(is_valid_word(word_input, adict_dict, l2_list))
 
 
 
