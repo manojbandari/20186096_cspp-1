@@ -34,13 +34,13 @@ def main():
     '''
     main function
     '''
-    n_input=input()
-    adict_dict={}
+    n_input = input()
+    adict_dict = {}
     for i in range(int(n_input)):
-        data=input()
-        l_list=data.split()
-        adict_dict[l_list[0]]=int(l_list[1])
-    data1=input()
+        i = input()
+        l_list = i.split()
+        adict_dict[l_list[0]] = int(l_list[1])
+    data1 = input()
     print(update_hand(adict_dict,data1))
         
 
