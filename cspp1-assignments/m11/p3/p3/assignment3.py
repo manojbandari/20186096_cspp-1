@@ -36,12 +36,8 @@ def is_valid_word(word_input, hand_dict, word_list):
         for i in word_input:
             if i in hand_dict and hand_dict[i] > 0:
                 count += 1
-        if count == len(word_list):
-            return True
-        else:
-            return False
-    else:
-        return False
+        return count == len(word_list):
+
 
 
 
