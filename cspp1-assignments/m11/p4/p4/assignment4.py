@@ -14,8 +14,8 @@ def calculate_hand_len(hand):
     """
     # TO DO... <-- Remove this comment when you code this function
     count_letters=0
-    for i in hand:
-        count_letters+=1
+    for i in range(len(hand)):
+        count_letters+=
     return count_letters
 
 def main():
