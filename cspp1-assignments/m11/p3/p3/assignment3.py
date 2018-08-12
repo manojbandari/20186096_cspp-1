@@ -32,17 +32,16 @@ def is_valid_word(word_input, hand_dict, word_list):
     """
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
-    flag = 0
     if word_input in word_list:
         for i in word_input:
             if i in hand_dict and hand_dict[i] > 0:
                 count += 1
         if count == len(word_list):
-            flag = 1
             return True
-    if flag == 0:
+        else:
+            return False
+    else:
         return False
-
 
 
 
