@@ -41,9 +41,9 @@ def main():
         l_list = i.split()
         adict_dict[l_list[0]] = int(l_list[1])
     data1 = input()
-    print(update_hand(adict_dict,data1))
+    print(update_hand(adict_dict, data1))
         
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
