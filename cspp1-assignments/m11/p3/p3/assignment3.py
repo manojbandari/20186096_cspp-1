@@ -40,7 +40,7 @@ def is_valid_word(word_input, hand_dict, word_list):
         if count == len(word_list):
             flag = 1
             return True
-    if flag == 0
+    if flag == 0:
         return False
 
 
