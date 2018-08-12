@@ -29,7 +29,7 @@ def isValidWord(word, hand, wordList):
     """
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
-    if word in wordlist:
+    if word in wordList:
         for i in word:
             if i in hand and hand[i]>0:
                 count+=1
