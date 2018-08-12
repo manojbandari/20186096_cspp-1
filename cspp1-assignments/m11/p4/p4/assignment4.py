@@ -13,24 +13,24 @@ def calculate_hand_len(hand):
     returns: integer
     """
     # TO DO... <-- Remove this comment when you code this function
-    count_letters=0
+    count_letters = 0
     for i in range(len(hand)):
-        count_letters+=1
+        count_letters = i+1
     return count_letters
 
 def main():
     '''
     main function
     '''
-    n=input()
-    adict={}
-    for i in range(int(n)):
-        data=input()
-        l=data.split()
-        adict[l[0]]=int(l[1])
+    n_input = input()
+    adict = {}
+    for i in range(int(n_input)):
+        data = input()
+        l_split = data.split()
+        adict[l_split[0]] = int(l_split[1])
     print(calculate_hand_len(adict))
         
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
