@@ -11,7 +11,7 @@ SCRABBLE_LETTER_VALUES = {
     'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1,
     's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
-def get_word_score(word, n):
+def get_word_score(word, n_letters):
     """
     Returns the score for a word. Assumes the word is a valid word.
 
@@ -29,7 +29,7 @@ def get_word_score(word, n):
     count = 0
     for i in word:
         count += SCRABBLE_LETTER_VALUES[i]
-    if len(word) == n:
+    if len(word) == n_letters:
         return count*len(word)+ 50
     return count*len(word)
 
