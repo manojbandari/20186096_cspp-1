@@ -74,7 +74,8 @@ def getWordScore(word, n):
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
     for i in word:
-        count+= SCRABBLE_LETTER_VALUES[i]
+        if i in SCRABBLE_LETTER_VALUES:
+            count+= SCRABBLE_LETTER_VALUES[i]
     if len(word) == n:
         return count*len(word)+50
     return count*len(word)
@@ -151,7 +152,7 @@ def updateHand(hand, word):
     count=0
     update_hand = hand.copy()
     for  i in word:
-        if i in hand and hand[i]!=0:
+        if i in update_hand:
             update_hand[i]-=1
     return update_hand
 
@@ -174,7 +175,7 @@ def isValidWord(word, hand, wordList):
     """
     # TO DO ... <-- Remove this comment when you code this function
     count=0
-    update_hand = hand.copy()
+    update_hand = hand.copy() #update_hand = dict(hand)
     if word in wordList:
         for i in word:
             if i in update_hand and update_hand[i]>0:
@@ -184,7 +185,6 @@ def isValidWord(word, hand, wordList):
         return bool(len(word) == count)
     else:
         return False
-    
 
 
 #
@@ -199,12 +199,12 @@ def calculateHandlen(hand):
     returns: integer
     """
     # TO DO... <-- Remove this comment when you code this function
-    for i in hand:
-        if i in hand and hand[i] > 0:
-            hand[i]-=1
-            count+=1
-    return count
-
+    # for i in hand:
+    #     if i in hand and hand[i] > 0:
+    #         hand[i]-=1
+    #         count+=1
+    # return count
+    return sum(hand.values())
 
 def playHand(hand, wordList, n):
     """
@@ -253,25 +253,35 @@ def playHand(hand, wordList, n):
 
                 # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
                 
-                # Update the hand 
+                # Update the hand
                 
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
-    
-    user_input=input()
-    if user_input== ".":
-        print(getWordScore(word, n))
-        print("Game over")
+    total_score = 0
+    while calculateHandlen(hand) > 0:
+        displayHand(hand)
+        user_input=input()
+        if user_input== ".":
+            print("Game over")
+            print("Total score :", total_score)
 
-    else:
-        if isValidWord(word, hand, wordList):
-            print(getWordScore(word, n))
-            print(updateHand(hand, word))
-            print()
+            break
+
         else:
-            print("invalid word")
-            print()
+            if not isValidWord(user_input, hand, wordList):
+                print("invalid word")
+                print()
 
+            else:
+                score = getWordScore(user_input, n)
+                print(score)
+                print()
+                total_score+= score
+                print("Total score :", total_score)
+
+                hand=updateHand(hand, user_input)
+    
+            
 
 
 
@@ -293,20 +303,17 @@ def playGame(wordList):
     """
     # TO DO ... <-- Remove this comment when you code this function
     #print("playGame not yet implemented.") # <-- Remove this line when you code the function
-    print("Enter a input n or r or e ")
     hand={}
     while True:
-        user_input = input()
+        user_input = input("Enter a input n(for new hand) or r(to play last hand) or e(exit the game) \n ")
         if user_input == 'n':
-            print(playHand(hand, wordList,n)) 
+            hand = dealHand(HAND_SIZE)
+            playHand(hand, wordList,HAND_SIZE) 
 
         elif user_input == 'r':
-            print(updateHand(hand, word))
-            print(playHand(hand, wordList,n))
+            playHand(hand, wordList,HAND_SIZE)
 
         elif user_input == 'e':
-            print(updateHand(hand, word))
-            print(getWordScore(word, n))
             print("game over")
             break
             
