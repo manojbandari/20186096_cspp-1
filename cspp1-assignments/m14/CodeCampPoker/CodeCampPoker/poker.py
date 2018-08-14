@@ -24,9 +24,10 @@ def is_straight(hand):
     count=0
     for i in range(len(hand)):
         lis1.append(hand[i][1])
-        lis.append(hand[i][0])
-    for i in lis:
-        lis.append(dic_new[i])
+        lis.append(dic_new[hand[i][0]])
+    #for i in range(len(lis)):
+     #   lis[i].replace(dic_new(lis[i]))
+
    # for i in hand:
     #   lis1.append(i[0][1]) 
     lis.sort()
