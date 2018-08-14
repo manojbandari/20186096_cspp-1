@@ -3,11 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-T=10
-J=11
-Q=12
-K=13
-A=1
+
 dic_new={'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
 def is_straight(hand):
     '''
@@ -63,16 +59,13 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    ranks=[]
-    ranks=is_straight(hand)
-    best=max(ranks)
+    best=[]
+    best=is_straight(hand)
 
 
 
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
-    #for i in range(len(hand)):
-     #  print(hand[i])
     # Each card is coded as a 2 character string. Example Kind of Hearts is KH
     # First character for face value 2,3,4,5,6,7,8,9,T,J,Q,K,A
     # Second character for the suit S (Spade), H (Heart), D (Diamond), C (Clubs)
@@ -99,7 +92,6 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-   
     # the line below may be new to you
     # max function is provided by python library
     # learn how it works, in particular the key argument, from the link
@@ -119,4 +111,6 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     # test the poker function to see how it works
-    print(' '.join(poker(HANDS)))
+        print(' '.join(poker(HANDS)))
+
+
