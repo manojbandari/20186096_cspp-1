@@ -59,8 +59,6 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    best=[]
-    best=is_straight(hand)
 
 
 
@@ -80,7 +78,7 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best han
     #print(hands)
-    return best
+    return is_straight(hand)
 
 def poker(hands):
     '''
