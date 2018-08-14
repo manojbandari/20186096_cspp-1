@@ -51,8 +51,8 @@ def is_flush(hand):
     # else:
     #     return False
     suit = hand[0]
-    for h in hand:
-        if suit[1] != h[1]:
+    for h_suit in hand:
+        if suit[1] != h_suit[1]:
             return False
     return True
 
@@ -66,12 +66,12 @@ def hand_rank(hand):
     '''
     if is_straight(hand) and is_flush(hand):
         return 3
-    elif is_flush(hand):
+    if is_flush(hand):
         return 2
-    elif is_straight(hand):
+    if is_straight(hand):
         return 1
-    else:
-        return 0
+
+    return 0
 
 
 
@@ -120,9 +120,6 @@ if __name__ == "__main__":
         line = input()
         ha = line.split(" ")
         HANDS.append(ha)
-       
+
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
-    
-
-
