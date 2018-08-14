@@ -8,7 +8,7 @@ J=11
 Q=12
 K=13
 A=1
-dic_new={'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13,'A':14}
+dic_new={'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -25,11 +25,6 @@ def is_straight(hand):
     for i in range(len(hand)):
         lis1.append(hand[i][1])
         lis.append(dic_new[hand[i][0]])
-    #for i in range(len(lis)):
-     #   lis[i].replace(dic_new(lis[i]))
-
-   # for i in hand:
-    #   lis1.append(i[0][1]) 
     lis.sort()
 
     for i in range(len(lis)-1):
@@ -68,7 +63,10 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
+    
     is_straight(hand)
+
+
 
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
