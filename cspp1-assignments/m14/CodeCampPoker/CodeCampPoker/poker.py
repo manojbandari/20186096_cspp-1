@@ -8,7 +8,7 @@ J=11
 Q=12
 K=13
 A=1
-dict_new={'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13,'A':14}
+dic_new={'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13,'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -25,14 +25,11 @@ def is_straight(hand):
     for i in range(len(hand)):
         lis1.append(hand[i][1])
         lis.append(int(hand[i][0]))
-    print(lis)
-   # for i in range(len(lis)):
-    #    lis[i]=(lis[i])
+    #for i in lis:
+     #  lis.append(dic_new(i))
    # for i in hand:
     #   lis1.append(i[0][1]) 
     lis.sort()
-    print(lis)
-    print(lis1)
 
     for i in range(len(lis)-1):
         if (lis[i+1]-lis[i])==1:
