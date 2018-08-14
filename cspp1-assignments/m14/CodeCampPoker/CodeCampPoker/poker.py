@@ -15,22 +15,22 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    lis=[]
-    lis1=[]
-    count=0
-    for i in range(len(hand)):
-        lis1.append(hand[i][1])
-        lis.append(dic_new[hand[i][0]])
-    lis.sort()
+    # lis=[]
+    # lis1=[]
+    # count=0
+    # for i in range(len(hand)):
+    #     lis1.append(hand[i][1])
+    #     lis.append(dic_new[hand[i][0]])
+    # lis.sort()
 
-    for i in range(len(lis)-1):
-        if (lis[i+1]-lis[i])==1:
-            count+=1
-    if count==len(lis):
-        is_flush(lis1)
-    else:
-        return 1
-
+    # for i in range(len(lis)-1):
+    #     if lis[i+1]-lis[i]!=1:
+    #         return False
+    # return True
+    if all([True if c in '2345A' else False for c,s in hand]):
+        return True
+    card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
+    return len(card_values) == 5 and max(card_values)-min(card_values)=4
 
 def is_flush(hand):
     '''
@@ -41,15 +41,20 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    count2 = 0
-    flag = ord(hand[0])
-    for i in range(1,len(hand)):
-        if flag == ord(hand[i]):
-            count2 += 1
-    if count2 == len(hand):
-        return 3
-    else:
-        return 2
+    # count2 = 0
+    # flag = ord(hand[0])
+    # for i in range(1,len(hand)):
+    #     if flag == ord(hand[i]):
+    #         count2 += 1
+    # if count2 == len(hand):
+    #     return True
+    # else:
+    #     return False
+    suit = hand[0]
+    for h in hand:
+        if suit[1]!=h[1]:
+            return False
+    return True
 
 def hand_rank(hand):
     '''
@@ -59,6 +64,14 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
+    if is_straight(hand) and is_flush(hand):
+        return 3
+    elif is_flush(hand):
+        return 2
+    elif is_straight(hand):
+        return 1
+    else:
+        return 0
 
 
 
@@ -78,7 +91,7 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best han
     #print(hands)
-    return is_straight(hand)
+    return best
 
 def poker(hands):
     '''
@@ -108,7 +121,9 @@ if __name__ == "__main__":
         line = input()
         ha = line.split(" ")
         HANDS.append(ha)
+       
     # test the poker function to see how it works
-        print(' '.join(poker(HANDS)))
+            print(' '.join(poker(HANDS)))
+    
 
 
