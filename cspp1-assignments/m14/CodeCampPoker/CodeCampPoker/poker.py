@@ -24,9 +24,9 @@ def is_straight(hand):
     count=0
     for i in range(len(hand)):
         lis1.append(hand[i][1])
-        lis.append(int(hand[i][0]))
-    #for i in lis:
-     #  lis.append(dic_new(i))
+        lis.append(hand[i][0])
+    for i in lis:
+        lis.append(dic_new[i])
    # for i in hand:
     #   lis1.append(i[0][1]) 
     lis.sort()
@@ -68,6 +68,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     is_straight(hand)
+
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
     #for i in range(len(hand)):
