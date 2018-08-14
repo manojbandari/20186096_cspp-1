@@ -123,7 +123,7 @@ if __name__ == "__main__":
         HANDS.append(ha)
        
     # test the poker function to see how it works
-            print(' '.join(poker(HANDS)))
+        print(' '.join(poker(HANDS)))
     
 
 
