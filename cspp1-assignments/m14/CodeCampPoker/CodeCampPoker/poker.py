@@ -1,10 +1,12 @@
 '''
+author : manojbandari
     Write a program to evaluate poker hands and determine the winner
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 
-#dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
+#dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
+          #  '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -27,7 +29,7 @@ def is_straight(hand):
     #     if lis[i+1]-lis[i]!=1:
     #         return False
     # return True
-    if all([True if c in '2345A' else False for c, s in hand]):
+    if all(True if c in '2345A' else False for c, s in hand):
         return True
     card_values = set(['--23456789TJQKA'.index(c) for c, s in hand])
     return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
@@ -109,7 +111,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key = hand_rank)
+    return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
