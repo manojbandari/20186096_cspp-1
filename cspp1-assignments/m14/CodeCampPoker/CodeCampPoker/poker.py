@@ -65,7 +65,7 @@ def hand_rank(hand):
     '''
     ranks=[]
     ranks=is_straight(hand)
-    best=max(rank)
+    best=max(ranks)
 
 
 
