@@ -5,8 +5,8 @@ author : manojbandari
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 
-#dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
-          #  '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
+dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
+           '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -57,6 +57,36 @@ def is_flush(hand):
         if suit[1] != h_suit[1]:
             return False
     return True
+def is_four_of_a_kind(hand):
+    '''
+        four of a kind or not
+    '''
+    # count = 0 
+    # for i in range(len(hand)):
+    #     lis.append(dic_new[hand[i][0]])
+    # lis.sort()
+    # flag = lis[0]
+    # if lis[0] != lis[1]:
+    #     for i in range(1,len(lis)-1):
+    #         if lis[i] == lis[i+1]:
+    #             count+=1
+    #     return bool(count==3)
+    # else:
+    #     for i in range(1,len(lis)):
+    #         if flag==lis[i]
+    #             count+=1
+    #         return bool(count==3)
+    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_values) == 2
+    
+def is_three_of_a_kind(hand):
+    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_values) == 3
+    
+def is_two_of_a_kind(hand):
+    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_values) == 4
+
 
 def hand_rank(hand):
     '''
@@ -66,14 +96,20 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
+    c=0
     if is_straight(hand) and is_flush(hand):
-        return 3
-    if is_flush(hand):
-        return 2
-    if is_straight(hand):
-        return 1
-
-    return 0
+        c = 6
+    elif is_four_of_a_kind(hand):
+        c = 5
+    elif is_flush(hand):
+        c = 4
+    elif is_straight(hand):
+        c = 3
+    elif is_three_of_a_kind(hand):
+        c = 2
+    elif is_two_of_a_kind(hand):
+        c = 1
+    return c
 
 
 
