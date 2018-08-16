@@ -78,7 +78,8 @@ def is_full_house(hand):
     for i in range(len(lis)):
         if lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4]:
             return True
-        return bool(lis[i] == [i+1] and lis[i+2] == lis[i+3] == lis[i+4])
+        else:
+            return bool(lis[i] == [i+1] and lis[i+2] == lis[i+3] == lis[i+4])
 
 
 def is_four_of_a_kind(hand):
