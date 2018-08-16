@@ -191,7 +191,7 @@ def hand_rank(hand):
                 a_temp = card_rank[i]
                 card_rank = []
                 card_rank.append(a_temp)
-                break
+            break
         c_r = 7
     elif is_flush(hand):
         #print("Flush")
@@ -213,7 +213,7 @@ def hand_rank(hand):
                 a_temp = card_rank[i]
                 card_rank = []
                 card_rank.append(a_temp)
-                break
+            break
         c_r = 2
     elif is_high_card(hand):
         #print("High card")
