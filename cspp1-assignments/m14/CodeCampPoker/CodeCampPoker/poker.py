@@ -102,20 +102,20 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    c = 0
+    c_rank = 0
     if is_straight(hand) and is_flush(hand):
-        c= 6
+        c_rank = 6
     elif is_four_of_a_kind(hand):
-        c = 5
+        c_rank = 5
     elif is_flush(hand):
-        c = 4
+        c_rank = 4
     elif is_straight(hand):
-        c = 3
+        c_rank = 3
     elif is_three_of_a_kind(hand):
-        c = 2
+        c_rank = 2
     elif is_two_of_a_kind(hand):
-        c = 1
-    return c
+        c_rank = 1
+    return c_rank
 
 
 
