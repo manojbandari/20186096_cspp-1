@@ -74,7 +74,7 @@ def is_full_house(hand):
     '''
     lis = get_face_values(hand)
     lis.sort()
-    for i in list(enumerate(lis))
+    for i in list(enumerate(lis)):
         if lis[i] == lis[i+1] and lis[i+2] == lis[i+3] == lis[i+4]:
             return True
         return bool(lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
