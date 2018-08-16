@@ -7,7 +7,6 @@ author : manojbandari
 
 DIC_NEW = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
            '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1, 'D':2, 'H':3, 'S':4}
-
 def get_face_values(hand):
     '''
     get values
@@ -40,8 +39,8 @@ def is_straight(hand):
     #         return False
     # return True
 
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
+    card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_rank) == 5 and (max(card_rank) - min(card_rank) == 4)
     if all(True if c in '2345A' else False for c, s in hand):
         return True
 
@@ -103,8 +102,8 @@ def is_four_of_a_kind(hand):
     #         if flag==lis[i]
     #             count+=1
     #         return bool(count==3)
-    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    #return len(card_values) == 2
+    #card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_rank) == 2
     lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
@@ -117,8 +116,8 @@ def is_three_of_a_kind(hand):
     '''
     three of a kind
     '''
-    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    #return len(card_values) == 3
+    #card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_rank) == 3
     lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
@@ -147,15 +146,15 @@ def is_one_pair(hand):
     '''
     one pair
     '''
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 4
+    card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_rank) == 4
 
 def is_high_card(hand):
     '''
     high card
     '''
-    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    #return len(card_values) == 5
+    #card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_rank) == 5
     lis = get_face_values(hand)
     for i in range(len(lis)):
         return bool(lis[i] != lis[i+1] != lis[i+2] != lis[i+3] != lis[i+4])
@@ -169,38 +168,46 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    c_rank = 0
-    card_values = ['--23456789TJQKA'.index(c) for c, s in hand]
-    card_values.sort()
-    card_values.reverse()
+    c_r = 0
+    a=[]
+    card_rank = ['--23456789TJQKA'.index(c) for c, s in hand]
+    card_rank.sort()
+    card_rank.reverse()
+
     if is_straight(hand) and is_flush(hand):
-        print("straight flush")
-        c_rank = 9
+        #print("straight flush")
+        c_r = 9
     elif is_four_of_a_kind(hand):
-        print("4 Kind")
-        c_rank = 8
+        #print("4 Kind")
+        c_r = 8
     elif is_full_house(hand):
-        print("Full house")
-        c_rank = 7
+        #print("Full house")
+        c_r = 7
     elif is_flush(hand):
-        print("Flush")
-        c_rank = 6
+        #print("Flush")
+        c_r = 6
     elif is_straight(hand):
-        print("straight")
-        c_rank = 5
+        #print("straight")
+        c_r = 5
     elif is_three_of_a_kind(hand):
-        print("Three Kind")
-        c_rank = 4
+        #print("Three Kind")
+        c_r = 4
     elif is_two_pair(hand):
-        print("Two pair")
-        c_rank = 3
+        #print("Two pair")
+        c_r = 3
     elif is_one_pair(hand):
-        print("One pair")
-        c_rank = 2
+        #print("One pair")
+        for i in range(len(card_rank)-1):
+            if card_rank[i] == card_rank[i+1]:
+                a=card_rank[i]
+                card_rank=[]
+                card_rank.append(a)
+                break
+        c_r = 2
     elif is_high_card(hand):
-        print("High card")
-        c_rank = 1
-    return (c_rank, card_values)
+        #print("High card")
+        c_r = 1
+    return (c_r, card_rank)
 
 
 
