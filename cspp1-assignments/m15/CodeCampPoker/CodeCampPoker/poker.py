@@ -112,7 +112,10 @@ def is_two_pair(hand):
             else:
                 return False
         else:
-            if hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4]
+            if hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4]:
+                return True
+            else:
+                return False
 
 
 
