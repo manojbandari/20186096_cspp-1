@@ -150,7 +150,7 @@ def is_high_card(hand):
     #return len(card_values) == 5
     lis = []
     for i in hand:
-        lis.append(dic_new[i[1]])
+        lis.append(dic_new[i[0]])
     
     for i in range(len(lis)):
         return bool(lis[i] != lis[i+1] != lis[i+2] != lis[i+3] != lis[i+4])
