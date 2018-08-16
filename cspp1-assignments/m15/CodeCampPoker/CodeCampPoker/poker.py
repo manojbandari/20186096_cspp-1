@@ -148,6 +148,7 @@ def hand_rank(hand):
     '''
     c_rank = 0
     maxi=[]
+    lis=[]
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
     elif is_four_of_a_kind(hand):
