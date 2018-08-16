@@ -182,6 +182,12 @@ def hand_rank(hand):
         c_r = 8
     elif is_full_house(hand):
         print("Full house")
+        for i in range(len(card_rank)-1):
+            if card_rank[i] == card_rank[i+1]==card_rank[i+2]:
+                a=card_rank[i]
+                card_rank=[]
+                card_rank.append(a)
+                break
         c_r = 7
     elif is_flush(hand):
         print("Flush")
