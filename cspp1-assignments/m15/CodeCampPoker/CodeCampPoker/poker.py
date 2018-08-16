@@ -131,7 +131,7 @@ def is_two_pair(hand):
         if lis[i]!=lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         else:
-            return bool(lis[i+2] == lis[i+3] and lis[i+4]!or lis[i+3] == lis[i+4])
+            return bool(lis[i+2] == lis[i+3] or lis[i+3] == lis[i+4])
 
 
 def is_one_pair(hand):
