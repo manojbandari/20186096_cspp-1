@@ -139,7 +139,7 @@ def is_two_pair(hand):
         if lis[i] != lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         else:
-            return bool(lis[i+2] == lis[i+3] != lis[i+4] or (lis[i+3]==lis[i+4] and lis[i+2]!=lis[i+1]!=lis[i+3]))
+            return bool(lis[i+2] == lis[i+3] != lis[i+4] or (lis[i+3] == lis[i+4] and lis[i+2] != lis[i+1] != lis[i+3]))
 
 
 def is_one_pair(hand):
@@ -169,7 +169,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_r = 0
-    a=[]
+     a_temp= []
     card_rank = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_rank.sort()
     card_rank.reverse()
@@ -181,33 +181,33 @@ def hand_rank(hand):
         #print("4 Kind")
         c_r = 8
     elif is_full_house(hand):
-        print("Full house")
-        for i in range(len(card_rank)-1):
-            if card_rank[i] == card_rank[i+1]==card_rank[i+2]:
-                a=card_rank[i]
-                card_rank=[]
-                card_rank.append(a)
+        #print("Full house")
+        for i in range(len(card_rank)-2):
+            if card_rank[i] == card_rank[i+1] == card_rank[i+2]:
+                a_temp = card_rank[i]
+                card_rank = []
+                card_rank.append(a_temp)
                 break
         c_r = 7
     elif is_flush(hand):
-        print("Flush")
+        #print("Flush")
         c_r = 6
     elif is_straight(hand):
-        print("straight")
+        #print("straight")
         c_r = 5
     elif is_three_of_a_kind(hand):
-        print("Three Kind")
+        #print("Three Kind")
         c_r = 4
     elif is_two_pair(hand):
-        print("Two pair")
+        #print("Two pair")
         c_r = 3
     elif is_one_pair(hand):
         #print("One pair")
         for i in range(len(card_rank)-1):
             if card_rank[i] == card_rank[i+1]:
-                a=card_rank[i]
-                card_rank=[]
-                card_rank.append(a)
+                a_temp = card_rank[i]
+                card_rank = []
+                card_rank.append(a_temp)
                 break
         c_r = 2
     elif is_high_card(hand):
