@@ -63,12 +63,12 @@ def is_full_house(hand):
     full house
     '''
     for i in range(len(hand)):
-    if hand[0][i]==hand[0][i+1]==hand[0][i+2] and hand[0][i+3]==hand[0][i+4]:
-        return True
-    elif hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4]:
-        return True
-    else:
-        return False
+        if hand[0][i]==hand[0][i+1]==hand[0][i+2] and hand[0][i+3]==hand[0][i+4]:
+            return True
+        elif hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4]:
+            return True
+        else:
+            return False
 
 
 def is_four_of_a_kind(hand):
