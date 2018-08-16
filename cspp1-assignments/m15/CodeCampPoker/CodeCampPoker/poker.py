@@ -147,7 +147,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_rank = 0
-    maxi=[]
+    maxi=""
     lis=[]
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
@@ -167,10 +167,10 @@ def hand_rank(hand):
     elif is_one_pair(hand):
         c_rank = 2
     elif is_high_card(hand):
-        for i in range(len(hand)):
-            lis.append(dic_new[hand[i][0]])
-        maxi=sum(lis)
-        if maxi!=1:
+        for k in range(len(hand)):
+            lis.append(dic_new[hand[k][0]])
+        maxi+=sum(lis)
+        if maxi>1:
             for i in range(len(maxi)-1):
                 if maxi[i+1]>max[i]:
                     c_rank = 1.1
