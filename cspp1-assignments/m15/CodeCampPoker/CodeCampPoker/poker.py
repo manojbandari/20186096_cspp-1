@@ -7,6 +7,11 @@ author : manojbandari
 
 dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
            '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1, 'D':2, 'H':3, 'S':4}
+
+def get_face_values(hand):
+    lis = [s for f, s in hand]
+    return lis
+
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -63,9 +68,7 @@ def is_full_house(hand):
     '''
     full house
     '''
-    lis = []
-    for i in range(len(hand)):
-        lis.append(dic_new[hand[i][0]])
+    lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
         if lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4]:
@@ -94,9 +97,7 @@ def is_four_of_a_kind(hand):
     #         return bool(count==3)
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 2
-    lis = []
-    for i in range(len(hand)):
-        lis.append(dic_new[hand[i][0]])
+    lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
         if lis[i] == lis[i+1]:
@@ -110,9 +111,7 @@ def is_three_of_a_kind(hand):
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 3
-    lis = []
-    for i in range(len(hand)):
-        lis.append(dic_new[hand[i][0]])
+    lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
         if lis[i] == lis[i+1]:
@@ -124,15 +123,13 @@ def is_three_of_a_kind(hand):
 
 
 def is_two_pair(hand):
-    lis = []
-    for i in range(len(hand)):
-        lis.append(dic_new[hand[i][0]])
+    lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
         if lis[i]!=lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         else:
-            return bool(lis[i+2] == lis[i+3] or lis[i+3] == lis[i+4])
+            return bool(lis[i+2] == lis[i+3] and lis[i+4]!or lis[i+3] == lis[i+4])
 
 
 def is_one_pair(hand):
@@ -148,9 +145,7 @@ def is_high_card(hand):
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 5
-    lis = []
-    for i in hand:
-        lis.append(dic_new[i[0]])
+    lis = get_face_values(hand)
     
     for i in range(len(lis)):
         return bool(lis[i] != lis[i+1] != lis[i+2] != lis[i+3] != lis[i+4])
