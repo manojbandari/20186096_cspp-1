@@ -7,7 +7,6 @@ author : manojbandari
 
 dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
            '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1, 'D':2, 'H':3, 'S':4}
-lis=[]
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -64,14 +63,14 @@ def is_full_house(hand):
     '''
     full house
     '''
-    lis=[]
+    lis = []
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
     for i in range(len(lis)):
-        if lis[i]==lis[i+1]==lis[i+2] and lis[i+3]==lis[i+4]:
+        if lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4]:
             return True
-        return bool(lis[i]==[i+1] and lis[i+2]==lis[i+3]==lis[i+4])
+        return bool(lis[i] == [i+1] and lis[i+2] == lis[i+3] == lis[i+4])
 
 
 def is_four_of_a_kind(hand):
@@ -95,7 +94,7 @@ def is_four_of_a_kind(hand):
     #         return bool(count==3)
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 2
-    lis=[]
+    lis = []
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
@@ -111,7 +110,7 @@ def is_three_of_a_kind(hand):
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 3
-    lis=[]
+    lis = []
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
@@ -125,7 +124,7 @@ def is_three_of_a_kind(hand):
 
 
 def is_two_pair(hand):
-    lis=[]
+    lis = []
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
@@ -143,7 +142,7 @@ def is_one_pair(hand):
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 4
 
-def is_high_card(hand,lis):
+def is_high_card(hand):
     '''
     high card
     '''
@@ -153,7 +152,7 @@ def is_high_card(hand,lis):
         lis.append(dic_new[hand[i][0]])
     
     for i in range(len(lis)):
-        return bool(lis[i]!=lis[i+1]!=lis[i+2]!= lis[i+3]!= lis[i+4])
+        return bool(lis[i] != lis[i+1] != lis[i+2] != lis[i+3] != lis[i+4])
         
 
 
@@ -168,7 +167,7 @@ def hand_rank(hand):
     '''
     c_rank=0
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    card_vlaues.sort()
+    card_values.sort()
     card_values.reverse()
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
@@ -187,7 +186,7 @@ def hand_rank(hand):
         c_rank = 3
     elif is_one_pair(hand):
         c_rank = 2
-    elif is_high_card(hand,lis):
+    elif is_high_card(hand):
 
 
         c_rank = 1
