@@ -32,6 +32,7 @@ def is_straight(hand):
     
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
+
     if all(True if c in '2345A' else False for c, s in hand):
         return True
 def is_flush(hand):
@@ -134,6 +135,9 @@ def is_high_card(hand):
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 5
 
+
+
+
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -143,6 +147,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_rank = 0
+    maxi=[]
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
     elif is_four_of_a_kind(hand):
@@ -161,7 +166,13 @@ def hand_rank(hand):
     elif is_one_pair(hand):
         c_rank = 2
     elif is_high_card(hand):
-        c_rank = 1
+        maxi=sum(hand[0][0],hand[0][1],hand[0][2],hand[0][3],hand[0][4])
+        for i in range(len(maxi)):
+            if maxi[i+1]>max[i]:
+                c_rank = 1.1
+            else:
+                c_rank = 1
+
     return c_rank
 
 
