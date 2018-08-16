@@ -102,6 +102,7 @@ def is_three_of_a_kind(hand):
     return len(card_values) == 3
 
 def is_two_pair(hand):
+    lis=[]
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
