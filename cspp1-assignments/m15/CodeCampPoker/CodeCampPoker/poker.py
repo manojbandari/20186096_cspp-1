@@ -171,7 +171,7 @@ def hand_rank(hand):
             lis.append(dic_new[hand[k][0]])
         maxi=sum(lis)
         if maxi>1:
-            for i in range(len(maxi)-1):
+            for i in range(len(maxi)):
                 if maxi[i+1]>max[i]:
                     c_rank = 1.1
                 else:
