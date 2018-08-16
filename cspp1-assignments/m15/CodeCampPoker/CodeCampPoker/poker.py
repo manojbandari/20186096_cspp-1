@@ -12,7 +12,7 @@ def get_face_values(hand):
     get values
     '''
     lis = []
-    for i,j in list(enumerate(hand)):
+    for i, j in list(enumerate(hand)):
         del j
         lis.append(DIC_NEW[hand[i][0]])
     return lis
