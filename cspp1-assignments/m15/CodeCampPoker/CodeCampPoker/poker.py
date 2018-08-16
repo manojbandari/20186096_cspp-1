@@ -186,7 +186,12 @@ def hand_rank(hand):
         c_r = 8
     elif is_full_house(hand):
         #print("Full house")
-        card_rank=maximum_samerank(card_rank)
+        for i in range(len(card_rank)-2):
+            if card_rank[i] == card_rank[i+1] == card_rank[i+2]:
+                a_temp = card_rank[i]
+                card_rank = []
+                card_rank.append(a_temp)
+                break
         c_r = 7
     elif is_flush(hand):
         #print("Flush")
