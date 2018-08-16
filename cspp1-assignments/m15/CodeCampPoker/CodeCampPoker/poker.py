@@ -166,7 +166,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_rank=0
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    card_values = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_values.sort()
     card_values.reverse()
     if is_straight(hand) and is_flush(hand):
