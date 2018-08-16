@@ -63,7 +63,8 @@ def is_full_house(hand):
             return True
         elif hand[0][0]==hand[0][1] and hand[0][2]==hand[0][3]==hand[0][4]:
             return True
-        else False
+        else:
+            return False
 
 
 def is_four_of_a_kind(hand):
