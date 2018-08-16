@@ -5,8 +5,8 @@ author : manojbandari
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 
-dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
-           '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+#DIC_NEW = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
+ #          '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -78,7 +78,7 @@ def is_four_of_a_kind(hand):
     #         return bool(count==3)
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 2
-    
+
 def is_three_of_a_kind(hand):
     '''
     three of a kind
@@ -102,20 +102,20 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    
+    c = 0
     if is_straight(hand) and is_flush(hand):
-        return 6
+        c= 6
     elif is_four_of_a_kind(hand):
-        return 5
+        c = 5
     elif is_flush(hand):
-        return 4
+        c = 4
     elif is_straight(hand):
-        return 3
+        c = 3
     elif is_three_of_a_kind(hand):
-        return 2
+        c = 2
     elif is_two_of_a_kind(hand):
-        return 1
-    return 0
+        c = 1
+    return c
 
 
 
