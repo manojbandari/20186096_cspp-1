@@ -114,7 +114,7 @@ def is_three_of_a_kind(hand):
     for i in range(len(lis)):
         if lis[i] == lis[i+1]:
             return bool(lis[i+1] == lis[i+2])
-        elif Lis[i+1] == lis[i+2]:
+        elif lis[i+1] == lis[i+2]:
             return bool(lis[i+2] == lis[i+3])
         else:
             return bool(lis[i+2] == lis[i+3] == lis[i+4])
