@@ -78,7 +78,6 @@ def is_full_house(hand):
         if lis[i] == lis[i+1] and lis[i+2] == lis[i+3] == lis[i+4]:
             return True
         return bool(lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
-                
 
     #return bool(is_three_of_a_kind(hand) and is_one_pair(hand))
 
@@ -109,8 +108,7 @@ def is_four_of_a_kind(hand):
     for i in range(len(lis)):
         if lis[i] == lis[i+1]:
             return bool(lis[i+1] == lis[i+2] == lis[i+3])
-        else:
-            return bool(lis[i+1] == lis[i+2] == lis[i+3] == lis[i+4])
+        return bool(lis[i+1] == lis[i+2] == lis[i+3] == lis[i+4])
 
 def is_three_of_a_kind(hand):
     '''
@@ -125,8 +123,7 @@ def is_three_of_a_kind(hand):
             return bool(lis[i+1] == lis[i+2])
         elif lis[i+1] == lis[i+2]:
             return bool(lis[i+2] == lis[i+3])
-        else:
-            return bool(lis[i+2] == lis[i+3] == lis[i+4])
+        return bool(lis[i+2] == lis[i+3] == lis[i+4])
 
 
 def is_two_pair(hand):
@@ -138,8 +135,8 @@ def is_two_pair(hand):
     for i in range(len(lis)):
         if lis[i] != lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
-        else:
-            return bool(lis[i+2] == lis[i+3] != lis[i+4] or (lis[i+3] == lis[i+4] and lis[i+2] != lis[i+1] != lis[i+3]))
+        return bool(lis[i+2] == lis[i+3] != lis[i+4] or
+                        (lis[i+3] == lis[i+4] and lis[i+2] != lis[i+1] != lis[i+3]))
 
 
 def is_one_pair(hand):
@@ -169,7 +166,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_r = 0
-    a_temp= []
+    a_temp = []
     card_rank = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_rank.sort()
     card_rank.reverse()
