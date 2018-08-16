@@ -128,7 +128,6 @@ def is_two_pair(hand):
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
-    print(lis)
     for i in range(len(lis)):
         if hand[i] == hand[i+1]:
             return bool(hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4])
