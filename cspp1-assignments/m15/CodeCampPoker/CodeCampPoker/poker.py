@@ -100,7 +100,7 @@ def is_four_of_a_kind(hand):
     lis.sort()
     for i in range(len(lis)):
         if hand[i] == hand[i+1]:
-            retur bool(hand[i+1] == hand[i+2] == hand[i+3])
+            return bool(hand[i+1] == hand[i+2] == hand[i+3])
         else:
             return bool(hand[i+1] == hand[i+2] == hand[i+3] == hand[i+4])
 
