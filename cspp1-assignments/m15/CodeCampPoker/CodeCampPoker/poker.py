@@ -169,7 +169,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_r = 0
-     a_temp= []
+    a_temp= []
     card_rank = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_rank.sort()
     card_rank.reverse()
