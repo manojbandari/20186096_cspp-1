@@ -7,7 +7,7 @@ author : manojbandari
 
 dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
            '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1, 'D':2, 'H':3, 'S':4}
-
+lis=[]
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -64,10 +64,14 @@ def is_full_house(hand):
     '''
     full house
     '''
+    lis=[]
     for i in range(len(hand)):
-        if hand[0][i]==hand[0][i+1]==hand[0][i+2] and hand[0][i+3]==hand[0][i+4]:
+        lis.append(dic_new[hand[i][0]])
+    lis.sort()
+    for i in range(len(lis)):
+        if lis[i]==lis[i+1]==lis[i+2] and lis[i+3]==lis[i+4]:
             return True
-        return bool(hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4])
+        return bool(lis[i]==[i+1] and lis[i+2]==lis[i+3]==lis[i+4])
 
 
 def is_four_of_a_kind(hand):
@@ -139,16 +143,15 @@ def is_one_pair(hand):
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 4
 
-def is_high_card(hand):
+def is_high_card(hand,lis):
     '''
     high card
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 5
-    lis=[]
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
-    lis.sort()
+    
     for i in range(len(lis)):
         return bool(lis[i]!=lis[i+1]!=lis[i+2]!= lis[i+3]!= lis[i+4])
         
@@ -163,8 +166,10 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    c_rank = 0
-    
+    c_rank=0
+    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    card_vlaues.sort()
+    card_values.reverse()
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
     elif is_four_of_a_kind(hand):
@@ -182,9 +187,11 @@ def hand_rank(hand):
         c_rank = 3
     elif is_one_pair(hand):
         c_rank = 2
-    elif is_high_card(hand):
+    elif is_high_card(hand,lis):
+
+
         c_rank = 1
-    return c_rank
+    return (c_rank, card_values)
 
 
 
