@@ -30,12 +30,12 @@ def is_straight(hand):
     #     if lis[i+1]-lis[i]!=1:
     #         return False
     # return True
-    
+    if all(True if c in '2345A' else False for c, s in hand):
+        return True
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
 
-    if all(True if c in '2345A' else False for c, s in hand):
-        return True
+    
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
