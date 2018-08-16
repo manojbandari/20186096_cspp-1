@@ -5,8 +5,8 @@ author : manojbandari
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 
-#DIC_NEW = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
- #          '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+DIC_NEW = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
+           '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -59,12 +59,16 @@ def is_flush(hand):
     return True
 
 def is_full_house(hand):
-        if hand[0][0]==hand[0][1]==hand[0][2] and hand[0][3]==hand[0][4]:
-            return True
-        elif hand[0][0]==hand[0][1] and hand[0][2]==hand[0][3]==hand[0][4]:
-            return True
-        else:
-            return False
+    '''
+    full house
+    '''
+    for i in range(len(hand)):
+    if hand[0][i]==hand[0][i+1]==hand[0][i+2] and hand[0][i+3]==hand[0][i+4]:
+        return True
+    elif hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4]:
+        return True
+    else:
+        return False
 
 
 def is_four_of_a_kind(hand):
@@ -97,7 +101,22 @@ def is_three_of_a_kind(hand):
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 3
 
-def is_two_of_a_kind(hand):
+def is_two_pair(hand):
+    for i in range(len(hand)):
+        lis.append(dic_new[hand[i][0]])
+    lis.sort()
+    for i in range(len(lis)):
+        if hand[i] == hand[i+1]:
+            if hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4]:
+                return True
+            else:
+                return False
+        else:
+            if hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4]
+
+
+
+def is_one_pair(hand):
     '''
     two pair
     '''
@@ -115,19 +134,21 @@ def hand_rank(hand):
     '''
     c_rank = 0
     if is_straight(hand) and is_flush(hand):
-        c_rank = 7
+        c_rank = 8
     elif is_four_of_a_kind(hand):
-        c_rank = 6
+        c_rank = 7
     elif is_full_house(hand):
-        c_rank = 5
+        c_rank = 6
 
     elif is_flush(hand):
-        c_rank = 4
+        c_rank = 5
     elif is_straight(hand):
-        c_rank = 3
+        c_rank = 4
     elif is_three_of_a_kind(hand):
+        c_rank = 3
+    elif is_two_pair(hand):
         c_rank = 2
-    elif is_two_of_a_kind(hand):
+    elif is_one_pair(hand):
         c_rank = 1
     return c_rank
 
