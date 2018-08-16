@@ -148,6 +148,7 @@ def is_high_card(hand):
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 5
+    lis = []
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     
