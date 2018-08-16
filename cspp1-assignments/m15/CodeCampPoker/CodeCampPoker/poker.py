@@ -76,13 +76,10 @@ def is_full_house(hand):
     lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
-        if lis[i] == [i+1] and lis[i+2] == lis[i+3] == lis[i+4]:
+        if lis[i] == lis[i+1] and lis[i+2] == lis[i+3] == lis[i+4]:
             return True
-        else:
-            if lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4]:
-                return True
-            else:
-                return False
+        return bool(lis[i] == lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
+                
 
     #return bool(is_three_of_a_kind(hand) and is_one_pair(hand))
 
