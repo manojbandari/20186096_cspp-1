@@ -6,7 +6,7 @@ author : manojbandari
 '''
 
 dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
-           '9':9, 'T':10, 'J':11, 'Q':12,'K':13, 'A':14}
+           '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -61,7 +61,7 @@ def is_four_of_a_kind(hand):
     '''
         four of a kind or not
     '''
-    # count = 0 
+    # count = 0
     # for i in range(len(hand)):
     #     lis.append(dic_new[hand[i][0]])
     # lis.sort()
@@ -80,10 +80,16 @@ def is_four_of_a_kind(hand):
     return len(card_values) == 2
     
 def is_three_of_a_kind(hand):
+    '''
+    three of a kind
+    '''
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 3
-    
+
 def is_two_of_a_kind(hand):
+    '''
+    two pair
+    '''
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 4
 
@@ -96,20 +102,20 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    c=0
+    
     if is_straight(hand) and is_flush(hand):
-        c = 6
+        return 6
     elif is_four_of_a_kind(hand):
-        c = 5
+        return 5
     elif is_flush(hand):
-        c = 4
+        return 4
     elif is_straight(hand):
-        c = 3
+        return 3
     elif is_three_of_a_kind(hand):
-        c = 2
+        return 2
     elif is_two_of_a_kind(hand):
-        c = 1
-    return c
+        return 1
+    return 0
 
 
 
