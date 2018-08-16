@@ -42,7 +42,6 @@ def is_straight(hand):
         return True
     card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_rank) == 5 and (max(card_rank) - min(card_rank) == 4)
-    
 
 def is_flush(hand):
     '''
