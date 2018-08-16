@@ -178,7 +178,7 @@ def hand_rank(hand):
         c_rank = 5
     elif is_three_of_a_kind(hand):
         c_rank = 4
-    elif print(is_two_pair(hand)):
+    elif is_two_pair(hand):
         c_rank = 3
     elif is_one_pair(hand):
         c_rank = 2
