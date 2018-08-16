@@ -38,11 +38,11 @@ def is_straight(hand):
     #     if lis[i+1]-lis[i]!=1:
     #         return False
     # return True
-
-    card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_rank) == 5 and (max(card_rank) - min(card_rank) == 4)
     if all(True if c in '2345A' else False for c, s in hand):
         return True
+    card_rank = set('--23456789TJQKA'.index(c) for c, s in hand)
+    return len(card_rank) == 5 and (max(card_rank) - min(card_rank) == 4)
+    
 
 def is_flush(hand):
     '''
@@ -136,7 +136,7 @@ def is_two_pair(hand):
         if lis[i] != lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         return bool(lis[i+2] == lis[i+3] != lis[i+4] or
-                        (lis[i+3] == lis[i+4] and lis[i+2] != lis[i+1] != lis[i+3]))
+                    (lis[i+3] == lis[i+4] and lis[i+2] != lis[i+1] != lis[i+3]))
 
 
 def is_one_pair(hand):
