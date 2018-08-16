@@ -67,10 +67,7 @@ def is_full_house(hand):
     for i in range(len(hand)):
         if hand[0][i]==hand[0][i+1]==hand[0][i+2] and hand[0][i+3]==hand[0][i+4]:
             return True
-        elif hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4]:
-            return True
-        else:
-            return False
+        return bool(hand[0][i]==hand[0][i+1] and hand[0][i+2]==hand[0][i+3]==hand[0][i+4])
 
 
 def is_four_of_a_kind(hand):
@@ -99,10 +96,10 @@ def is_four_of_a_kind(hand):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
     for i in range(len(lis)):
-        if hand[i] == hand[i+1]:
-            return bool(hand[i+1] == hand[i+2] == hand[i+3])
+        if lis[i] == lis[i+1]:
+            return bool(lis[i+1] == lis[i+2] == lis[i+3])
         else:
-            return bool(hand[i+1] == hand[i+2] == hand[i+3] == hand[i+4])
+            return bool(lis[i+1] == lis[i+2] == lis[i+3] == lis[i+4])
 
 def is_three_of_a_kind(hand):
     '''
@@ -115,12 +112,12 @@ def is_three_of_a_kind(hand):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
     for i in range(len(lis)):
-        if hand[i] == hand[i+1]:
-            return bool(hand[i+1] == hand[i+2])
-        elif hand[i+1] == hand[i+2]:
-            return bool(hand[i+2] == hand[i+3])
+        if lis[i] == lis[i+1]:
+            return bool(lis[i+1] == lis[i+2])
+        elif Lis[i+1] == lis[i+2]:
+            return bool(lis[i+2] == lis[i+3])
         else:
-            return bool(hand[i+2] == hand[i+3] == hand[i+4])
+            return bool(lis[i+2] == lis[i+3] == lis[i+4])
 
 
 def is_two_pair(hand):
@@ -129,11 +126,10 @@ def is_two_pair(hand):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
     for i in range(len(lis)):
-        if hand[i] == hand[i+1]:
-            return bool(hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4])
+        if lis[i]!=lis[i+1]:
+            return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         else:
-            return bool(hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4])
-
+            return bool(lis[i+2] == lis[i+3] or lis[i+3] == lis[i+4])
 
 
 def is_one_pair(hand):
@@ -154,7 +150,7 @@ def is_high_card(hand):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
     for i in range(len(lis)):
-        return bool(hand[i]!=hand[i+1]!=hand[i+2]!= hand[i+3]!= hand[i+4])
+        return bool(lis[i]!=lis[i+1]!=lis[i+2]!= lis[i+3]!= lis[i+4])
         
 
 
@@ -182,7 +178,7 @@ def hand_rank(hand):
         c_rank = 5
     elif is_three_of_a_kind(hand):
         c_rank = 4
-    elif is_two_pair(hand):
+    elif print(is_two_pair(hand)):
         c_rank = 3
     elif is_one_pair(hand):
         c_rank = 2
