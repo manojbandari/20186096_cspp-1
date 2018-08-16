@@ -5,13 +5,16 @@ author : manojbandari
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 
-dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
+DIC_NEW = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
            '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1, 'D':2, 'H':3, 'S':4}
 
 def get_face_values(hand):
+    '''
+    get values
+    '''
     lis = []
     for i in range(len(hand)):
-        lis.append(dic_new[hand[i][0]])
+        lis.append(DIC_NEW[hand[i][0]])
     return lis
 
 def is_straight(hand):
@@ -29,19 +32,19 @@ def is_straight(hand):
     # count=0
     # for i in range(len(hand)):
     #     lis1.append(hand[i][1])
-    #     lis.append(dic_new[hand[i][0]])
+    #     lis.append(DIC_NEW[hand[i][0]])
     # lis.sort()
 
     # for i in range(len(lis)-1):
     #     if lis[i+1]-lis[i]!=1:
     #         return False
     # return True
-    
+
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
     if all(True if c in '2345A' else False for c, s in hand):
         return True
-    
+
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -84,7 +87,7 @@ def is_four_of_a_kind(hand):
     '''
     # count = 0
     # for i in range(len(hand)):
-    #     lis.append(dic_new[hand[i][0]])
+    #     lis.append(DIC_NEW[hand[i][0]])
     # lis.sort()
     # flag = lis[0]
     # if lis[0] != lis[1]:
@@ -113,7 +116,7 @@ def is_three_of_a_kind(hand):
     '''
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 3
-    lis= get_face_values(hand)
+    lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
         if lis[i] == lis[i+1]:
@@ -125,10 +128,13 @@ def is_three_of_a_kind(hand):
 
 
 def is_two_pair(hand):
+    '''
+    two pair
+    '''
     lis = get_face_values(hand)
     lis.sort()
     for i in range(len(lis)):
-        if lis[i]!=lis[i+1]:
+        if lis[i] != lis[i+1]:
             return bool(lis[i+1] == lis[i+2] and lis[i+3] == lis[i+4])
         else:
             return bool(lis[i+2] == lis[i+3] or lis[i+3] == lis[i+4])
@@ -136,7 +142,7 @@ def is_two_pair(hand):
 
 def is_one_pair(hand):
     '''
-    two pair
+    one pair
     '''
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 4
@@ -148,11 +154,8 @@ def is_high_card(hand):
     #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     #return len(card_values) == 5
     lis = get_face_values(hand)
-    
     for i in range(len(lis)):
         return bool(lis[i] != lis[i+1] != lis[i+2] != lis[i+3] != lis[i+4])
-        
-
 
 
 def hand_rank(hand):
@@ -163,31 +166,38 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-    c_rank=0
+    c_rank = 0
     card_values = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_values.sort()
     card_values.reverse()
     if is_straight(hand) and is_flush(hand):
+        print("straight flush")
         c_rank = 9
     elif is_four_of_a_kind(hand):
+        print("4 Kind")
         c_rank = 8
     elif is_full_house(hand):
+        print("Full house")
         c_rank = 7
-
     elif is_flush(hand):
+        print("Flush")
         c_rank = 6
     elif is_straight(hand):
+        print("straight")
         c_rank = 5
     elif is_three_of_a_kind(hand):
+        print("Three Kind")
         c_rank = 4
     elif is_two_pair(hand):
+        print("Two pair")
         c_rank = 3
     elif is_one_pair(hand):
+        print("One pair")
         c_rank = 2
     elif is_high_card(hand):
-
-
+        print("High card")
         c_rank = 1
+    print("High")
     return (c_rank, card_values)
 
 
