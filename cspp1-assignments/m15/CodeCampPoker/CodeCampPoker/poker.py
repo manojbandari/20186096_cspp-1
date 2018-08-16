@@ -170,6 +170,13 @@ def hand_rank(hand):
     card_rank = ['--23456789TJQKA'.index(c) for c, s in hand]
     card_rank.sort()
     card_rank.reverse()
+    def maximum_samerank(card_rank):
+        for i in range(len(card_rank)-1):
+            if card_rank[i] == card_rank[i+1]:
+                a_temp = card_rank[i]
+                card_rank = []
+                card_rank.append(a_temp)
+                return(card_rank)
 
     if is_straight(hand) and is_flush(hand):
         #print("straight flush")
@@ -200,12 +207,7 @@ def hand_rank(hand):
         c_r = 3
     elif is_one_pair(hand):
         #print("One pair")
-        for i in range(len(card_rank)-1):
-            if card_rank[i] == card_rank[i+1]:
-                a_temp = card_rank[i]
-                card_rank = []
-                card_rank.append(a_temp)
-                break
+        card_rank=maximum_samerank(card_rank)
         c_r = 2
     elif is_high_card(hand):
         #print("High card")
