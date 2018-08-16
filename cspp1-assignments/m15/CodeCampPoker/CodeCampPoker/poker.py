@@ -119,7 +119,7 @@ def is_three_of_a_kind(hand):
             return bool(hand[i+1] == hand[i+2])
         elif hand[i+1] == hand[i+2]:
             return bool(hand[i+2] == hand[i+3])
-        elif hand[i]!=hand[i+1]:
+        else:
             return bool(hand[i+2] == hand[i+3] == hand[i+4])
 
 
@@ -128,6 +128,7 @@ def is_two_pair(hand):
     for i in range(len(hand)):
         lis.append(dic_new[hand[i][0]])
     lis.sort()
+    print(lis)
     for i in range(len(lis)):
         if hand[i] == hand[i+1]:
             return bool(hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4])
@@ -147,9 +148,16 @@ def is_high_card(hand):
     '''
     high card
     '''
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 5
-
+    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_values) == 5
+    lis=[]
+    for i in range(len(hand)):
+        lis.append(dic_new[hand[i][0]])
+    lis.sort()
+    print(lis)
+    for i in range(len(lis)):
+        return bool(hand[i]!=hand[i+1]!=hand[i+2]!= hand[i+3]!= hand[i+4])
+        
 
 
 
