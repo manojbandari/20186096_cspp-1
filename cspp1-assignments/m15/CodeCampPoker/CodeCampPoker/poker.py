@@ -166,7 +166,7 @@ def hand_rank(hand):
     elif is_one_pair(hand):
         c_rank = 2
     elif is_high_card(hand):
-        maxi=hand[0][0]+hand[0][1]+hand[0][2]+hand[0][3]+hand[0][4]
+        maxi=maxi+(hand[0][0]+hand[0][1]+hand[0][2]+hand[0][3]+hand[0][4])
         for i in range(len(maxi)):
             if maxi[i+1]>max[i]:
                 c_rank = 1.1
