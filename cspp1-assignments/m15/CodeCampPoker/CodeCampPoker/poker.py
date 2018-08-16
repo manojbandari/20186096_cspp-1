@@ -6,7 +6,8 @@ author : manojbandari
 '''
 
 dic_new = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8,
-           '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+           '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, 'C':1 'D':2, 'H':3, 'S':4}
+
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -91,9 +92,23 @@ def is_four_of_a_kind(hand):
     #         if flag==lis[i]
     #             count+=1
     #         return bool(count==3)
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 2
-
+    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_values) == 2
+    lis=[]
+    for i in range(len(hand)):
+        lis.append(dic_new[hand[i][0]])
+    lis.sort()
+    for i in range(len(lis)):
+        if hand[i] == hand[i+1]:
+            if hand[i+1]==hand[i+2] == hand[i+3]:
+                return True
+            else:
+                return False
+        else:
+            if hand[i+1] == hand[i+2]==hand[i+3] == hand[i+4]:
+                return True
+            else:
+                return False
 
 def is_three_of_a_kind(hand):
     '''
@@ -147,8 +162,7 @@ def hand_rank(hand):
         or a flush or a straight flush.
     '''
     c_rank = 0
-    maxi=[]
-    lis=[]
+    
     if is_straight(hand) and is_flush(hand):
         c_rank = 9
     elif is_four_of_a_kind(hand):
@@ -167,16 +181,7 @@ def hand_rank(hand):
     elif is_one_pair(hand):
         c_rank = 2
     elif is_high_card(hand):
-        for k in range(len(hand)):
-            lis.append(dic_new[hand[k][0]])
-        maxi=sum(lis)
-        # if len(maxi)>1:
-        #     for i in range(len(maxi)-1):
-        #         if maxi[i+1]>max[i]:
-        #             c_rank = 1.1
-        #         else:
-        #             c_rank = 1
-
+        c_rank = 1
     return c_rank
 
 
