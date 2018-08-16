@@ -30,11 +30,11 @@ def is_straight(hand):
     #     if lis[i+1]-lis[i]!=1:
     #         return False
     # return True
-    if all(True if c in '2345A' else False for c, s in hand):
-        return True
+    
     card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
     return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
-
+    if all(True if c in '2345A' else False for c, s in hand):
+        return True
     
 def is_flush(hand):
     '''
@@ -100,22 +100,28 @@ def is_four_of_a_kind(hand):
     lis.sort()
     for i in range(len(lis)):
         if hand[i] == hand[i+1]:
-            if hand[i+1]==hand[i+2] == hand[i+3]:
-                return True
-            else:
-                return False
+            retur bool(hand[i+1] == hand[i+2] == hand[i+3])
         else:
-            if hand[i+1] == hand[i+2]==hand[i+3] == hand[i+4]:
-                return True
-            else:
-                return False
+            return bool(hand[i+1] == hand[i+2] == hand[i+3] == hand[i+4])
 
 def is_three_of_a_kind(hand):
     '''
     three of a kind
     '''
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 3
+    #card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
+    #return len(card_values) == 3
+    lis=[]
+    for i in range(len(hand)):
+        lis.append(dic_new[hand[i][0]])
+    lis.sort()
+    for i in range(len(lis)):
+        if hand[i] == hand[i+1]:
+            return bool(hand[i+1] == hand[i+2])
+        elif hand[i+1] == hand[i+2]:
+            return bool(hand[i+2] == hand[i+3])
+        elif hand[i]!=hand[i+1]:
+            return bool(hand[i+2] == hand[i+3] == hand[i+4])
+
 
 def is_two_pair(hand):
     lis=[]
@@ -124,15 +130,9 @@ def is_two_pair(hand):
     lis.sort()
     for i in range(len(lis)):
         if hand[i] == hand[i+1]:
-            if hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4]:
-                return True
-            else:
-                return False
+            return bool(hand[i+2] == hand[i+3] or hand[i+3] == hand[i+4])
         else:
-            if hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4]:
-                return True
-            else:
-                return False
+            return bool(hand[i+1] == hand[i+2] and hand[i+3] == hand[i+4])
 
 
 
