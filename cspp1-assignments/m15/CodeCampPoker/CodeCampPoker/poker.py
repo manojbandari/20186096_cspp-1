@@ -181,19 +181,19 @@ def hand_rank(hand):
         #print("4 Kind")
         c_r = 8
     elif is_full_house(hand):
-        #print("Full house")
+        print("Full house")
         c_r = 7
     elif is_flush(hand):
-        #print("Flush")
+        print("Flush")
         c_r = 6
     elif is_straight(hand):
-        #print("straight")
+        print("straight")
         c_r = 5
     elif is_three_of_a_kind(hand):
-        #print("Three Kind")
+        print("Three Kind")
         c_r = 4
     elif is_two_pair(hand):
-        #print("Two pair")
+        print("Two pair")
         c_r = 3
     elif is_one_pair(hand):
         #print("One pair")
