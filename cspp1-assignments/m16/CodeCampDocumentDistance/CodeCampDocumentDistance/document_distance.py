@@ -41,7 +41,7 @@ def word_list(dict_list):
     new_dict = load_stopwords("stopwords.txt")
     for word in dict_list:
         word = word.strip()
-        if word not in new_dict:
+        if word not in new_dict and len(word) > 0:
             if word not in dictionary:
                 dictionary[word] = 1
             else:
