@@ -60,7 +60,6 @@ def similarity(dict1, dict2):
     dict2 = remove_special(dict2)
     
     dictionary =combine_list(word_list(dict1),word_list(dict2))
-    print(dictionary)
     return calculate_simialrity(dictionary)
 
     
