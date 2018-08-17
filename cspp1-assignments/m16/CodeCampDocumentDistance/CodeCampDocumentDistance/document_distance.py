@@ -17,9 +17,9 @@ def remove_special(dict1):
     return words
 
 def calculate_simialrity(dictionary):
-    numerator = sum([k[0] * key[1] for key in dictionary])
-    denominator_one = math.sqrt(sum([key[0]**2 for key in dictionary.values()]))
-    denominator_two = math.sqrt(sum([key[1]**2 for key in dictionary.values()]))
+    numerator = sum([k[0] * k[1] for k in dictionary])
+    denominator_one = math.sqrt(sum([k[0]**2 for k in dictionary.values()]))
+    denominator_two = math.sqrt(sum([k[1]**2 for k in dictionary.values()]))
     return numerator / (denominator_one*denominator_two) 
 def combine_list(lis, lis1):
     dictionary = {}
