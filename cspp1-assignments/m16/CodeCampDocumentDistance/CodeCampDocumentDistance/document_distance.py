@@ -69,7 +69,7 @@ def similarity(dict1, dict2):
     dict2 = remove_special(dict2)
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
-    #print(dictionary)
+    print(dictionary)
     return calculate_simialrity(dictionary)
 
     
