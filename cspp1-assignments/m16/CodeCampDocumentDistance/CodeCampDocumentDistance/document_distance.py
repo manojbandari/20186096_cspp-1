@@ -61,8 +61,8 @@ def similarity(dict1, dict2):
     new_dict1 = {}
     #word_freq = {}
     freq = []
-    dict1 = remove_special(dict1).replace('\'','').split(" ")
-    dict2 = remove_special(dict2).replace('\'','').split(" ")
+    dict1 = remove_special(dict1).replace('\'','')
+    dict2 = remove_special(dict2).replace('\'','')
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
     print(dictionary)
