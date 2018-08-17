@@ -28,14 +28,16 @@ def combine_list(lis, lis1):
     for word in lis:
         word=word.strip()
         if word not in lis and len(word) > 0:
-            dictionary1[word] = 1
-        else:
-            dictionary1[word] += 1
+            if word not in dictionary:
+                dictionary1[word] = 1
+            else:
+                dictionary1[word] += 1
     for word in lis1:
         if word not in lis1 and len(word) > 0:
-            dictionary2[word] = 1
-        else:
-            dictionary2[word] += 1
+            if word not in dictionary:
+                dictionary2[word] = 1
+            else:
+                dictionary2[word] += 1
 
 
     for word in dictionary1:
