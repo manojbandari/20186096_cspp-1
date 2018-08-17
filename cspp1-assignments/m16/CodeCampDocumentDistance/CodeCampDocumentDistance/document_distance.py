@@ -11,7 +11,7 @@ def remove_special(dict1):
     #     else:
     #         s = s + i
     # return s
-    words = dict1.lower().strip().replace('\'','')
+    words = dict1.lower().strip().replace('\'',' ')
     regex=re.compile('[^a-z]')
     words =regex.sub(" ", words).split(" ")
     return words
