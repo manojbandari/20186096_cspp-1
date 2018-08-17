@@ -19,12 +19,12 @@ def combine_list(lis,lis1):
     dictionary1={}
     dictionary2={}
     for word in lis:
-        if word not in lis and len(word) >0
+        if word not in lis and len(word) >0:
             dictionary1[word]= 1
         else:
             dictionary1[word]+=1
     for word in lis1:
-        if word not in lis1 and len(word)>0
+        if word not in lis1 and len(word)>0:
             dictionary2[word]=1
         else:
             dictionary2[word]+=1
