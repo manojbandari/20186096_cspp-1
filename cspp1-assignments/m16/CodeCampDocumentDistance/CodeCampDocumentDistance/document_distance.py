@@ -57,6 +57,7 @@ def word_list(dict1, new_dict):
     for i in dict1:
         if i not in new_dict:
             lis.append(i)
+    print(lis)
     return lis
 def similarity(dict1, dict2):
     '''
