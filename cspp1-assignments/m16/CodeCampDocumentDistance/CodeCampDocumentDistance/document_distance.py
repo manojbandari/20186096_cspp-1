@@ -5,7 +5,7 @@ import re
 import math
 def remove_special(dict1):
     s = ""
-    dict1 = dict1.lower().strip().replace("\'", " ")
+    dict1 = dict1.lower().strip().replace("\'", "")
     for i in dict1:
         if i in "!@#$%^&*()_+<>?:>.,-='1234567890":
             s = s + ' '
@@ -22,11 +22,13 @@ def calculate_simialrity(dictionary):
     denominator_one = math.sqrt(sum([k[0]**2 for k in dictionary.values()]))
     denominator_two = math.sqrt(sum([k[1]**2 for k in dictionary.values()]))
     return numerator / (denominator_one*denominator_two) 
-def combine_list(dictionary1, dictionary2):
+def combine_dict(dictionary1, dictionary2):
     
     dictionary={}
     for word in dictionary1:
-        dictionary[word] = [dictionary1[word], dictionary2[word]]
+        if word in dictionary2:
+            if word not in dictionary:
+                dictionary[word] = [dictionary1[word], dictionary2[word]]
     for word in dictionary1:
         if word not in dictionary:
             dictionary[word] = [dictionary1[word], 0]
@@ -59,7 +61,7 @@ def similarity(dict1, dict2):
     '''
     dict1 = remove_special(dict1)
     dict2 = remove_special(dict2)
-    dictionary =combine_list(word_list(dict1),word_list(dict2))
+    dictionary =combine_dict(word_list(dict1),word_list(dict2))
     return calculate_simialrity(dictionary)
 
     
