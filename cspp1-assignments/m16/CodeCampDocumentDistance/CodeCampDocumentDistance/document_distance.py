@@ -2,47 +2,47 @@
     Document Distance - A detailed description is given in the PDF
 '''
 def remove_special(dict1):
-    s=""
+    s = ""
     for i in dict1:
         if i in "!@#$%^&*()_+<>?:>.,\"-=1234567890'":
-            s=s+''
+            s = s + ''
         else:
-            s=s+i
+            s = s + i
     return s
 def calculate_simialrity(dictionary):
     numerator = sum([k[0] * key[1] for key in dictionary])
     denominator_one = math.sqrt(sum([key[0]**2 for key in dictionary.values()]))
     denominator_two = math.sqrt(sum([key[1]**2 for key in dictionary.values()]))
-    return numerator/denominator_one*denominator_two 
-def combine_list(lis,lis1):
-    dictionary={}
-    dictionary1={}
-    dictionary2={}
+    return numerator / (denominator_one*denominator_two) 
+def combine_list(lis, lis1):
+    dictionary = {}
+    dictionary1 = {}
+    dictionary2 = {}
     for word in lis:
-        if word not in lis and len(word) >0:
-            dictionary1[word]= 1
+        if word not in lis and len(word) > 0:
+            dictionary1[word] = 1
         else:
-            dictionary1[word]+=1
+            dictionary1[word] += 1
     for word in lis1:
-        if word not in lis1 and len(word)>0:
-            dictionary2[word]=1
+        if word not in lis1 and len(word) > 0:
+            dictionary2[word] = 1
         else:
-            dictionary2[word]+=1
+            dictionary2[word] += 1
 
 
     for word in dictionary1:
-        dictionary[word] = [dictionary1[word],dictionary2[word]]
+        dictionary[word] = [dictionary1[word], dictionary2[word]]
     for word in dictionary1:
         if word not in dictionary:
-            dictionary[word]=[dictionary1[word],0]
+            dictionary[word] = [dictionary1[word], 0]
     for word in lis1:
         if word not in dictionary:
-            dictionary[word]=[0,dictionary2[word]]
+            dictionary[word] = [0, dictionary2[word]]
 
     return dictionary
 
-def word_list(dict1,new_dict):
-    lis=[]
+def word_list(dict1, new_dict):
+    lis = []
     for i in dict1:
         if i not in new_dict:
             lis.append(i)
@@ -51,10 +51,10 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    new_dict1={}
-    word_freq={}
-    freq=[]
-    dict1 = remove_special(dict1).strip().lower().replace('\'',' ').split(" ")
+    new_dict1 = {}
+    word_freq = {}
+    freq = []
+    dict1 = remove_special(dict1).strip().lower().replace('\'','').split(" ")
     dict2 = remove_special(dict2).strip().lower().split(" ")
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
