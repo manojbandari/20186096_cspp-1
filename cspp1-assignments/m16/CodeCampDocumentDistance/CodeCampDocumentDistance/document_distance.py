@@ -13,7 +13,7 @@ def remove_special(dict1):
     # return s
     words = dict1.lower().strip()
     regex=re.compile('[^a-z]')
-    words =regex.sub(" ", words).split(" ")
+    words =regex.sub(" ", words).replace('\'','').split(" ")
     return words
 
 def calculate_simialrity(dictionary):
@@ -61,8 +61,8 @@ def similarity(dict1, dict2):
     new_dict1 = {}
     #word_freq = {}
     freq = []
-    dict1 = remove_special(dict1).replace('\'','')
-    dict2 = remove_special(dict2).replace('\'','')
+    dict1 = remove_special(dict1)
+    dict2 = remove_special(dict2)
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
     print(dictionary)
