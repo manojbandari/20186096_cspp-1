@@ -11,9 +11,9 @@ def remove_special(dict1):
     #     else:
     #         s = s + i
     # return s
-    words = dict1.lower().strip().replace('\'',' ')
-    regex=re.compile('[^a-z]')
-    words =regex.sub(" ", words).split(" ")
+    words = dict1.lower().strip().replace("\'","")
+    regex = re.compile('[^a-z]')
+    words = regex.sub("", words).split(" ")
     return words
 
 def calculate_simialrity(dictionary):
@@ -42,7 +42,7 @@ def combine_list(lis, lis1):
     for word in dictionary1:
         if word not in dictionary:
             dictionary[word] = [dictionary1[word], 0]
-    for word in lis1:
+    for word in dictionary2:
         if word not in dictionary:
             dictionary[word] = [0, dictionary2[word]]
 
