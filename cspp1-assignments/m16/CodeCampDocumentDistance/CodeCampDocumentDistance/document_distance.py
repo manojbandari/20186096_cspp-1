@@ -4,17 +4,17 @@
 import re
 import math
 def remove_special(dict1):
-    s = ""
-    for i in dict1:
-        if i in "!@#$%^&*()_+<>?:>.,-=1234567890":
-            s = s + ' '
-        else:
-            s = s + i
-    return s
-    # words = dict1.lower().strip()
-    # regex=re.compile('[^a-z]')
-    # words =regex.sub(" ", words).split(" ")
-    # return words
+    # s = ""
+    # for i in dict1:
+    #     if i in "!@#$%^&*()_+<>?:>.,-=1234567890":
+    #         s = s + ' '
+    #     else:
+    #         s = s + i
+    # return s
+    words = dict1.lower().strip()
+    regex=re.compile('[^a-z]')
+    words =regex.sub(" ", words).split(" ")
+    return words
 
 def calculate_simialrity(dictionary):
     numerator = sum([k[0] * key[1] for key in dictionary])
@@ -61,8 +61,8 @@ def similarity(dict1, dict2):
     new_dict1 = {}
     #word_freq = {}
     freq = []
-    dict1 = remove_special(dict1).strip().lower().replace('\'','').split(" ")
-    dict2 = remove_special(dict2).strip().lower().replace('\'','').split(" ")
+    dict1 = remove_special(dict1).replace('\'','').split(" ")
+    dict2 = remove_special(dict2).replace('\'','').split(" ")
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
     print(dictionary)
