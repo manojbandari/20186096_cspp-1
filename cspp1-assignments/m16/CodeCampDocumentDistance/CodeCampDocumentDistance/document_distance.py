@@ -26,7 +26,7 @@ def combine_list(lis, lis1):
     dictionary1 = {}
     dictionary2 = {}
     for word in lis:
-        word=word.strip()
+        word = word.strip()
         if word not in lis and len(word) > 0:
             if word not in dictionary:
                 dictionary1[word] = 1
@@ -34,6 +34,7 @@ def combine_list(lis, lis1):
                 dictionary1[word] += 1
     for word in lis1:
         if word not in lis1 and len(word) > 0:
+            word = word.strip()
             if word not in dictionary:
                 dictionary2[word] = 1
             else:
@@ -68,7 +69,7 @@ def similarity(dict1, dict2):
     dict2 = remove_special(dict2)
     new_dict = load_stopwords("stopwords.txt")
     dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
-    print(dictionary)
+    #print(dictionary)
     return calculate_simialrity(dictionary)
 
     
