@@ -26,6 +26,7 @@ def combine_list(lis, lis1):
     dictionary1 = {}
     dictionary2 = {}
     for word in lis:
+        word=word.strip()
         if word not in lis and len(word) > 0:
             dictionary1[word] = 1
         else:
