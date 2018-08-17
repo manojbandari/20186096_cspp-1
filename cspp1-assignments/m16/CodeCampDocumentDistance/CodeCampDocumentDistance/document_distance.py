@@ -16,14 +16,28 @@ def calculate_simialrity(dictionary):
     return numerator/denominator_one*denominator_two 
 def combine_list(lis,lis1):
     dictionary={}
+    dictionary1={}
+    dictionary2={}
     for word in lis:
-        dictionary[word] = [lis[word],lis1[word]]
-    for word in lis:
+        if word not in lis and len(word) >0
+            dictionary1[word]= 1
+        else:
+            dictionary1[word]+=1
+    for word in lis1:
+        if word not in lis1 and len(word)>0
+            dictionary2[word]=1
+        else:
+            dictionary2[word]+=1
+
+
+    for word in dictionary1:
+        dictionary[word] = [dictionary1[word],dictionary2[word]]
+    for word in dictionary1:
         if word not in dictionary:
-            dictionary[word]=[lis[word],0]
+            dictionary[word]=[dictionary1[word],0]
     for word in lis1:
         if word not in dictionary:
-            dictionary[word]=[0,lis[word]]
+            dictionary[word]=[0,dictionary2[word]]
 
     return dictionary
 
