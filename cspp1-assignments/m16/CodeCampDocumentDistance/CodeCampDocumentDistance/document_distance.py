@@ -4,17 +4,17 @@
 import re
 import math
 def remove_special(dict1):
-    s = ""
-    for i in dict1:
-        if i in "!@#$%^&*()_+<>?:>.,-='1234567890":
-            s = s + ' '
-        else:
-            s = s + i
-    return s
-    # words = dicto.lower().strip()
-    # regex=re.compile('[^a-z]')
-    # words =regex.sub(" ", words).split(" ")
-    # return words
+    # s = ""
+    # for i in dict1:
+    #     if i in "!@#$%^&*()_+<>?:>.,-='1234567890":
+    #         s = s + ' '
+    #     else:
+    #         s = s + i
+    # return s
+    words = dicto.lower().strip()
+    regex=re.compile('[^a-z]')
+    words =regex.sub(" ", words).split(" ")
+    return words
 
 def calculate_simialrity(dictionary):
     numerator = sum([k[0] * key[1] for key in dictionary])
