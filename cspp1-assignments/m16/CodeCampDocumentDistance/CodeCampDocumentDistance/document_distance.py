@@ -11,9 +11,9 @@ def remove_special(dict1):
     #     else:
     #         s = s + i
     # return s
-    words = dict1.lower().strip()
+    words = dict1.lower().strip().replace('\'','')
     regex=re.compile('[^a-z]')
-    words =regex.sub("", words).replace('\'','').split(" ")
+    words =regex.sub(" ", words).split(" ")
     return words
 
 def calculate_simialrity(dictionary):
