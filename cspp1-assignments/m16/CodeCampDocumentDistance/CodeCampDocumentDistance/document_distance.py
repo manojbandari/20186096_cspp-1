@@ -2,36 +2,36 @@
     Document Distance - A detailed description is given in the PDF
 '''
 def remove_special(dict1):
-	s=""
-	for i in dict1:
-		if i in "!@#$%^&*()_+<>?:>.,\"-=1234567890'":
-			s=s+''
-		else:
-			s=s+i
-	return s
+    s=""
+    for i in dict1:
+        if i in "!@#$%^&*()_+<>?:>.,\"-=1234567890'":
+            s=s+''
+        else:
+            s=s+i
+    return s
 def calculate_simialrity(dictionary):
-	numerator = sum([k[0] * key[1] for key in dictionary])
-	denominator_one = math.sqrt(sum([key[0]**2 for key in dictionary.values()]))
-	denominator_two = math.sqrt(sum([key[1]**2 for key in dictionary.values()]))
-	return numerator/denominator_one*denominator_two 
+    numerator = sum([k[0] * key[1] for key in dictionary])
+    denominator_one = math.sqrt(sum([key[0]**2 for key in dictionary.values()]))
+    denominator_two = math.sqrt(sum([key[1]**2 for key in dictionary.values()]))
+    return numerator/denominator_one*denominator_two 
 def combine_list(lis,lis1):
-	dictionary={}
-	for word in lis:
-		dictionary[word] = [lis[word],lis1[word]]
-	for word in lis:
-		if word not in dictionary:
-			dictionary[word]=[lis[word],0]
-	for word in lis1:
-		if word not in dictionary:
-			dictionary[word]=[0,lis[word]]
+    dictionary={}
+    for word in lis:
+        dictionary[word] = [lis[word],lis1[word]]
+    for word in lis:
+        if word not in dictionary:
+            dictionary[word]=[lis[word],0]
+    for word in lis1:
+        if word not in dictionary:
+            dictionary[word]=[0,lis[word]]
 
-	return dictionary
+    return dictionary
 
 def word_list(dict1,new_dict):
-	lis=[]
-	for i in dict1:
-    	if i not in new_dict:
-    		lis.append(i)
+    lis=[]
+    for i in dict1:
+        if i not in new_dict:
+            lis.append(i)
     return lis
 def similarity(dict1, dict2):
     '''
@@ -49,28 +49,28 @@ def similarity(dict1, dict2):
     
     # k=0
     # for m in lis:
-    # 	if m in word_freq:
-    # 		word_freq[0]=word_freq+1
-    # 	else:
-    # 		word_freq=m
+    #   if m in word_freq:
+    #       word_freq[0]=word_freq+1
+    #   else:
+    #       word_freq=m
     # print(word_freq)
 
      # for m in lis:
-    # 	count=0
-    # 	if m in lis:
-    # 		count+=1
-    # 	lis.append(count)
+    #   count=0
+    #   if m in lis:
+    #       count+=1
+    #   lis.append(count)
     # print(lis)
 
 
-    	# count=0
-    	# for n in lis1:
-    	# 	if m==n:
-    	# 		count+=1
-    	# 	else:
-    	# 		word_freq[m]=count
-    	# 		word_freq[n]=count
-    	# word_freq[m]=count
+        # count=0
+        # for n in lis1:
+        #   if m==n:
+        #       count+=1
+        #   else:
+        #       word_freq[m]=count
+        #       word_freq[n]=count
+        # word_freq[m]=count
 
 def load_stopwords(filename):
     '''
