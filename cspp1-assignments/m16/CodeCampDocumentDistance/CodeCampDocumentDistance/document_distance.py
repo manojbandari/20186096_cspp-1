@@ -1,30 +1,35 @@
 '''
     Document Distance - A detailed description is given in the PDF
 '''
-import re
+#import re
 import math
 def remove_special(dict1):
-    s = ""
+    '''
+    removing special characters and numericals
+    ''' 
+    s_string = ""
     dict1 = dict1.lower().strip().replace("\'", "")
     for i in dict1:
         if i in "!@#$%^&*()_+<>?:>.,-='1234567890":
-            s = s + ' '
+            s_string = s_string + ' '
         else:
-            s = s + i
-    return s.split(" ")
+            s_string = s_string + i
+    return s_string.split(" ")
     # words = dict1.lower().strip().replace("\'","")
     # regex = re.compile('[^a-z]')
     # words = regex.sub(" ", words).split(" ")
     # return words
 
 def calculate_simialrity(dictionary):
+    '''
+    calculate the similarity 
+    ''' 
     numerator = sum([k[0] * k[1] for k in dictionary.values()])
     denominator_one = math.sqrt(sum([k[0]**2 for k in dictionary.values()]))
     denominator_two = math.sqrt(sum([k[1]**2 for k in dictionary.values()]))
     return numerator / (denominator_one*denominator_two) 
 def combine_dict(dictionary1, dictionary2):
-    
-    dictionary={}
+    dictionary = {}
     for word in dictionary1:
         if word in dictionary2:
             if word not in dictionary:
@@ -35,10 +40,12 @@ def combine_dict(dictionary1, dictionary2):
     for word in dictionary2:
         if word not in dictionary:
             dictionary[word] = [0, dictionary2[word]]
-
     return dictionary
 
 def word_list(dict_list):
+    '''
+    creating dictionaries
+    '''
     dictionary = {}
     new_dict = load_stopwords("stopwords.txt")
     for word in dict_list:
@@ -61,11 +68,8 @@ def similarity(dict1, dict2):
     '''
     dict1 = remove_special(dict1)
     dict2 = remove_special(dict2)
-    dictionary =combine_dict(word_list(dict1),word_list(dict2))
-    return calculate_simialrity(dictionary)
-
-    
-    
+    dictionary =combine_dict(word_list(dict1), word_list(dict2))
+    return calculate_simialrity(dictionary)  
 
 def load_stopwords(filename):
     '''
