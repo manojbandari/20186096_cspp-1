@@ -5,7 +5,7 @@ import re
 import math
 def remove_special(dict1):
     s = ""
-    dict1 = dict1.lower().strip()
+    dict1 = dict1.lower().strip().replace("\'", "")
     for i in dict1:
         if i in "!@#$%^&*()_+<>?:>.,-='1234567890":
             s = s + ' '
