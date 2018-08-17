@@ -27,13 +27,13 @@ def combine_list(lis, lis1):
     dictionary2 = {}
     for word in lis:
         word = word.strip()
-        if word not in lis and len(word) > 0:
+        if word not in lis:
             if word not in dictionary:
                 dictionary1[word] = 1
             else:
                 dictionary1[word] += 1
     for word in lis1:
-        if word not in lis1 and len(word) > 0:
+        if word not in lis1:
             word = word.strip()
             if word not in dictionary:
                 dictionary2[word] = 1
@@ -62,9 +62,6 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    new_dict1 = {}
-    #word_freq = {}
-    freq = []
     dict1 = remove_special(dict1)
     dict2 = remove_special(dict2)
     new_dict = load_stopwords("stopwords.txt")
@@ -73,30 +70,7 @@ def similarity(dict1, dict2):
     return calculate_simialrity(dictionary)
 
     
-    # k=0
-    # for m in lis:
-    #   if m in word_freq:
-    #       word_freq[0]=word_freq+1
-    #   else:
-    #       word_freq=m
-    # print(word_freq)
-
-     # for m in lis:
-    #   count=0
-    #   if m in lis:
-    #       count+=1
-    #   lis.append(count)
-    # print(lis)
-
-
-        # count=0
-        # for n in lis1:
-        #   if m==n:
-        #       count+=1
-        #   else:
-        #       word_freq[m]=count
-        #       word_freq[n]=count
-        # word_freq[m]=count
+    
 
 def load_stopwords(filename):
     '''
