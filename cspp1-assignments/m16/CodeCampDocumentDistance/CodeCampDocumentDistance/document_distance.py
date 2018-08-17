@@ -21,26 +21,9 @@ def calculate_simialrity(dictionary):
     denominator_one = math.sqrt(sum([k[0]**2 for k in dictionary.values()]))
     denominator_two = math.sqrt(sum([k[1]**2 for k in dictionary.values()]))
     return numerator / (denominator_one*denominator_two) 
-def combine_list(lis, lis1):
-    dictionary = {}
-    dictionary1 = {}
-    dictionary2 = {}
-    for word in lis:
-        word = word.strip()
-        if word not in lis:
-            if word not in dictionary:
-                dictionary1[word] = 1
-            else:
-                dictionary1[word] += 1
-    for word in lis1:
-        if word not in lis1:
-            word = word.strip()
-            if word not in dictionary:
-                dictionary2[word] = 1
-            else:
-                dictionary2[word] += 1
-
-
+def combine_list(dictionary1, dictionary2):
+    
+    dictionary={}
     for word in dictionary1:
         dictionary[word] = [dictionary1[word], dictionary2[word]]
     for word in dictionary1:
@@ -52,21 +35,31 @@ def combine_list(lis, lis1):
 
     return dictionary
 
-def word_list(dict1, new_dict):
-    lis = []
-    for i in dict1:
-        if i not in new_dict:
-            lis.append(i)
-    print(lis)
-    return lis
+def word_list(dict_list):
+    dictionary = {}
+    new_dict = load_stopwords("stopwords.txt")
+    for word in dict_list:
+        word = word.strip()
+        if word not in new_dict and len(word) > 0:
+            if word not in dictionary:
+                dictionary[word] = 1
+            else:
+                dictionary[word] += 1
+    return dictionary
+    # lis = []
+    # for i in dict1:
+    #     if i not in new_dict:
+    #         lis.append(i)
+    # print(lis)
+    # return lis
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
     dict1 = remove_special(dict1)
     dict2 = remove_special(dict2)
-    new_dict = load_stopwords("stopwords.txt")
-    dictionary =combine_list(word_list(dict1,new_dict),word_list(dict2,new_dict))
+    
+    dictionary =combine_list(word_list(dict1),word_list(dict2))
     print(dictionary)
     return calculate_simialrity(dictionary)
 
