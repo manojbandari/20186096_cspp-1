@@ -94,7 +94,7 @@ def build_search_index(docs):
     # for i in range(len(tup)):
         #search_index.update(frequency(tup[i]))
         # clean up doc and tokenize to words list
-       # tup=tup+(i[0],clean_word(i[1])) 
+       # tup=tup+(i[0],clean_word(i[1]))
         # add or update the words of the doc to the search index
     return search_index
     # return search index
