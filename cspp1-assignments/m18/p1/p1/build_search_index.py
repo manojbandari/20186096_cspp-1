@@ -40,17 +40,17 @@ def word_list(text):
         return a list of words
     '''
     string_words = " "
-    text = text.lower().replace("\'","").strip()
+    text = text.lower().replace("\'", "").strip()
     for i in text:
         if i in "!@#$%^&*()_+<>?:/,.;][1234567890":
-            string_words= string_words+" "
+            string_words = string_words+" "
         else:
-            string_words= string_words + i
+            string_words = string_words + i
     return string_words.split(" ")
 
 def clean_word(tup):
-    dictionary={}
-    stop_words=load_stopwords("stopwords.txt")
+    dictionary = {}
+    stop_words = load_stopwords("stopwords.txt")
     for word in tup:
         word = word.strip()
         if word not in stop_words and len(word) > 0:
@@ -60,17 +60,17 @@ def clean_word(tup):
                 dictionary[word] += 1
     return dictionary
 
-def frequency(tup,dictionary):
+def frequency(tup, dictionary):
     '''
     combining two dictionaries
     '''
     for word in tup[1]:
         if word in tup[1] and word in dictionary:
-            v=tup[0],tup[1][word]
+            v = tup[0], tup[1][word]
             dictionary[word].append(v)
 
         if word not in dictionary:
-            dictionary[word] =[(tup[0],tup[1][word])]
+            dictionary[word] = [(tup[0], tup[1][word])]
         
     return dictionary
 
@@ -80,14 +80,14 @@ def build_search_index(docs):
     '''
         Process the docs step by step as given below
     '''
-    tup=()
-    search_index={}
+    tup = ()
+    search_index = {}
     for i in enumerate(docs):
     # initialize a search index (an empty dictionary)
     # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
-        search_index.update(frequency((i[0],clean_word(word_list(i[1]))),search_index))
+        search_index.update(frequency((i[0], clean_word(word_list(i[1]))), search_index))
     # print(tup)
     # for i in range(len(tup)):
         #search_index.update(frequency(tup[i]))
