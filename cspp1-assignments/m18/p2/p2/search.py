@@ -41,8 +41,8 @@ def search(search_index, query):
     query = query.lower().split(" ")
     for i in range(len(query)):
         if query[i] in search_index:
-            set_docid.add(search_index[query[i]][0][0])
-
+            for j in range(len(search_index[query[i]])):
+                set_docid.add(search_index[query[i]][j][0])
     return set_docid
 
 
