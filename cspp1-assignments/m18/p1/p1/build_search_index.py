@@ -49,6 +49,9 @@ def word_list(text):
     return string_words.split(" ")
 
 def clean_word(tup):
+    '''
+    to clean the words which are present in file
+    '''
     dictionary = {}
     stop_words = load_stopwords("stopwords.txt")
     for word in tup:
@@ -66,12 +69,12 @@ def frequency(tup, dictionary):
     '''
     for word in tup[1]:
         if word in tup[1] and word in dictionary:
-            v = tup[0], tup[1][word]
-            dictionary[word].append(v)
+            count_words = tup[0], tup[1][word]
+            dictionary[word].append(count_words)
 
         if word not in dictionary:
             dictionary[word] = [(tup[0], tup[1][word])]
-        
+
     return dictionary
 
 
@@ -80,7 +83,6 @@ def build_search_index(docs):
     '''
         Process the docs step by step as given below
     '''
-    tup = ()
     search_index = {}
     for i in enumerate(docs):
     # initialize a search index (an empty dictionary)
@@ -92,7 +94,7 @@ def build_search_index(docs):
     # for i in range(len(tup)):
         #search_index.update(frequency(tup[i]))
         # clean up doc and tokenize to words list
-       # tup=tup+(i[0],clean_word(i[1]))  
+       # tup=tup+(i[0],clean_word(i[1])) 
         # add or update the words of the doc to the search index
     return search_index
     # return search index
