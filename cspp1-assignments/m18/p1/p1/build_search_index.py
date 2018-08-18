@@ -88,7 +88,6 @@ def build_search_index(docs):
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
         search_index.update(frequency((i[0],clean_word(word_list(i[1]))),search_index))
-        print(search_index)
     # print(tup)
     # for i in range(len(tup)):
         #search_index.update(frequency(tup[i]))
