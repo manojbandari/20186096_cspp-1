@@ -39,9 +39,7 @@ def create_social_network(data_string):
     dict_k = {}
     for i in range(len(data_string)):
         copy = data_string[i]
-        l_list = l_list + copy.split("follows")
-
-
+        l_list = l_list + copy.split(" follows ")
 
     for i in range(0, len(l_list)-2, 2):
         dict_k[l_list[i]] = l_list[i + 1].split(",")
