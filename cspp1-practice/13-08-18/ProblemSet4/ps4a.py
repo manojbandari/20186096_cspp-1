@@ -8,16 +8,19 @@ CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
 HAND_SIZE = 7
 
 SCRABBLE_LETTER_VALUES = {
-    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
+    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4,
+    'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3,
+    'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8,
+    'y': 4, 'z': 10
 }
 
 # -----------------------------------
 # Helper code
 # (you don't need to understand this helper code)
 
-WORDLIST_FILENAME = "words.txt"
+word_list_FILENAME = "words.txt"
 
-def loadWords():
+def load_words():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
     
@@ -26,15 +29,15 @@ def loadWords():
     """
     print("Loading word list from file...")
     # inFile: file
-    inFile = open(WORDLIST_FILENAME, 'r')
-    # wordList: list of strings
-    wordList = []
+    inFile = open(word_list_FILENAME, 'r')
+    # word_list: list of strings
+    word_list = []
     for line in inFile:
-        wordList.append(line.strip().lower())
-    print("  ", len(wordList), "words loaded.")
-    return wordList
+        word_list.append(line.strip().lower())
+    print("  ", len(word_list), "words loaded.")
+    return word_list
 
-def getFrequencyDict(sequence):
+def get_frequency_dict(sequence):
     """
     Returns a dictionary where the keys are elements of the sequence
     and the values are integer counts, for the number of times that
@@ -56,7 +59,7 @@ def getFrequencyDict(sequence):
 #
 # Problem #1: Scoring a word
 #
-def getWordScore(word, n):
+def get_word_score(word, n):
     """
     Returns the score for a word. Assumes the word is a valid word.
 
@@ -82,14 +85,15 @@ def getWordScore(word, n):
 
 
 #
-# Problem #2: Make sure you understand how this function works and what it does!
+# Problem #2: Make sure you understand how this function works
+# and what it does!
 #
-def displayHand(hand):
+def display_hand(hand):
     """
     Displays the letters currently in the hand.
 
     For example:
-    >>> displayHand({'a':1, 'x':2, 'l':3, 'e':1})
+    >>> display_hand({'a':1, 'x':2, 'l':3, 'e':1})
     Should print out something like:
        a x x l l l e
     The order of the letters is unimportant.
@@ -102,9 +106,10 @@ def displayHand(hand):
     print()                             # print an empty line
 
 #
-# Problem #2: Make sure you understand how this function works and what it does!
+# Problem #2: Make sure you understand how this function
+#works and what it does!
 #
-def dealHand(n):
+def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
     At least n/3 the letters in the hand should be VOWELS.
@@ -132,7 +137,7 @@ def dealHand(n):
 #
 # Problem #2: Update a hand by removing letters
 #
-def updateHand(hand, word):
+def update_hand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
     In other words, this assumes that however many times
@@ -162,21 +167,21 @@ def updateHand(hand, word):
 #
 # Problem #3: Test word validity
 #
-def isValidWord(word, hand, wordList):
+def is_valid_word(word, hand, word_list):
     """
-    Returns True if word is in the wordList and is entirely
+    Returns True if word is in the word_list and is entirely
     composed of letters in the hand. Otherwise, returns False.
 
-    Does not mutate hand or wordList.
+    Does not mutate hand or word_list.
    
     word: string
     hand: dictionary (string -> int)
-    wordList: list of lowercase strings
+    word_list: list of lowercase strings
     """
     # TO DO ... <-- Remove this comment when you code this function
     count=0
     update_hand = hand.copy() #update_hand = dict(hand)
-    if word in wordList:
+    if word in word_list:
         for i in word:
             if i in update_hand and update_hand[i]>0:
                 update_hand[i]-=1
@@ -191,7 +196,7 @@ def isValidWord(word, hand, wordList):
 # Problem #4: Playing a hand
 #
 
-def calculateHandlen(hand):
+def calculate_hand_len(hand):
     """ 
     Returns the length (number of letters) in the current hand.
     
@@ -206,7 +211,7 @@ def calculateHandlen(hand):
     # return count
     return sum(hand.values())
 
-def playHand(hand, wordList, n):
+def play_hand(hand, word_list, n):
     """
     Allows the user to play the given hand, as follows:
 
@@ -225,11 +230,12 @@ def playHand(hand, wordList, n):
       inputs a "."
 
       hand: dictionary (string -> int)
-      wordList: list of lowercase strings
+      word_list: list of lowercase strings
       n: integer (HAND_SIZE; i.e., hand size required for additional points)
       
     """
-    # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
+    # BEGIN PSEUDOCODE <-- Remove this comment when you code this function;
+    #do your coding within the pseudocode (leaving those comments in-place!)
     # Keep track of the total score
     
     # As long as there are still letters left in the hand:
@@ -251,15 +257,17 @@ def playHand(hand, wordList, n):
 
             # Otherwise (the word is valid):
 
-                # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
+                # Tell the user how many points the word earned,
+                #and the updated total score, in one line followed by a blank line
                 
                 # Update the hand
                 
 
-    # Game is over (user entered a '.' or ran out of letters), so tell user the total score
+    # Game is over (user entered a '.' or ran out of letters),
+    #so tell user the total score
     total_score = 0
-    while calculateHandlen(hand) > 0:
-        displayHand(hand)
+    while calculate_hand_len(hand) > 0:
+        display_hand(hand)
         user_input=input()
         if user_input== ".":
             print("Game over")
@@ -268,18 +276,18 @@ def playHand(hand, wordList, n):
             break
 
         else:
-            if not isValidWord(user_input, hand, wordList):
+            if not is_valid_word(user_input, hand, word_list):
                 print("invalid word")
                 print()
 
             else:
-                score = getWordScore(user_input, n)
+                score = get_word_score(user_input, n)
                 print(score)
                 print()
                 total_score+= score
                 print("Total score :", total_score)
 
-                hand=updateHand(hand, user_input)
+                hand=update_hand(hand, user_input)
     
             
 
@@ -289,7 +297,7 @@ def playHand(hand, wordList, n):
 # Problem #5: Playing a game
 # 
 
-def playGame(wordList):
+def play_game(word_list):
     """
     Allow the user to play an arbitrary number of hands.
 
@@ -302,31 +310,26 @@ def playGame(wordList):
     2) When done playing the hand, repeat from step 1    
     """
     # TO DO ... <-- Remove this comment when you code this function
-    #print("playGame not yet implemented.") # <-- Remove this line when you code the function
     hand={}
     while True:
-        user_input = input("Enter a input n(for new hand) or r(to play last hand) or e(exit the game) \n ")
+        user_input = input("Enter a input n(for new hand) or \
+                        r(to play last hand) or e(exit the game) \n ")
         if user_input == 'n':
-            hand = dealHand(HAND_SIZE)
-            playHand(hand, wordList,HAND_SIZE) 
+            hand = deal_hand(HAND_SIZE)
+            play_hand(hand, word_list,HAND_SIZE) 
 
         elif user_input == 'r':
-            playHand(hand, wordList,HAND_SIZE)
+            play_hand(hand, word_list,HAND_SIZE)
 
         elif user_input == 'e':
             print("game over")
             break
             
-
         else:
             print("Input is invalid")
 
-
-
-
-#
 # Build data structures used for entire session and play game
 #
 if __name__ == '__main__':
-    wordList = loadWords()
-    playGame(wordList)
+    word_list = load_words()
+    play_game(word_list)
