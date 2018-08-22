@@ -1,5 +1,5 @@
 '''
-@author : manojbandari 
+@author : manojbandari
  Problem 2 - PlaintextMessage '''
 # For this problem, the graders will use our implementation of the Message class,
 # so don't worry if you did not get the previous parts correct.
@@ -42,7 +42,7 @@ def load_words(file_name):
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message():
+class Message(object):
     ''' Grader's Implementation of Message Object '''
 
     ### DO NOT MODIFY THIS METHOD ###
