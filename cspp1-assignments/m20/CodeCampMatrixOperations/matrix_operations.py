@@ -32,12 +32,12 @@ def mult_matrix(m1_matrix, m2_matrix):
                         a += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])  
                     mul_1m.append(a)
                 
-                if len(m2_matrix[0]) >= 3 and len(m2_matrix)==len(m1_matrix[0]):
+                if len(m2_matrix[0]) >= 3:
                     a = 0
                     for n_value in range(len(m2_matrix)):
                         a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])   
                     mul_1m.append(a)
-                if len(m2_matrix[0])>=4 and len(m2_matrix)==len(m1_matrix[0]):
+                if len(m2_matrix[0])>=4:
                     a=0
                     for m in range(len(m2_matrix)):
                         a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
