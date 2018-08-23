@@ -17,7 +17,7 @@ def mult_matrix(m1_matrix, m2_matrix):
             for i in range(len(m1_matrix)):
                 mul_1m = []
                 count = 0
-                b=1
+                b = 1
                 for b in range(len(m1_matrix)):
                     if len(m2_matrix[0]) >= b:
                         a_list = 0
@@ -29,20 +29,19 @@ def mult_matrix(m1_matrix, m2_matrix):
                     # if len(m2_matrix[0]) >= 2:
                     #     a_list = 0
                     #     for k_value in range(len(m2_matrix)):
-                    #         a_list += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])  
-            
+                    #         a_list += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])
+
                     #     mul_1m.append(a_list)
                     # if len(m2_matrix[0]) >= 3:
                     #     a_list = 0
                     #     for n_value in range(len(m2_matrix)):
-                    #         a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])   
+                    #         a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])
                     #     mul_1m.append(a)
                     # if len(m2_matrix[0]) >= 4:
                     #     a_list=0
                     #     for m_value in range(len(m2_matrix)):
                     #         a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
                     #     mul_1m.append(a)
-                    
 
                 mul_2m.append(mul_1m)
         else:
@@ -61,9 +60,7 @@ def add_matrix(m1_matrix, m2_matrix):
         and return None
         error message should be "Error: Matrix shapes invalid for addition"
     '''
-    
-    
-    add_2m=[]
+    add_2m = []
 
     try:
         if len(m1_matrix[1]) == len(m2_matrix[0]):
