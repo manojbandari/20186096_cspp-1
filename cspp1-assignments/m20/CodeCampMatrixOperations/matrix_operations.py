@@ -33,7 +33,7 @@ def mult_matrix(m1, m2):
                 #loop(loop(loop(loop(mul_1m,i,j,m1,m2,count),i,j,m1,m2,count),i,j,m1,m2,count),i,j,m1,m2,count)
                 # loop(mul_1m,i,j,m1,m2,count)
                 #loop(mul_1m,i,j,m1,m2,count)
-                if len(m2[0])>=1
+                if len(m2[0])>=1:
                     a=0
                     for j in range(len(m2)):
                         a+=int(m1[i][j])*int(m2[j][0])
