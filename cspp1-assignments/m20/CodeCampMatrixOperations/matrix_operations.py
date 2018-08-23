@@ -23,38 +23,37 @@ def mult_matrix(m1_matrix, m2_matrix):
         error message should be "Error: Matrix shapes invalid for mult"
     '''
     #print(len(m1_matrix[0]),len(m2_matrix))
-    mul_2m=[]
+    mul_2m = []
     try:
-        if len(m1_matrix[0])==len(m2_matrix):
+        if len(m1_matrix[0]) == len(m2_matrix):
             for i in range(len(m1_matrix[0])):
-                mul_1m=[]
-                count=0
+                mul_1m = []
+                count = 0
                # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
                 #loop(loop(loop(loop(mul_1m,i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count)
                 # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
                 #loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
-                if len(m2_matrix[0])>=1:
-                    a=0
+                if len(m2_matrix[0]) >= 1:
+                    a = 0
                     for j in range(len(m2_matrix)):
-                        a+=int(m1_matrix[i][j])*int(m2_matrix[j][0])
+                        a += int(m1_matrix[i][j]) * int(m2_matrix[j][0])
                     mul_1m.append(a)
 
-                if len(m2_matrix[0])>=2:
-                    a=0
+                if len(m2_matrix[0]) >= 2:
+                    a = 0
                     for k in range(len(m2_matrix)):
-                        a+=int(m1_matrix[i][k])*int(m2_matrix[k][1])  
+                        a += int(m1_matrix[i][k]) * int(m2_matrix[k][1])  
                     mul_1m.append(a)
                 
-                if len(m2_matrix[0])>=3:
-                    a=0
-                    count+=1
+                if len(m2_matrix[0]) >= 3:
+                    a = 0
                     for n in range(len(m2_matrix)):
-                        a+=int(m1_matrix[i][n])*int(m2_matrix[n][2])   
+                        a += int(m1_matrix[i][n]) * int(m2_matrix[n][2])   
                     mul_1m.append(a)
                 if len(m2_matrix[0])>=4:
                     a=0
                     for m in range(len(m2_matrix)):
-                        a+=int(m1_matrix[i][m])*int(m2_matrix[m][3])
+                        a += int(m1_matrix[i][m]) * int(m2_matrix[m][3])
                     mul_1m.append(a)
                     
 
@@ -80,7 +79,7 @@ def add_matrix(m1_matrix, m2_matrix):
     add_2m=[]
 
     try:
-        if len(m1_matrix[1])==len(m2_matrix[0]):
+        if len(m1_matrix[1]) == len(m2_matrix[0]):
             for i in range(len(m1_matrix)):
                 add_m = []
                 for j in range(len(m2_matrix[0])):
@@ -107,7 +106,7 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    matrix=[]
+    matrix =[]
     matrix_size = input().split(",")
     for i in range(int(matrix_size[0])): 
         matrix.append(input().split(" "))
@@ -115,12 +114,14 @@ def read_matrix():
 
 
 def main():
-    
+    '''
+    main function
+    '''
     
 
     # read matrix 1
-    m1_matrix=read_matrix()
-    m2_matrix=read_matrix()
+    m1_matrix = read_matrix()
+    m2_matrix = read_matrix()
     # read matrix 2
     # print(m1_matrix)
     # print(m2_matrix)
@@ -130,11 +131,12 @@ def main():
     #     print(mult_matrix(m1_matrix, m2_matrix))
     
     # else:
-    a_add=add_matrix(m1_matrix, m2_matrix)
+    a_add = add_matrix(m1_matrix, m2_matrix)
     print(a_add)
-    b_mult=mult_matrix(m1_matrix,m2_matrix)
-    if a_add==b_mult:
-        c_temp=0
+    b_mult = mult_matrix(m1_matrix, m2_matrix)
+    if a_add == b_mult:
+        c_temp = 0
+        b_mult = c_temp
     else:
         print(b_mult)    
     # multiply matrix 1 and matrix 2
