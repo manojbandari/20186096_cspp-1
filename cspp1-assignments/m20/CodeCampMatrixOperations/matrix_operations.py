@@ -27,13 +27,13 @@ def mult_matrix(m1, m2):
             for i in range(len(m1[0])):
                 mul_1m=[]
                 count=1
-                mul_1m = loop(mul_1m,i,j,m1,m2,count)
+                loop(mul_1m,i,j,m1,m2,count)
                 count=2
-                mul_1m=loop(mul_1m,i,j,m1,m2,count)
+                loop(mul_1m,i,j,m1,m2,count)
                 count=3
-                mul_1m=loop(mul_1m,i,j,m1,m2,count)
+                loop(mul_1m,i,j,m1,m2,count)
                 count=4
-                mul_1m=loop(mul_1m,i,j,m1,m2,count)
+                loop(mul_1m,i,j,m1,m2,count)
                 # if len(m2[0])>=1
                 #     a=0
                 #     for j in range(len(m2)):
