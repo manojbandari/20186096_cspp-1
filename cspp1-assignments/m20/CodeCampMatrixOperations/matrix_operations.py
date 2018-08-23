@@ -131,7 +131,7 @@ def main():
     
     # else:
     a_add=add_matrix(m1_matrix, m2_matrix)
-    print(a)
+    print(a_add)
     b_mult=mult_matrix(m1_matrix,m2_matrix)
     if a_add==b_mult:
         c_temp=0
