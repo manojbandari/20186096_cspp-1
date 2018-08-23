@@ -37,7 +37,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                     mul_1m.append(a_list)
                 if len(m2_matrix[0]) >= 4:
                     a_list = 0
-                    for m_value in enumerate(m2_matrix):
+                    for m_value in range(len(m2_matrix)):
                         a_list += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
                     mul_1m.append(a_list)
 
