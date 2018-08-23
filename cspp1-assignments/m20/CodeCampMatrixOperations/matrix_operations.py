@@ -52,7 +52,7 @@ def mult_matrix(m1, m2):
                         a+=int(m1[i][m])*int(m2[m][3])
                
                     mul_1m.append(a)
-                    
+                print(mul_1m)
                     
 
                 mul_2m.append(mul_1m)
