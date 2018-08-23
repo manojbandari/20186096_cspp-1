@@ -4,13 +4,14 @@
 #     for j in range(len(m2)):
 #         a+=int(m1[i][j])*int(m2[j][0]) 
 #             mul_1m.append(a)
-# def loop(mul_1m,count):
-#     a=0
-#     for j in range(len(m2)):
-#         a+=int(m1[i][j])*int(m2[j][count]) 
-#             mul_1m.append(a)
+def loop(mul_1m,i,j,m1,m2,count):
+    if len(m2[0])>=count
+    a=0
+    for j in range(len(m2)):
+        a+=int(m1[i][j])*int(m2[j][count-1]) 
+            mul_1m.append(a)
 
-
+    return mul_1m
 def mult_matrix(m1, m2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -25,33 +26,37 @@ def mult_matrix(m1, m2):
         if len(m1[0])==len(m2):
             for i in range(len(m1[0])):
                 mul_1m=[]
-                a=0
-                count=0
-                for j in range(len(m2)):
-                    a+=int(m1[i][j])*int(m2[j][0])
-                mul_1m.append(a)
+                count=1
+                mul_1m = loop(mul_1m,i,j,m1,m2,count):
+                count=2
+                mul_1m=loop(mul_1m,i,j,m1,m2,count):
+                count=3
+                mul_1m=loop(mul_1m,i,j,m1,m2,count):
+                count=4
+                mul_1m=loop(mul_1m,i,j,m1,m2,count):
+                # if len(m2[0])>=1
+                #     a=0
+                #     for j in range(len(m2)):
+                #         a+=int(m1[i][j])*int(m2[j][0])
+                #     mul_1m.append(a)
 
-                if len(m2[0])>=2:
-                    a=0
-                    count+=1
-                    for k in range(len(m2)):
-                        a+=int(m1[i][k])*int(m2[k][1])
-                        
-                    mul_1m.append(a)
-                    #print(mul_1m)
-                if len(m2[0])>=3:
-                    a=0
-                    count+=1
-                    for n in range(len(m2)):
-                        a+=int(m1[i][n])*int(m2[n][2])
-                       
-                    mul_1m.append(a)
-                if len(m2[0])>=4:
-                    a=0
-                    for m in range(len(m2)):
-                        a+=int(m1[i][m])*int(m2[m][3])
-               
-                    mul_1m.append(a)
+                # if len(m2[0])>=2:
+                #     a=0
+                #     for k in range(len(m2)):
+                #         a+=int(m1[i][k])*int(m2[k][1])  
+                #     mul_1m.append(a)
+                
+                # if len(m2[0])>=3:
+                #     a=0
+                #     count+=1
+                #     for n in range(len(m2)):
+                #         a+=int(m1[i][n])*int(m2[n][2])   
+                #     mul_1m.append(a)
+                # if len(m2[0])>=4:
+                #     a=0
+                #     for m in range(len(m2)):
+                #         a+=int(m1[i][m])*int(m2[m][3])
+                #     mul_1m.append(a)
                     
 
                 mul_2m.append(mul_1m)
@@ -60,7 +65,7 @@ def mult_matrix(m1, m2):
             return None
     except:
         return "Error: Invalid input for the matrix"
-        
+
     return mul_2m
 
 def add_matrix(m1, m2):
