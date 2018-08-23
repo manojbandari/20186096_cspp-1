@@ -131,8 +131,9 @@ def main():
     
     # else:
     print(add_matrix(m1, m2))
-    
-    print(mult_matrix(m1, m2))    
+    if add_matrix(m1,m2)==mult_matrix(m1,m2):
+    else:
+        print(mult_matrix(m1, m2))    
     # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
