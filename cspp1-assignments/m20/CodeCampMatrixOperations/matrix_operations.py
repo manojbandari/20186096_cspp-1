@@ -69,11 +69,12 @@ def add_matrix(m1, m2):
     
     
     add_2m=[]
+
     try:
         if len(m1[1])==len(m2[0]):
             for i in range(len(m1)):
                 add_m = []
-                for j in range(len(m1)):
+                for j in range(len(m2)):
                     add_m.append(int(m1[i][j])+int(m2[i][j]))
             #add_m.append(add_m)
                 add_2m.append(add_m)
