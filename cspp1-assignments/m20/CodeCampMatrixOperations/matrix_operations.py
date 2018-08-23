@@ -55,7 +55,7 @@ def mult_matrix(m1, m2):
         else:
             print("Error: Matrix shapes invalid for addition")
     except:
-        return print("Error: Invalid input for the matrix")
+        print("Error: Invalid input for the matrix")
     return mul_2m
 
 def add_matrix(m1, m2):
@@ -81,7 +81,7 @@ def add_matrix(m1, m2):
         else:
             print("Error: Matrix shapes invalid for addition")
     except:
-        return print("Error: Invalid input for the matrix")
+        print("Error: Invalid input for the matrix")
         # add_m[i][1]=m1[i][1]+m2[i][1]
         # add_m[i][2]=m1[i][2]+m2[i][2]
     
