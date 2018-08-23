@@ -55,7 +55,7 @@ def mult_matrix(m1, m2):
         else:
             print("Error: Matrix shapes invalid for mult")
     except:
-        print("Error: Invalid input for the matrix")
+        return "Error: Invalid input for the matrix"
     return mul_2m
 
 def add_matrix(m1, m2):
