@@ -33,24 +33,24 @@ def mult_matrix(m1_matrix, m2_matrix):
                 #loop(loop(loop(loop(mul_1m,i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count)
                 # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
                 #loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
-                if len(m2_matrix[0]) >= 1:
+                if len(m2_matrix[0]) >= 1 and len(m2_matrix)==len(m1_matrix[0]):
                     a = 0
                     for j in range(len(m2_matrix)):
                         a += int(m1_matrix[i][j]) * int(m2_matrix[j][0])
                     mul_1m.append(a)
 
-                if len(m2_matrix[0]) >= 2:
+                if len(m2_matrix[0]) >= 2 and len(m2_matrix)==len(m1_matrix[0]):
                     a = 0
                     for k in range(len(m2_matrix)):
                         a += int(m1_matrix[i][k]) * int(m2_matrix[k][1])  
                     mul_1m.append(a)
                 
-                if len(m2_matrix[0]) >= 3:
+                if len(m2_matrix[0]) >= 3 and len(m2_matrix)==len(m1_matrix[0]):
                     a = 0
                     for n in range(len(m2_matrix)):
                         a += int(m1_matrix[i][n]) * int(m2_matrix[n][2])   
                     mul_1m.append(a)
-                if len(m2_matrix[0])>=4:
+                if len(m2_matrix[0])>=4 and len(m2_matrix)==len(m1_matrix[0]):
                     a=0
                     for m in range(len(m2_matrix)):
                         a += int(m1_matrix[i][m]) * int(m2_matrix[m][3])
