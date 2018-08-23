@@ -22,7 +22,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                     if len(m2_matrix[0]) >= b:
                         a_list = 0
                         for j_value in range(len(m2_matrix)):
-                            a_list += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][0])
+                            a_list += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][b-1])
                         mul_1m.append(a_list)
 
 
