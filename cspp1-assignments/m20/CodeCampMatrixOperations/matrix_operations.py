@@ -1,10 +1,15 @@
 
-def loop(mul_1m,count):
-    a=0
-    for j in range(len(m2)):
-        a+=int(m1[i][j])*int(m2[j][count]) 
-            mul_1m.append(a)
-    return mul_1m
+# def loop(count):
+#     a=0
+#     for j in range(len(m2)):
+#         a+=int(m1[i][j])*int(m2[j][0]) 
+#             mul_1m.append(a)
+# def loop(mul_1m,count):
+#     a=0
+#     for j in range(len(m2)):
+#         a+=int(m1[i][j])*int(m2[j][count]) 
+#             mul_1m.append(a)
+
 
 def mult_matrix(m1, m2):
     '''
@@ -18,36 +23,31 @@ def mult_matrix(m1, m2):
     try:
         if len(m1)==len(m2):
             for i in range(len(m1)):
-                # for loop in range(len(m2)):
-                #     kil=0
                 mul_1m=[]
+                a=0
                 count=0
                 for j in range(len(m2)):
-                    loop(mul_1m,count)
-                    count+=1
-
-                # a=0
-                # for j in range(len(m2)):
-                #     a+=int(m1[i][j])*int(m2[j][0])
-                #     #kil+=1  
-                # mul_1m.append(a)
-                # #mul_1m.append(mul_1m)
-
-                # a=0
-                # for k in range(len(m2)):
-                #     a+=int(m1[i][k])*int(m2[k][1])
-               
-                # mul_1m.append(a)
-                # a=0
-                # for n in range(len(m2)):
-                #     a+=int(m1[i][n])*int(m2[n][2])
+                    a+=int(m1[i][j])*int(m2[j][0])
+                mul_1m.append(a)
+                if count<=len(m2):
+                    a=0
+                    for k in range(len(m2)):
+                        a+=int(m1[i][k])*int(m2[k][1])
+                        count+=1
+                    mul_1m.append(a)
+                if count<=len(m2):
+                    a=0
+                    for n in range(len(m2)):
+                        a+=int(m1[i][n])*int(m2[n][2])
+            
                        
-                # mul_1m.append(a)
-                # a=0
-                # for m in range(len(m2)):
-                #     a+=int(m1[i][m])*int(m2[m][3])
+                    mul_1m.append(a)
+                if count<=len(m2):
+                    a=0
+                    for m in range(len(m2)):
+                        a+=int(m1[i][m])*int(m2[m][3])
                
-                # mul_1m.append(a)
+                    mul_1m.append(a)
                     
                     
 
