@@ -29,20 +29,20 @@ def mult_matrix(m1, m2):
                 for j in range(len(m2)):
                     a+=int(m1[i][j])*int(m2[j][0])
                 mul_1m.append(a)
-                if count<=len(m2):
+                if len(m2)==2
                     a=0
                     for k in range(len(m2)):
                         a+=int(m1[i][k])*int(m2[k][1])
                         count+=1
                     mul_1m.append(a)
-                if count==len(m2):
+                if 3==len(m2):
                     a=0
                     for n in range(len(m2)):
                         a+=int(m1[i][n])*int(m2[n][2])
                         count+=1
                        
                     mul_1m.append(a)
-                if count==len(m2):
+                if 4==len(m2):
                     a=0
                     for m in range(len(m2)):
                         a+=int(m1[i][m])*int(m2[m][3])
