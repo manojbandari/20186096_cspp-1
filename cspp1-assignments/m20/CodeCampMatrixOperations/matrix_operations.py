@@ -81,8 +81,8 @@ def add_matrix(m1, m2):
         else:
             print("Error: Matrix shapes invalid for addition")
     except:
-        add_2m=None
         print("Error: Invalid input for the matrix")
+        break
 
         # add_m[i][1]=m1[i][1]+m2[i][1]
         # add_m[i][2]=m1[i][2]+m2[i][2]
