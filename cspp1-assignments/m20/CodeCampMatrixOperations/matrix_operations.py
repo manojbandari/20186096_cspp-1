@@ -21,7 +21,7 @@ def mult_matrix(m1, m2):
     '''
     mul_2m=[]
     try:
-        if len(m1[0])==len(m2[1]):
+        if len(m1[0])==len(m2) and:
             for i in range(len(m1)):
                 mul_1m=[]
                 a=0
