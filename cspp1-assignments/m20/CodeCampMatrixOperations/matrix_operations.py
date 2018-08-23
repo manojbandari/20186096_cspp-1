@@ -91,12 +91,9 @@ def add_matrix(m1_matrix, m2_matrix):
             return None
     except:
             return "Error: Invalid input for the matrix"
-    
 
         # add_m[i][1]=m1_matrix[i][1]+m2_matrix[i][1]
         # add_m[i][2]=m1_matrix[i][2]+m2_matrix[i][2]
-    
-
     return add_2m
 def read_matrix():
     '''
@@ -106,19 +103,16 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    matrix =[]
+    matrix = []
     matrix_size = input().split(",")
-    for i in range(int(matrix_size[0])): 
+    for _ in range(int(matrix_size[0])):
         matrix.append(input().split(" "))
     return matrix
-
 
 def main():
     '''
     main function
     '''
-    
-
     # read matrix 1
     m1_matrix = read_matrix()
     m2_matrix = read_matrix()
@@ -138,8 +132,7 @@ def main():
         c_temp = 0
         b_mult = c_temp
     else:
-        print(b_mult)    
-    # multiply matrix 1 and matrix 2
+        print(b_mult)    # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
     main()
