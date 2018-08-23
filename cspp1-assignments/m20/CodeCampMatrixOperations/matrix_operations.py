@@ -43,7 +43,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                     #         a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
                     #     mul_1m.append(a)
 
-                mul_2m.append(mul_1m)
+                    mul_2m.append(mul_1m)
         else:
             print("Error: Matrix shapes invalid for mult")
             return None
