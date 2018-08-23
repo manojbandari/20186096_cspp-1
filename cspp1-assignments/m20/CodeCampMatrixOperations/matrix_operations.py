@@ -127,11 +127,11 @@ def main():
     
     # # add matrix 1 and matrix 2
     mult_result=mult_matrix(m1, m2)
-    if add_result==mult_result:
-        print(add_result)
-    else:
+    if add_result!=mult_result:
         print(add_result)
         print(mult_result)
+    else:
+        print(add_result)
     # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
