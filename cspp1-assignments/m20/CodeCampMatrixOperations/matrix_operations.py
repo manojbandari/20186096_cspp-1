@@ -54,6 +54,7 @@ def mult_matrix(m1, m2):
                 mul_2m.append(mul_1m)
         else:
             print("Error: Matrix shapes invalid for mult")
+            return None
     except:
         return "Error: Invalid input for the matrix"
     return mul_2m
