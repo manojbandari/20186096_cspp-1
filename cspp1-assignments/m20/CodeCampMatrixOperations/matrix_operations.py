@@ -11,7 +11,7 @@ def mult_matrix(m1, m2):
         for i in range(len(m1)):
             mul_m=[]
             for j in range(len(m2)):
-                mul_m.append(m1[i][j]+m2[j][i])
+                mul_m.append(int(m1[i][j])+int(m2[j][i]))
             mul_2m.append(mul_m)
     return mul_2m
 
@@ -35,7 +35,7 @@ def add_matrix(m1, m2):
             #add_m.append(add_m)
                 add_2m.append(add_m)
         else:
-            print("Matrix shapes invalid for addition")
+            print("Error: Matrix shapes invalid for addition")
     except:
         print("Error: Invalid input for the matrix")
         # add_m[i][1]=m1[i][1]+m2[i][1]
