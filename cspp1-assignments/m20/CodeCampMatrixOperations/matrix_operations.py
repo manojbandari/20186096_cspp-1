@@ -1,13 +1,6 @@
 '''
 @author: manojbandari
 '''
-def loop(mul_1m,i,m1_matrix,m2_matrix,count):
-    count += 1
-    if len(m2_matrix[0]) >= count:
-        a = 0
-        for j_value in range(len(m2_matrix)):
-            a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][count-1])
-        return mul_1m.append(a)
 
 def mult_matrix(m1_matrix, m2_matrix):
     '''
@@ -24,36 +17,32 @@ def mult_matrix(m1_matrix, m2_matrix):
             for i in range(len(m1_matrix)):
                 mul_1m = []
                 count = 0
-               # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
-                mul_2m.append(loop(loop(loop(loop(mul_1m,i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count))
-                # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
-                #loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
-                # if len(m2_matrix[0]) >= 1:
-                #     a = 0
-                #     for j_value in range(len(m2_matrix)):
-                #         a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][0])
-                #     mul_1m.append(a)
+                if len(m2_matrix[0]) >= 1:
+                    a = 0
+                    for j_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][0])
+                    mul_1m.append(a)
 
 
-                # if len(m2_matrix[0]) >= 2:
-                #     a = 0
-                #     for k_value in range(len(m2_matrix)):
-                #         a += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])  
+                if len(m2_matrix[0]) >= 2:
+                    a = 0
+                    for k_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])  
         
-                #     mul_1m.append(a)
-                # if len(m2_matrix[0]) >= 3:
-                #     a = 0
-                #     for n_value in range(len(m2_matrix)):
-                #         a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])   
-                #     mul_1m.append(a)
-                # if len(m2_matrix[0]) >= 4:
-                #     a=0
-                #     for m_value in range(len(m2_matrix)):
-                #         a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
-                #     mul_1m.append(a)
+                    mul_1m.append(a)
+                if len(m2_matrix[0]) >= 3:
+                    a = 0
+                    for n_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])   
+                    mul_1m.append(a)
+                if len(m2_matrix[0]) >= 4:
+                    a=0
+                    for m_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
+                    mul_1m.append(a)
                     
 
-                #mul_2m.append(mul_1m)
+                mul_2m.append(mul_1m)
         else:
             print("Error: Matrix shapes invalid for mult")
             return None
