@@ -26,7 +26,7 @@ def mult_matrix(m1_matrix, m2_matrix):
     mul_2m = []
     try:
         if len(m1_matrix[0]) == len(m2_matrix):
-            for _ in range(len(m1_matrix[0])):
+            for i in range(len(m1_matrix[0])):
                 mul_1m = []
                 count = 0
                # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
