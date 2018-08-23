@@ -19,6 +19,7 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
+    print(len(m1[0]),len(m2))
     mul_2m=[]
     try:
         if len(m1[0])==len(m2):
@@ -29,20 +30,24 @@ def mult_matrix(m1, m2):
                 for j in range(len(m2)):
                     a+=int(m1[i][j])*int(m2[j][0])
                 mul_1m.append(a)
-                if len(m2)>=2:
+
+                if len(m1[0])==len(m2):
                     a=0
+                    count+=1
                     for k in range(len(m2)):
                         a+=int(m1[i][k])*int(m2[k][1])
-                        count+=1
+                        
                     mul_1m.append(a)
-                if len(m2)>=3:
+                    print(mul_1m)
+                if len(m1[0])==len(m2[2]):
                     a=0
+                    count+=1
                     for n in range(len(m2)):
                         a+=int(m1[i][n])*int(m2[n][2])
-                        count+=1
+                        
                        
                     mul_1m.append(a)
-                if len(m2)>=4:
+                if len(m1[0])==len(m2[3]):
                     a=0
                     for m in range(len(m2)):
                         a+=int(m1[i][m])*int(m2[m][3])
