@@ -18,7 +18,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                 mul_1m = []
                 count = 0
                 b=1
-                for b in range len(m1_matrix):
+                for b in range(len(m1_matrix)):
                     if len(m2_matrix[0]) >= b:
                         a_list = 0
                         for j_value in range(len(m2_matrix)):
