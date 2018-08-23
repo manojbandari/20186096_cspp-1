@@ -5,9 +5,9 @@ def loop(mul_1m,i,m1_matrix,m2_matrix,count):
     count += 1
     if len(m2_matrix[0]) >= count:
         a = 0
-            for j_value in range(len(m2_matrix)):
-                a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][count-1])
-            return mul_1m.append(a)
+        for j_value in range(len(m2_matrix)):
+            a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][count-1])
+        return mul_1m.append(a)
 
 def mult_matrix(m1_matrix, m2_matrix):
     '''
