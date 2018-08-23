@@ -60,6 +60,8 @@ def mult_matrix(m1, m2):
             return None
     except:
         return "Error: Invalid input for the matrix"
+    if add_matrix(m1,m2)==mul_2m:
+        return 
     return mul_2m
 
 def add_matrix(m1, m2):
@@ -125,9 +127,12 @@ def main():
     #     print(mult_matrix(m1, m2))
     
     # else:
-    print(add_matrix(m1, m2))
+    a=add_matrix(m1, m2)
     
-    print(mult_matrix(m1, m2))    
+    b=mult_matrix(m1, m2)
+    print(a)
+    print(b)
+
     # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
