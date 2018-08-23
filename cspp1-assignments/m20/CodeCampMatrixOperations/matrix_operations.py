@@ -7,17 +7,43 @@ def mult_matrix(m1, m2):
         error message should be "Error: Matrix shapes invalid for mult"
     '''
     mul_2m=[]
-    try:
-        if len(m1)==len(m2):
-            for i in range(len(m1)):
-                mul_m=[]
-                for j in range(len(m2)):
-                    mul_mint+=(m1[i][j])*int(m2[j][i])
-                mul_2m.append(mul_m)
-        else:
-            print("Error: Matrix shapes invalid for addition")
-    except:
-        return print("Error: Invalid input for the matrix")
+    #try:
+    if len(m1)==len(m2):
+        for i in range(len(m1)):
+            # for loop in range(len(m2)):
+            #     kil=0
+            a=0
+            mul_1m=[]
+
+            for j in range(len(m2)):
+                a+=int(m1[i][j])*int(m2[j][0])
+                #kil+=1  
+            mul_1m.append(a)
+            #mul_1m.append(mul_1m)
+
+            a=0
+            for k in range(len(m2)):
+                a+=int(m1[i][k])*int(m2[k][1])
+           
+            mul_1m.append(a)
+            a=0
+            for n in range(len(m2)):
+                a+=int(m1[i][n])*int(m2[n][2])
+                   
+            mul_1m.append(a)
+            a=0
+            for m in range(len(m2)):
+                a+=int(m1[i][m])*int(m2[m][3])
+           
+            mul_1m.append(a)
+                
+                
+
+            mul_2m.append(mul_1m)
+    else:
+        print("Error: Matrix shapes invalid for addition")
+    #except:
+     #   return print("Error: Invalid input for the matrix")
     return mul_2m
 
 def add_matrix(m1, m2):
