@@ -124,7 +124,7 @@ def main():
     if add_matrix(m1, m2)==mult_matrix(m1, m2):
         print(mult_matrix(m1, m2))
     
-    else
+    else:
         print(add_matrix(m1, m2))
     
     # # add matrix 1 and matrix 2
