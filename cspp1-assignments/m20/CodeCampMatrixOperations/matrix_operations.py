@@ -4,10 +4,11 @@
 #     for j in range(len(m2)):
 #         a+=int(m1[i][j])*int(m2[j][0]) 
 #             mul_1m.append(a)
-def loop(mul_1m,i,j,m1,m2,count):
+def loop(mul_1m,i,m1,m2,count):
     count+=1
     if len(m2[0])>=count:
         a=0
+        j=0
         for j in range(len(m2)):
             a+=int(m1[i][j])*int(m2[j][count-1]) 
         mul_1m.append(a)
