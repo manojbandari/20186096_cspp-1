@@ -80,6 +80,7 @@ def add_matrix(m1, m2):
                 add_2m.append(add_m)
         else:
             print("Error: Matrix shapes invalid for addition")
+            return None
     except:
         print("Error: Invalid input for the matrix")
         return None
