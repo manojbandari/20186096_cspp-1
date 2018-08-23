@@ -53,7 +53,7 @@ def mult_matrix(m1, m2):
 
                 mul_2m.append(mul_1m)
         else:
-            print("Error: Matrix shapes invalid for addition")
+            print("Error: Matrix shapes invalid for mult")
     except:
         print("Error: Invalid input for the matrix")
     return mul_2m
@@ -118,10 +118,14 @@ def main():
     # print(m1)
     # print(m2)
     add_result = add_matrix(m1, m2)
-    print(add_result)
+    
     # # add matrix 1 and matrix 2
     mult_result=mult_matrix(m1, m2)
-    print(mult_result)
+    if add_result==mult_result:
+        print(add_result)
+    else:
+        print(add_result)
+        print(mult_result)
     # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
