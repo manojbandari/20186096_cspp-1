@@ -59,10 +59,10 @@ def mult_matrix(m1, m2):
                 mul_2m.append(mul_1m)
         else:
             print("Error: Matrix shapes invalid for mult")
-            print(None)
+            return None
     except:
-        print("Error: Invalid input for the matrix")
-    print(mul_2m)
+        return "Error: Invalid input for the matrix"
+    return mul_2m
 
 def add_matrix(m1, m2):
     '''
@@ -86,16 +86,16 @@ def add_matrix(m1, m2):
                 add_2m.append(add_m)
         else:
             print("Error: Matrix shapes invalid for addition")
-            print(None)
+            return None
     except:
-            print("Error: Invalid input for the matrix")
+            return "Error: Invalid input for the matrix"
     
 
         # add_m[i][1]=m1[i][1]+m2[i][1]
         # add_m[i][2]=m1[i][2]+m2[i][2]
     
 
-    print(add_2m)
+    return add_2m
 def read_matrix():
     '''
         read the matrix dimensions from input
@@ -123,7 +123,7 @@ def main():
     # print(m2)
     # print(m1)
     # print(m2)
-    add_result =add_matrix(m1, m2)
+    add_result = add_matrix(m1, m2)
     
     # # add matrix 1 and matrix 2
     mult_result=mult_matrix(m1, m2)
