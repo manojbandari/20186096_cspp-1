@@ -133,7 +133,7 @@ def main():
     a=add_matrix(m1, m2)
     print(a)
     b=mult_matrix(m1,m2)
-    if a==b
+    if a==b:
         c=0
         c=a
     else:
