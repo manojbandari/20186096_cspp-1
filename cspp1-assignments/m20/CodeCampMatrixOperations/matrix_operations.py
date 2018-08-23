@@ -1,22 +1,9 @@
-
-# def loop(count):
-#     a=0
-#     for j in range(len(m2_matrix)):
-#         a+=int(m1_matrix[i][j])*int(m2_matrix[j][0]) 
-#             mul_1m.append(a)
-# def loop(mul_1m,i,m1_matrix,m2_matrix,count):
-#     count+=1
-#     if len(m2_matrix[0])>=count:
-#         a=0
-#         j=0
-#         for j in range(len(m2_matrix)):
-#             a+=int(m1_matrix[i][j])*int(m2_matrix[j][count-1]) 
-#         mul_1m.append(a)
-
-#     return mul_1m
+'''
+@author: manojbandari
+'''
 def mult_matrix(m1_matrix, m2_matrix):
     '''
-        check if the matrix1 columns = matrix2 rows
+        check_value if the matrix1 columns = matrix2 rows
         mult the matrices and return the result matrix
         print an error message if the matrix shapes are not valid for mult
         and return None
@@ -29,31 +16,31 @@ def mult_matrix(m1_matrix, m2_matrix):
             for i in range(len(m1_matrix[0])):
                 mul_1m = []
                 count = 0
-               # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
-                #loop(loop(loop(loop(mul_1m,i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count),i,j,m1_matrix,m2_matrix,count)
-                # loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
-                #loop(mul_1m,i,j,m1_matrix,m2_matrix,count)
+               # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
+                #loop(loop(loop(loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count)
+                # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
+                #loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
                 if len(m2_matrix[0]) >= 1:
                     a = 0
-                    for j in range(len(m2_matrix)):
-                        a += int(m1_matrix[i][j]) * int(m2_matrix[j][0])
+                    for j_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][0])
                     mul_1m.append(a)
 
                 if len(m2_matrix[0]) >= 2:
                     a = 0
-                    for k in range(len(m2_matrix)):
-                        a += int(m1_matrix[i][k]) * int(m2_matrix[k][1])  
+                    for k_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][k_value]) * int(m2_matrix[k_value][1])  
                     mul_1m.append(a)
                 
                 if len(m2_matrix[0]) >= 3 and len(m2_matrix)==len(m1_matrix[0]):
                     a = 0
-                    for n in range(len(m2_matrix)):
-                        a += int(m1_matrix[i][n]) * int(m2_matrix[n][2])   
+                    for n_value in range(len(m2_matrix)):
+                        a += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])   
                     mul_1m.append(a)
                 if len(m2_matrix[0])>=4 and len(m2_matrix)==len(m1_matrix[0]):
                     a=0
                     for m in range(len(m2_matrix)):
-                        a += int(m1_matrix[i][m]) * int(m2_matrix[m][3])
+                        a += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
                     mul_1m.append(a)
                     
 
@@ -68,7 +55,7 @@ def mult_matrix(m1_matrix, m2_matrix):
 
 def add_matrix(m1_matrix, m2_matrix):
     '''
-        check if the matrix shapes are similar
+        check_value if the matrix shapes are similar
         add the matrices and return the result matrix
         print an error message if the matrix shapes are not valid for addition
         and return None
@@ -82,8 +69,8 @@ def add_matrix(m1_matrix, m2_matrix):
         if len(m1_matrix[1]) == len(m2_matrix[0]):
             for i in range(len(m1_matrix)):
                 add_m = []
-                for j in range(len(m2_matrix[0])):
-                    add_m.append(int(m1_matrix[i][j])+int(m2_matrix[i][j]))
+                for j_value in range(len(m2_matrix[0])):
+                    add_m.append(int(m1_matrix[i][j_value])+int(m2_matrix[i][j_value]))
             #add_m.append(add_m)
                 add_2m.append(add_m)
         else:
