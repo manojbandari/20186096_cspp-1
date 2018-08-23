@@ -31,7 +31,7 @@ def mult_matrix(m1, m2):
                     a+=int(m1[i][j])*int(m2[j][0])
                 mul_1m.append(a)
 
-                if len(m1[0])==len(m2):
+                if len(m1[0])==len(m2[0][1])+len(m2[1][1])+len(m2[2][1])+len(m2[3][1]):
                     a=0
                     count+=1
                     for k in range(len(m2)):
@@ -52,7 +52,6 @@ def mult_matrix(m1, m2):
                         a+=int(m1[i][m])*int(m2[m][3])
                
                     mul_1m.append(a)
-                print(mul_1m)
                     
 
                 mul_2m.append(mul_1m)
