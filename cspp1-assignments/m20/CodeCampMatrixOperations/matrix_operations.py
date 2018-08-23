@@ -20,7 +20,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                 #loop(loop(loop(loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count),i,j_value,m1_matrix,m2_matrix,count)
                 # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
                 #loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
-                if len(m2_matrix[0]) >= 1 and len(m2_matrix)==len(m1_matrix[0]):
+                if len(m2_matrix[0]) >= 1:
                     a = 0
                     for j_value in range(len(m2_matrix)):
                         a += int(m1_matrix[i][j_value]) * int(m2_matrix[j_value][0])
