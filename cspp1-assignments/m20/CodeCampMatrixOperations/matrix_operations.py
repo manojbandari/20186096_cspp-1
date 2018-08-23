@@ -21,7 +21,7 @@ def mult_matrix(m1, m2):
     '''
     mul_2m=[]
     try:
-        if len(m1)==len(m2):
+        if len(m1)==len(m2[0])==len(m2[1]):
             for i in range(len(m1)):
                 mul_1m=[]
                 a=0
@@ -53,7 +53,7 @@ def mult_matrix(m1, m2):
 
                 mul_2m.append(mul_1m)
         else:
-            print("Error: Matrix shapes invalid for addition")
+            print("Error: Matrix shapes invalid for multiplication")
     except:
         return print("Error: Invalid input for the matrix")
     return mul_2m
