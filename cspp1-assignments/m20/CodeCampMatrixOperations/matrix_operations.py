@@ -21,14 +21,14 @@ def mult_matrix(m1, m2):
     '''
     mul_2m=[]
     try:
-        if len(m1)==len(m2[0])==len(m2[1]):
+        if len(m1)==len(m2):
             for i in range(len(m1)):
                 mul_1m=[]
                 a=0
-                count=1
+                count=0
                 for j in range(len(m2)):
                     a+=int(m1[i][j])*int(m2[j][0])
-
+                    count+=1
                 mul_1m.append(a)
                 if count<=len(m2):
                     a=0
@@ -36,14 +36,14 @@ def mult_matrix(m1, m2):
                         a+=int(m1[i][k])*int(m2[k][1])
                         count+=1
                     mul_1m.append(a)
-                if count<=len(m2):
+                if count==len(m2):
                     a=0
                     for n in range(len(m2)):
                         a+=int(m1[i][n])*int(m2[n][2])
-                        
+                        count+=1
                        
                     mul_1m.append(a)
-                if count<=len(m2):
+                if count==len(m2):
                     a=0
                     for m in range(len(m2)):
                         a+=int(m1[i][m])*int(m2[m][3])
@@ -54,7 +54,7 @@ def mult_matrix(m1, m2):
 
                 mul_2m.append(mul_1m)
         else:
-            print("Error: Matrix shapes invalid for multiplication")
+            print("Error: Matrix shapes invalid for addition")
     except:
         return print("Error: Invalid input for the matrix")
     return mul_2m
