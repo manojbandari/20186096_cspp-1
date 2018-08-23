@@ -36,7 +36,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                         a_list += int(m1_matrix[i][n_value]) * int(m2_matrix[n_value][2])
                     mul_1m.append(a_list)
                 if len(m2_matrix[0]) >= 4:
-                    a_list=0
+                    a_list = 0
                     for m_value in range(len(m2_matrix)):
                         a_list += int(m1_matrix[i][m_value]) * int(m2_matrix[m_value][3])
                     mul_1m.append(a_list)
@@ -72,7 +72,7 @@ def add_matrix(m1_matrix, m2_matrix):
             print("Error: Matrix shapes invalid for addition")
             return None
     except:
-            return "Error: Invalid input for the matrix"
+        return "Error: Invalid input for the matrix"
 
     return add_2m
 def read_matrix():
