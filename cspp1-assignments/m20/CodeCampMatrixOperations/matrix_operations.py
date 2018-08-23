@@ -130,10 +130,11 @@ def main():
     #     print(mult_matrix(m1, m2))
     
     # else:
-    print(add_matrix(m1, m2))
-    if add_matrix(m1,m2)==mult_matrix(m1,m2):
+    a=add_matrix(m1, m2)
+    print(a)
+    if a==mult_matrix(m1,m2):
         b=0
-        b=mult_matrix(m1,m2)
+        b=a
     else:
         print(mult_matrix(m1, m2))    
     # multiply matrix 1 and matrix 2
