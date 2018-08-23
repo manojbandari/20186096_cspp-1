@@ -40,8 +40,8 @@ def mult_matrix(m1, m2):
                     
 
                 mul_2m.append(mul_1m)
-    else:
-        print("Error: Matrix shapes invalid for addition")
+        else:
+            print("Error: Matrix shapes invalid for addition")
     except:
         return print("Error: Invalid input for the matrix")
     return mul_2m
