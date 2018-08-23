@@ -132,11 +132,12 @@ def main():
     # else:
     a=add_matrix(m1, m2)
     print(a)
-    if a==mult_matrix(m1,m2):
-        b=0
-        b=a
+    b=mult_matrix(m1,m2)
+    if a==b
+        c=0
+        c=a
     else:
-        print(mult_matrix(m1, m2))    
+        print(b)    
     # multiply matrix 1 and matrix 2
 
 if __name__ == '__main__':
