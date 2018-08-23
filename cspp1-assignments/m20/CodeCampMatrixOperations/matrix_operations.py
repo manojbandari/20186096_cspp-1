@@ -25,7 +25,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                 mul_1m = []
                 count = 0
                # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
-                loop(loop(loop(loop(mul_1m,i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count)
+                mul_2m.append(loop(loop(loop(loop(mul_1m,i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count),i,m1_matrix,m2_matrix,count))
                 # loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
                 #loop(mul_1m,i,j_value,m1_matrix,m2_matrix,count)
                 # if len(m2_matrix[0]) >= 1:
@@ -53,7 +53,7 @@ def mult_matrix(m1_matrix, m2_matrix):
                 #     mul_1m.append(a)
                     
 
-                mul_2m.append(mul_1m)
+                #mul_2m.append(mul_1m)
         else:
             print("Error: Matrix shapes invalid for mult")
             return None
