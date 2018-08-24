@@ -10,15 +10,15 @@ def winner_check(matrix):
         return 'draw'
     elif completed_game(matrix) == 'invalid game':
         return 'invalid game'
-    c= winner_vertical(matrix)
-    if c =='x':
+    c_temp = winner_vertical(matrix)
+    if c_temp == 'x':
         return 'x'
-    elif c=='o':
+    elif c_temp == 'o':
         return 'o'
-    d= winner_horizontal(matrix)
-    if d =='x':
+    d_temp = winner_horizontal(matrix)
+    if d_temp == 'x':
         return 'x'
-    elif d=='o':
+    elif d_temp == 'o':
         return 'o'
 def winner_game(matrix):
     a_count = 0
