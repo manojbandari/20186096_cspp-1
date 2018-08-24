@@ -20,15 +20,20 @@ def Winnner_check(matrix):
 	# 		elif matrix[i][j] =='x':
 	# 			count_bb+=1
 
-	if count_val(matrix):
-
-	
+	if  count_val(matrix):
+		
 		for i in range(1):
 			for j in range(3):
 				if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o':
 					return 'o'
 				elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 					return 'x'
+
+
+	return "invalid game"
+
+
+	
 			
 		for i in range(3):
 			count_a=0
@@ -47,7 +52,7 @@ def Winnner_check(matrix):
 		if count_a==5 and count_b==4 or count_a==4 and count_b==5:
 			return 'draw'
 	
-	return "invalid game"
+	
 		
 		
 	
