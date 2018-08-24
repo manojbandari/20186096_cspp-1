@@ -9,7 +9,7 @@ def Winnner_check(matrix):
 				count_b+=1
 
 		
-		elif count_a==3:
+		if count_a==3:
 			return 'o'
 
 		elif count_b==3:
