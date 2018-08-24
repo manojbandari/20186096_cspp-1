@@ -1,18 +1,20 @@
 def Winnner_check(matrix):
 	
-	for i in range(1):
+	for i in range(3):
 		count_a=0
 		count_b=0
+		for j in range(3):
+			
+			if matrix[i][j] == 'o':
+				count_a+=1
+			elif matrix[i][j] =='x':
+				count_b+=1
+	for i in range(1):
 		for j in range(3):
 			if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o':
 				return 'o'
 			elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 				return 'x'
-			if matrix[i][j] == 'o':
-				count_a+=1
-			elif matrix[i][j] =='x':
-				count_b+=1
-
 		
 		
 		if count_a==3:
