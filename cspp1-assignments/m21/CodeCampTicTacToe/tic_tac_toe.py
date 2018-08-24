@@ -31,10 +31,6 @@ def Winnner_check(matrix):
 		elif count_b==3:
 			return 'x'
 	
-		
-
-	
-		
 	if count_a==5 and count_b==4 or count_a==4 and count_b==5:
 		return 'draw'
 	
