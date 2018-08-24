@@ -33,7 +33,7 @@ def winner_check(matrix):
         for j in range(3):
             if matrix[i][j] == 'o' and matrix[i+1][j] == 'o' and matrix[i+2][j] == 'o':
                 return 'o'
-            elif matrix[i][j] == 'x' and matrix[i+1][j] == 'x' and matrix[i+2][j] == 'x':
+            if matrix[i][j] == 'x' and matrix[i+1][j] == 'x' and matrix[i+2][j] == 'x':
                 return 'x'
     a_count = 0
     b_count = 0
