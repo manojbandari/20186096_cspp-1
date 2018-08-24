@@ -35,7 +35,7 @@ def valid_game(matrix):
 					b+=1
 
 
-	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and 0>=abs(a-b)<=1)
+	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and abs(a-b)<=1)
 
 
 
