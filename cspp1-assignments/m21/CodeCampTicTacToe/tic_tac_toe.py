@@ -46,7 +46,7 @@ def winner_check(matrix):
                     b_count += 1
         if a_count == 3:
             return 'o'
-        elif b_count == 3:
+        if b_count == 3:
             return 'x'
 
 def valid_game(matrix):
