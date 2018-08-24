@@ -29,8 +29,8 @@ def Winnner_check(matrix):
 				elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 					return 'x'
 
-
-	return "invalid game"
+	else:
+		return "invalid game"
 
 
 	
