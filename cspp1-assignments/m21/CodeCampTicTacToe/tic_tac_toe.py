@@ -1,17 +1,5 @@
-def invalid(matrix):
-	a=0
-	b=0
-	for i in range(3):
-		for j in range(3):
-			
-			if matrix[i][j] == 'o':
-				a+=1
-			elif matrix[i][j] =='x':
-				b+=1
-	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
 def Winnner_check(matrix):
-	if not invalid(matrix):
-		return "invalid game"
+	
 	for i in range(3):
 		count_a=0
 		count_b=0
@@ -21,7 +9,8 @@ def Winnner_check(matrix):
 				count_a+=1
 			elif matrix[i][j] =='x':
 				count_b+=1
-		
+		if count_a==count_b:
+			return 'invalid game'
 		if count_a==3:
 			return 'o'
 
@@ -39,7 +28,7 @@ def Winnner_check(matrix):
 				return 'x'
 		
 		
-	#return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)	
+		
 	
 
 
@@ -47,13 +36,24 @@ def Winnner_check(matrix):
 
 
 def is_valid(matrix):
+	
+	a=0
+	b=0
+	c=0
 	for i in range(3):
 		for j in range(3):
 			if matrix[i][j] in 'ox.':
-				return False
+				if matrix[i][j]=='o':
+					a+=1
+				elif matrix[i][j]=='x':
+					b+=1
+				else:
+					c+=1
+			else:
+				return "invalid input"
 
-	return True
-	
+
+	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
 	
 def read_input():
 	matrix = []
@@ -64,10 +64,13 @@ def read_input():
 
 def main():
 	matrix=read_input()
-	if not is_valid(matrix):
-		print("invalid input")
-	else:
+	if is_valid(matrix):
 		print(Winnner_check(matrix))
+
+	else:
+		print("invalid game")
+	
+
 
 
 
