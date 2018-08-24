@@ -11,8 +11,7 @@ def Winnner_check(matrix):
 					b+=1
 		if a==3 and b==3:
 			return 'invalid game'
-	if a==5 and b==4 or a==4 and b==5:
-		return 'draw'
+
 
 
 	for i in range(1):
@@ -35,7 +34,8 @@ def Winnner_check(matrix):
 			return 'o'
 		elif bb==3:
 			return 'x' 
-
+		elif a==5 and b==4 or a==4 and b==5:
+		return 'draw'
 def valid_game(matrix):
 	a=0
 	b=0
