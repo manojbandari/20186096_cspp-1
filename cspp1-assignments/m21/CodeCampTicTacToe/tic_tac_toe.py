@@ -1,11 +1,12 @@
 def Winnner_check(matrix):
-	count_a=0
-	count_b=0
+	
 	for i in matrix:
+		count_a=0
+		count_b=0
 		for j in i:
 			if j == 'o':
 				count_a+=1
-			if j =='x':
+			elif j =='x':
 				count_b+=1
 
 		
