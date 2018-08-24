@@ -2,7 +2,7 @@
 @author: manoj bandari
 program for tic_tac toe game
 '''
-def Winnner_check(matrix):
+def winner_check(matrix):
     '''
     return result of the game
     '''
@@ -63,7 +63,8 @@ def valid_game(matrix):
                     a_count += 1
                 elif matrix[i][j] == 'x':
                     b_count += 1
-    return bool(((a_count <= 5 and b_count <= 4) or (a_count <= 4 and b_count <= 5)) and abs(a_count - b_count) <= 1)
+    return bool(((a_count <= 5 and b_count <= 4) or
+                (a_count <= 4 and b_count <= 5)) and abs(a_count - b_count) <= 1)
 
 def is_valid(matrix):
     '''
@@ -94,7 +95,7 @@ def main():
     matrix = read_input()
     if is_valid(matrix):
         if valid_game(matrix):
-            print(Winnner_check(matrix))
+            print(winner_check(matrix))
         else:
             print("invalid game")
     else:
