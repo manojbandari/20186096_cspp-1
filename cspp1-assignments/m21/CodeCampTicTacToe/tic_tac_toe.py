@@ -9,12 +9,12 @@ def Winnner_check(matrix):
 				count_b+=1
 
 		if count_a==count_b:
-			return draw
+			return 'draw'
 		elif count_a==3:
-			return o
+			return 'o'
 
 		elif count_b==3:
-			return x
+			return 'x'
 
 
 
