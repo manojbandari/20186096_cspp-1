@@ -37,7 +37,8 @@ def is_valid(matrix):
 				else:
 					c+=1
 			else:
-				return "invalid input"
+				print("invalid input")
+				break
 
 
 	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
