@@ -1,4 +1,4 @@
-def Winnner_check():
+def Winnner_check(matrix):
 	for i in matrix:
 		for j in i:
 			if j == 'o':
