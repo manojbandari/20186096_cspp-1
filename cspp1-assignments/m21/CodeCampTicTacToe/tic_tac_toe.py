@@ -5,7 +5,7 @@ def Winnner_check():
 				count_a+=1
 			if j =='x':
 				count_b+=1
-		
+
 		if count_a==count_b:
 			print(draw)
 		elif count_a==3:
@@ -35,7 +35,7 @@ def is_valid(matrix):
 					c+=1
 			else:
 				return False
-	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1):
+	return bool((a<=5 and b<=4) or (a<=4 and b<=5)):
 	
 def read_input():
 	matrix = []
