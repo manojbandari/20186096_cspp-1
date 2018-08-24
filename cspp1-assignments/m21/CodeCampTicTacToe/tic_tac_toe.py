@@ -35,7 +35,7 @@ def Winnner_check(matrix):
 		elif bb==3:
 			return 'x' 
 		elif a==5 and b==4 or a==4 and b==5:
-		return 'draw'
+			return 'draw'
 def valid_game(matrix):
 	a=0
 	b=0
