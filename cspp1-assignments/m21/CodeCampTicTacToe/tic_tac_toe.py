@@ -6,10 +6,20 @@ def winner_check(matrix):
     '''
     return result of the game
     '''
-    return winner_game(matrix)
-    return completed_game(matrix)
-    return winner_vertical(matrix)
-    return winner_horizontal(matrix)
+    if  winner_game(matrix)=='draw':
+        return 'draw'
+    elif completed_game(matrix)=='invalid game'
+        return 'invalid game'
+    c= winner_vertical(matrix)
+    if c =='x':
+        return 'x'
+    elif c=='o':
+        return 'o'
+    d= winner_horizontal(matrix)
+    if d =='x':
+        return 'x'
+    elif d=='o':
+        return 'o'
 def winner_game(matrix):
     a_count = 0
     b_count = 0
@@ -22,6 +32,7 @@ def winner_game(matrix):
                     b_count += 1
         if (a_count == 5 and b_count == 4) or (a_count == 4 and b_count == 5):
             return 'draw'
+    return 'none'
 def completed_game(matrix):
     a_count = 0
     b_count = 0
@@ -34,6 +45,7 @@ def completed_game(matrix):
                     b_count += 1
         if a_count == 3 and b_count == 3:
             return 'invalid game'
+    return 'none'
 def winner_vertical(matrix):
     for i in range(1):
         for j in range(3):
@@ -41,6 +53,7 @@ def winner_vertical(matrix):
                 return 'o'
             if matrix[i][j] == 'x' and matrix[i+1][j] == 'x' and matrix[i+2][j] == 'x':
                 return 'x'
+    return 'none'
 def winner_horizontal(matrix):
     a_count = 0
     b_count = 0
@@ -55,7 +68,7 @@ def winner_horizontal(matrix):
             return 'o'
         if b_count == 3:
             return 'x'
-
+    return 'none'
 def valid_game(matrix):
     '''
     checking the game is valid or not
