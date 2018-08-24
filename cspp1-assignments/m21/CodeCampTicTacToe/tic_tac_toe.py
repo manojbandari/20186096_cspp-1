@@ -1,4 +1,5 @@
-def count_values(matrix,a,b):
+
+def Winnner_check(matrix):
 	a=0
 	b=0
 	for i in range(3):
@@ -9,23 +10,8 @@ def count_values(matrix,a,b):
 					a+=1
 				elif matrix[i][j] =='x':
 					b+=1
-	return a,b
-def Winnner_check(matrix):
-	a=0
-	b=0
-	# for i in range(3):
-		
-	# 	for j in range(3):
-	# 		if matrix[i][j] in 'ox.':
-	# 			if matrix[i][j] == 'o':
-	# 				a+=1
-	# 			elif matrix[i][j] =='x':
-	# 				b+=1
-	count_values(matrix,a,b)
-	if (a==5 and b==4) or (a==4 and b==5):
-		return 'draw'
-	a=0
-	b=0
+		if (a==5 and b==4) or (a==4 and b==5):
+			return 'draw'
 	for i in range(3):
 		
 		for j in range(3):
