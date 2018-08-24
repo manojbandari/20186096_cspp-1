@@ -6,9 +6,9 @@ def winner_check(matrix):
     '''
     return result of the game
     '''
-    if  winner_game(matrix)=='draw':
+    if  winner_game(matrix) == 'draw':
         return 'draw'
-    elif completed_game(matrix)=='invalid game'
+    elif completed_game(matrix) == 'invalid game':
         return 'invalid game'
     c= winner_vertical(matrix)
     if c =='x':
