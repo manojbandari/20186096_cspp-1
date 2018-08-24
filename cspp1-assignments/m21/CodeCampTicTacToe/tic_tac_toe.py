@@ -42,7 +42,7 @@ def winner_check(matrix):
             if matrix[i][j] in 'ox.':
                 if matrix[i][j] == 'o':
                     a_count += 1
-                elif matrix[i][j] == 'x':
+                if matrix[i][j] == 'x':
                     b_count += 1
         if a_count == 3:
             return 'o'
