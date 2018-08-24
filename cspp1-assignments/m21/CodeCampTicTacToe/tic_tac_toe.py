@@ -9,9 +9,9 @@ def Winnner_check(matrix):
 			elif matrix[i][j] =='x':
 				count_b+=1
 
-			if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o'
+			if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o':
 				return 'o'
-			elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x'
+			elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 				return 'x'
 		
 		if count_a==3:
