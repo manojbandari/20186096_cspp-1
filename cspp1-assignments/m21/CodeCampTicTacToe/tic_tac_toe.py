@@ -20,7 +20,11 @@ def winner_check(matrix):
         return 'x'
     if d_temp == 'o':
         return 'o'
+    return 'none'
 def winner_game(matrix):
+    '''
+    checking draw or not
+    '''
     a_count = 0
     b_count = 0
     for i in range(3):
@@ -34,6 +38,9 @@ def winner_game(matrix):
             return 'draw'
     return 'none'
 def completed_game(matrix):
+    '''
+    checking whether who won the game
+    '''
     a_count = 0
     b_count = 0
     for i in range(3):
@@ -47,6 +54,9 @@ def completed_game(matrix):
             return 'invalid game'
     return 'none'
 def winner_vertical(matrix):
+    '''
+    checking vertically
+    '''
     for i in range(1):
         for j in range(3):
             if matrix[i][j] == 'o' and matrix[i+1][j] == 'o' and matrix[i+2][j] == 'o':
@@ -55,6 +65,9 @@ def winner_vertical(matrix):
                 return 'x'
     return 'none'
 def winner_horizontal(matrix):
+    '''
+    checking horizontally
+    '''
     a_count = 0
     b_count = 0
     for i in range(3):
