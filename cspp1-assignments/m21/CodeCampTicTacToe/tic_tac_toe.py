@@ -52,7 +52,7 @@ def is_valid(matrix):
 			if matrix[i][j] not in 'ox.':
 				return "False"
 
-	print(Winnner_check(matrix))
+	
 	
 	
 def read_input():
@@ -66,8 +66,8 @@ def main():
 	matrix=read_input()
 	if not is_valid(matrix):
 		print("invalid input")
-	
-
+	else:
+		print(Winnner_check(matrix))
 
 
 
