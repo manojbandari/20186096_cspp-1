@@ -1,14 +1,18 @@
 def Winnner_check(matrix):
 	
-	for i in matrix:
+	for i in range(3):
 		count_a=0
 		count_b=0
-		for j in i:
-			if j == 'o':
+		for j in range(3):
+			if matrix[i][j] == 'o':
 				count_a+=1
-			elif j =='x':
+			elif matrix[i][j] =='x':
 				count_b+=1
 
+			if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o'
+				return 'o'
+			elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x'
+				return 'x'
 		
 		if count_a==3:
 			return 'o'
@@ -23,7 +27,7 @@ def Winnner_check(matrix):
 
 
 def is_valid(matrix):
-	count=0
+	
 	a=0
 	b=0
 	c=0
@@ -37,10 +41,7 @@ def is_valid(matrix):
 				else:
 					c+=1
 			else:
-				count+=1
-				if count>=1:
-					print("invalid input")
-
+				return "invalid input"
 
 
 	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
