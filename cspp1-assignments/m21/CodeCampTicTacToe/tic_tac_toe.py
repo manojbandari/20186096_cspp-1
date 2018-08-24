@@ -21,7 +21,7 @@ def Winnner_check(matrix):
 	# 			count_bb+=1
 
 	if  count_val(matrix):
-		
+
 		for i in range(1):
 			for j in range(3):
 				if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o':
@@ -35,23 +35,23 @@ def Winnner_check(matrix):
 
 	
 			
-		for i in range(3):
-			count_a=0
-			count_b=0
-			for j in range(3):
-				
-				if matrix[i][j] == 'o':
-					count_a+=1
-				elif matrix[i][j] =='x':
-					count_b+=1
-			if count_a==3:
-				return 'o'
-			elif count_b==3:
-				return 'x'
+	for i in range(3):
+		count_a=0
+		count_b=0
+		for j in range(3):
+					
+			if matrix[i][j] == 'o':
+				count_a+=1
+			elif matrix[i][j] =='x':
+				count_b+=1
+		if count_a==3:
+			return 'o'
+		elif count_b==3:
+			return 'x'
+			
+	if count_a==5 and count_b==4 or count_a==4 and count_b==5:
+		return 'draw'
 		
-		if count_a==5 and count_b==4 or count_a==4 and count_b==5:
-			return 'draw'
-	
 	
 		
 		
