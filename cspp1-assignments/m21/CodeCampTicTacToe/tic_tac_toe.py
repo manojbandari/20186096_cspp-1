@@ -1,12 +1,13 @@
 def invalid(matrix):
 	a=0
 	b=0
-	for j in range(3):
+	for i in range(3)
+		for j in range(3):
 			
-		if matrix[i][j] == 'o':
-			a+=1
-		elif matrix[i][j] =='x':
-			b+=1
+			if matrix[i][j] == 'o':
+				a+=1
+			elif matrix[i][j] =='x':
+				b+=1
 	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
 def Winnner_check(matrix):
 	if not invalid(matrix):
