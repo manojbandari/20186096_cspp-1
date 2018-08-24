@@ -9,12 +9,12 @@ def Winnner_check(matrix):
 				count_b+=1
 
 		if count_a==count_b:
-			print(draw)
+			return draw
 		elif count_a==3:
-			print('o')
+			return o
 
 		elif count_b==3:
-			print('x')
+			return x
 
 
 
@@ -49,7 +49,7 @@ def read_input():
 def main():
 	matrix=read_input()
 	if is_valid(matrix):
-		Winnner_check(matrix)
+		print(Winnner_check(matrix))
 
 	else:
 		print("invalid game")
