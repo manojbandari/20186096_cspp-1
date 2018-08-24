@@ -12,6 +12,8 @@ def Winnner_check(matrix):
 					b+=1
 		if (a==5 and b==4) or (a==4 and b==5):
 			return 'draw'
+	a=0
+	b=0
 	for i in range(3):
 		
 		for j in range(3):
@@ -31,19 +33,19 @@ def Winnner_check(matrix):
 					return 'o'
 				elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 					return 'x'
-	aa=0
-	bb=0
+	a=0
+	b=0
 	for i in range(3):
 		
 		for j in range(3):
 			if matrix[i][j] in 'ox.':
 				if matrix[i][j] == 'o':
-					aa+=1
+					a+=1
 				elif matrix[i][j] =='x':
-					bb+=1
-		if aa==3:
+					b+=1
+		if a==3:
 			return 'o'
-		elif bb==3:
+		elif b==3:
 			return 'x' 
 		
 def valid_game(matrix):
