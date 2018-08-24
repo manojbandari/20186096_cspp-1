@@ -30,11 +30,11 @@ def Winnner_check(matrix):
             return 'invalid game'
 
     for i in range(1):
-            for j in range(3):
-                if matrix[i][j] == 'o' and matrix[i+1][j] == 'o' and matrix[i+2][j] == 'o':
-                    return 'o'
-                elif matrix[i][j] == 'x' and matrix[i+1][j] == 'x' and matrix[i+2][j] == 'x':
-                    return 'x'
+        for j in range(3):
+            if matrix[i][j] == 'o' and matrix[i+1][j] == 'o' and matrix[i+2][j] == 'o':
+                return 'o'
+            elif matrix[i][j] == 'x' and matrix[i+1][j] == 'x' and matrix[i+2][j] == 'x':
+                return 'x'
     a_count = 0
     b_count = 0
     for i in range(3):
@@ -86,8 +86,8 @@ def read_input():
     return matrix
 def main():
     '''
-    main function 
-    printing who is the winner 
+    main function
+    printing who is the winner
     invalid input if the input is wrong
     invalid game if the input entered is wrong
     '''
