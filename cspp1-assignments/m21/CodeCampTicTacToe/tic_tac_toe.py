@@ -8,14 +8,14 @@ def Winnner_check(matrix):
 			if j =='x':
 				count_b+=1
 
-		if count_a==count_b:
-			return 'draw'
+		
 		elif count_a==3:
 			return 'o'
 
 		elif count_b==3:
 			return 'x'
-
+	if count_a==count_b:
+			return 'draw'
 
 
 
