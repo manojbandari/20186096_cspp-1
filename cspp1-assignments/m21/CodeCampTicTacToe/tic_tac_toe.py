@@ -1,7 +1,7 @@
 '''
 @author: manoj bandari
 program for tic_tac toe game
-''' 
+'''
 def Winnner_check(matrix):
     '''
     return result of the game
@@ -9,12 +9,11 @@ def Winnner_check(matrix):
     a_count = 0
     b_count = 0
     for i in range(3):
-        
         for j in range(3):
             if matrix[i][j] in 'ox.':
                 if matrix[i][j] == 'o':
                     a_count += 1
-                elif matrix[i][j] =='x':
+                elif matrix[i][j] == 'x':
                     b_count += 1
         if (a_count == 5 and b_count == 4) or (a_count == 4 and b_count == 5):
             return 'draw'
@@ -25,7 +24,7 @@ def Winnner_check(matrix):
             if matrix[i][j] in 'ox.':
                 if matrix[i][j] == 'o':
                     a_count += 1
-                elif matrix[i][j] =='x':
+                elif matrix[i][j] == 'x':
                     b_count += 1
         if a_count == 3 and b_count == 3:
             return 'invalid game'
@@ -43,7 +42,7 @@ def Winnner_check(matrix):
             if matrix[i][j] in 'ox.':
                 if matrix[i][j] == 'o':
                     a_count += 1
-                elif matrix[i][j] =='x':
+                elif matrix[i][j] == 'x':
                     b_count += 1
         if a_count == 3:
             return 'o'
