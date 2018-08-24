@@ -45,7 +45,8 @@ def read_input():
 	return matrix
 
 def main():
-	if is_valid(read_input()):
+	matrix=read_input()
+	if is_valid(matrix):
 		Winnner_check(matrix)
 
 	else:
