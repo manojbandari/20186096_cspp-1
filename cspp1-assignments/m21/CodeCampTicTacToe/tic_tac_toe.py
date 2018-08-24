@@ -64,7 +64,7 @@ def valid_game(matrix):
                 elif matrix[i][j] == 'x':
                     b_count += 1
     return bool(((a_count <= 5 and b_count <= 4) or
-                (a_count <= 4 and b_count <= 5)) and abs(a_count - b_count) <= 1)
+                 (a_count <= 4 and b_count <= 5)) and abs(a_count - b_count) <= 1)
 
 def is_valid(matrix):
     '''
