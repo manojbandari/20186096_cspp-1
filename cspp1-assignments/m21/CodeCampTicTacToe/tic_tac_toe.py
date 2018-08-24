@@ -30,9 +30,9 @@ def Winnner_check(matrix):
 				elif matrix[i][j] =='x':
 					bb+=1
 		if aa==3:
-			return 'x'
+			return 'o'
 		elif bb==3:
-			return 'o' 
+			return 'x' 
 
 def valid_game(matrix):
 	a=0
