@@ -1,4 +1,6 @@
 def Winnner_check(matrix):
+	count_a=0
+	count_b=0
 	for i in matrix:
 		for j in i:
 			if j == 'o':
