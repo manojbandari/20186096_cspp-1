@@ -4,7 +4,7 @@ def Winnner_check(matrix):
 	for i in range(3):
 		
 		for j in range(3):
-			if matrix[i][j] in 'ox.'
+			if matrix[i][j] in 'ox.':
 				if matrix[i][j] == 'o':
 					a+=1
 				elif matrix[i][j] =='x':
