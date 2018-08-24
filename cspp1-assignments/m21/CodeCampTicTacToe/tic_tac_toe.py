@@ -30,7 +30,7 @@ def Winnner_check(matrix):
 					return 'x'
 
 	else:
-		return "invalid game"
+		print("invalid game")
 
 
 	
