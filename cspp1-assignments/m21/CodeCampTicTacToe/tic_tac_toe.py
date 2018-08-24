@@ -19,8 +19,20 @@ def Winnner_check(matrix):
 					return 'o'
 				elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
 					return 'x'
-
-
+	aa=0
+	bb=0
+	for i in range(3):
+		
+		for j in range(3):
+			if matrix[i][j] in 'ox.':
+				if matrix[i][j] == 'o':
+					aa+=1
+				elif matrix[i][j] =='x':
+					bb+=1
+		if aa==3:
+			return 'x'
+		elif bb==3:
+			return 'o' 
 
 def valid_game(matrix):
 	a=0
