@@ -20,6 +20,7 @@ def winner_check(matrix):
         return 'x'
     if d_temp == 'o':
         return 'o'
+    return 'none'
 def winner_game(matrix):
     '''
     checking draw or not
