@@ -8,7 +8,7 @@ def count_val(matrix):
 				count_a+=1
 			elif matrix[i][j] =='x':
 				count_b+=1
-	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and 0>=abs(a-b)<=1)
+	return bool(((count_a<=5 and count_b<=4) or (count_a<=4 and count_b<=5)) and 0>=abs(count_a-count_b)<=1 )
 def Winnner_check(matrix):
 	# for i in range(3):
 	# 	count_aa=0
