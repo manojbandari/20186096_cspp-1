@@ -1,18 +1,25 @@
 def Winnner_check(matrix):
-	for i in matrix:
-		for j in i:
-			if j == 'o':
-				count_a+=1
-			if j =='x':
-				count_b+=1
+	a=0
+	b=0
+	for i in range(3):
+		
+		for j in range(3):
+			if matrix[i][j] in 'ox.'
+				if matrix[i][j] == 'o':
+					a+=1
+				elif matrix[i][j] =='x':
+					b+=1
+		if a==3 and b==3:
+			return 'draw'
 
-		if count_a==count_b:
-			print(draw)
-		elif count_a==3:
-			print('o')
 
-		elif count_b==3:
-			print('x')
+	for i in range(1):
+			for j in range(3):
+				if matrix[i][j]=='o' and matrix[i+1][j]=='o' and matrix[i+2][j]=='o':
+					return 'o'
+				elif matrix[i][j]=='x' and matrix[i+1][j]=='x' and matrix[i+2][j]=='x':
+					return 'x'
+
 
 
 def valid_game(matrix):
@@ -21,10 +28,11 @@ def valid_game(matrix):
 	for i in range(3):
 		
 		for j in range(3):
-			if matrix[i][j] == 'o':
-				a+=1
-			elif matrix[i][j] =='x':
-				b+=1
+			if matrix[i][j] in 'ox.'
+				if matrix[i][j] == 'o':
+					a+=1
+				elif matrix[i][j] =='x':
+					b+=1
 
 
 	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and 0>=abs(a-b)<=1)
