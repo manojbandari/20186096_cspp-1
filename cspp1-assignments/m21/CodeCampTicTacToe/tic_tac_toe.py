@@ -9,6 +9,11 @@ def Winnner_check(matrix):
 				count_a+=1
 			elif matrix[i][j] =='x':
 				count_b+=1
+	if count_a==3:
+			return 'o'
+
+	elif count_b==3:
+			return 'x'
 	if count_a==5 and count_b==4 or count_a==4 and count_b==5:
 		return 'draw'
 	for i in range(1):
@@ -19,11 +24,7 @@ def Winnner_check(matrix):
 				return 'x'
 		
 		
-		if count_a==3:
-			return 'o'
-
-		elif count_b==3:
-			return 'x'
+		
 	
 
 
