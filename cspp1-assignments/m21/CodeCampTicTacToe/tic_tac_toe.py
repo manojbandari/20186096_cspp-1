@@ -23,7 +23,7 @@ def Winnner_check(matrix):
 
 
 def is_valid(matrix):
-	
+	count=0
 	a=0
 	b=0
 	c=0
@@ -37,8 +37,10 @@ def is_valid(matrix):
 				else:
 					c+=1
 			else:
-				print("invalid input")
-				break
+				count+=1
+				if count>=1:
+					print("invalid input")
+
 
 
 	return bool(((a<=5 and b<=4) or (a<=4 and b<=5)) and a-b<=1)
