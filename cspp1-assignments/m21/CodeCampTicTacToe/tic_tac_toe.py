@@ -10,7 +10,9 @@ def Winnner_check(matrix):
 				elif matrix[i][j] =='x':
 					b+=1
 		if a==3 and b==3:
-			return 'draw'
+			return 'invalid game'
+	if a==5 and b==4 or a==4 and b==5:
+		return 'draw'
 
 
 	for i in range(1):
