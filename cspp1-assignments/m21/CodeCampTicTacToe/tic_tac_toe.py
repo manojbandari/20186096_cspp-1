@@ -8,17 +8,17 @@ def winner_check(matrix):
     '''
     if  winner_game(matrix) == 'draw':
         return 'draw'
-    elif completed_game(matrix) == 'invalid game':
+    if completed_game(matrix) == 'invalid game':
         return 'invalid game'
     c_temp = winner_vertical(matrix)
     if c_temp == 'x':
         return 'x'
-    elif c_temp == 'o':
+    if c_temp == 'o':
         return 'o'
     d_temp = winner_horizontal(matrix)
     if d_temp == 'x':
         return 'x'
-    elif d_temp == 'o':
+    if d_temp == 'o':
         return 'o'
 def winner_game(matrix):
     a_count = 0
