@@ -9,9 +9,9 @@ def tokenize(string):
     '''
     string_tokenize = {}
     for i in string:
-        if i not in string_tokenize:
+        if i not in string_tokenize and len(i)>0:
             string_tokenize[i] = 1
-        else:
+        elif i in string_tokenize and len(i)>0:
             string_tokenize[i] += 1
     return string_tokenize
             
@@ -26,7 +26,7 @@ def main():
         string+=input()
     print(string)
     string_words = " "
-    string = string.replace('\"', "").rstrip()
+    string = string.replace('\"', "").strip()
     for i in string:
         if i in "!@#$%^&*()_+<>?:/,.;][1234567890":
             string_words = string_words+" "
