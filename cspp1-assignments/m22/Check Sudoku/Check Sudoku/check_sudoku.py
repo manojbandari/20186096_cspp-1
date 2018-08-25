@@ -22,9 +22,9 @@ def check_sudoku(sudoku):
             #if sudoku[i][0] == sudoku
         if count_val < len(sudoku):
             return False
-        check = set(lis)
-        if check < len(sudoku):
-            return False
+        # check = set(lis)
+        # if check < len(sudoku):
+        #     return False
 
 
     return True
