@@ -9,9 +9,9 @@ def tokenize(string):
     '''
     string_tokenize = {}
     for i in string:
-        if i not in string_tokenize and len(i)>0:
+        if i not in string_tokenize and len(i) > 0:
             string_tokenize[i] = 1
-        elif i in string_tokenize and len(i)>0:
+        elif i in string_tokenize and len(i) > 0:
             string_tokenize[i] += 1
     return string_tokenize
             
@@ -23,7 +23,7 @@ def main():
     string=" "
     number_of_lines = int(input())
     for i in range(number_of_lines):
-        string+=input()
+        string += input()
     string_words = " "
     string = string.replace('\"', "").strip()
     for i in string:
