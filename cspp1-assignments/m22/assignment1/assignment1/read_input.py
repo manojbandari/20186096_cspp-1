@@ -12,8 +12,8 @@ def main():
     lis=[]
     for i in range(number_of_lines):
         multiple_lines+=input()
-        multiple_lines=multiple_lines+","
-    lis=multiple_lines.split(",")
+        multiple_lines=multiple_lines+"0@"
+    lis=multiple_lines.split("0@")
     for i in range(len(lis)):
         print(lis[i].strip())
 
