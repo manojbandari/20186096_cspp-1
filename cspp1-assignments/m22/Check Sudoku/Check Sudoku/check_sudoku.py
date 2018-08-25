@@ -19,12 +19,12 @@ def check_sudoku(sudoku):
         for j in range(len(sudoku[0])):
             count_val = set(sudoku[i])
             lis.append(sudoku[j][i])
-            #if sudoku[i][0] == sudoku
-        if count_val < len(sudoku):
+             
+        if count_val != len(sudoku):
             return False
-        # check = set(lis)
-        # if check < len(sudoku):
-        #     return False
+        check = set(lis)
+        if check != len(sudoku):
+            return False
 
 
     return True
