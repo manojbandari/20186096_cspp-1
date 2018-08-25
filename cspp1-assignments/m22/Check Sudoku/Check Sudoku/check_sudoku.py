@@ -1,4 +1,5 @@
 '''
+    @author : manojbandari
     Sudoku is a logic-based, combinatorial number-placement puzzle.
     The objective is to fill a 9×9 grid with digits so that
     each column, each row, and each of the nine 3×3 subgrids that compose the grid
@@ -13,12 +14,16 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    for i in range(len(sudoku)):
-        for j in range(len(sudoku[0])):
-            if sudoku[i][i] == sudoku[i][j]:
-                return False
-            elif sudoku[i][i] == sudoku[j][i]:
-                return False
+    for i in range(10): 
+        count_val=sudoku[0].count(i)
+        if count_val>1
+            return False
+    # for i in range(len(sudoku)):
+    #     for j in range(len(sudoku[0])):
+    #         if sudoku[i][i] == sudoku[i][j] :
+    #             return False
+    #         elif sudoku[i][i] == sudoku[j][i]:
+    #             return False
 
 def main():
     '''
