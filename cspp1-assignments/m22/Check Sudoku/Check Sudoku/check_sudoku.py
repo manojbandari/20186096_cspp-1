@@ -17,17 +17,14 @@ def check_sudoku(sudoku):
     for i in range(10):
         for j in range(10):
             count_val=sudoku[i].count(j)
-            if count_val>1:
+            if count_val > 1:
+                return False
+    for i in range(len(sudoku)):
+        for j in range(len(sudoku[0])):
+            if sudoku[i][j] == sudoku[i][j] :
                 return False
             else:
                 return True
-    # for i in range(len(sudoku)):
-    #     for j in range(len(sudoku[0])):
-    #         if sudoku[i][i] == sudoku[i][j] :
-    #             return False
-    #         elif sudoku[i][i] == sudoku[j][i]:
-    #             return False
-
 def main():
     '''
         main function to read input sudoku from console
