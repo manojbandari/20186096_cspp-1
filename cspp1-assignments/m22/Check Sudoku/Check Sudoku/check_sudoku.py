@@ -15,7 +15,7 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     for i in range(10):
-        for j in range(10) 
+        for j in range(10):
             count_val=sudoku[i].count(j)
             if count_val>1:
                 return False
