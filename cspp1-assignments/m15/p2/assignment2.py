@@ -1,4 +1,6 @@
-''' Implement CipherTextMessage Class '''
+'''
+@author : manojbandari
+ Implement CipherTextMessage Class '''
 import string
 
 # Helper code begins
@@ -264,7 +266,8 @@ def decrypt_story():
     ''' Decrypt the story text using CiphertextMessage class and return the
         shift value and decrypted string in a tuple.
     '''
-    pass #delete this line when you write your code.
+    object_dec = CiphertextMessage(get_story_string())
+    return object_dec.decrypt_message()
 
 ### DO NOT MODIFY THIS METHOD ###
 def main():
