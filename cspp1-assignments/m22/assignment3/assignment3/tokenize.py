@@ -7,7 +7,6 @@ def tokenize(string):
     '''
     tokenize the string
     '''
-    print(string)
     string_tokenize = {}
     for i in string:
         if i not in string_tokenize:
@@ -24,9 +23,16 @@ def main():
     string=" "
     number_of_lines = int(input())
     for i in range(number_of_lines):
-        string=input()
-
-    print(tokenize(string))
+        string+=input()
+    print(string)
+    string_new = ""
+    for i in string:
+        if i in '!@#$%.^&*;"\t().,':
+            string_new = string_new + i
+        else:
+            string_new = string_new+i
+    string.replace('\t"',"")
+    print(tokenize(string_new.split(" ")))
 
 if __name__ == '__main__':
     main()
