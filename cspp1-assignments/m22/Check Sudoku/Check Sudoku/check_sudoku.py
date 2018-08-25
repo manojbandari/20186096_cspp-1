@@ -25,7 +25,7 @@ def check_sudoku(sudoku):
         check = set(lis)
         if len(check) != len(sudoku):
             return False
-        if sudoku[i][j] == sudoku[i][i]
+        if sudoku[i][j] == sudoku[i][i]:
             return False
 
     return True
