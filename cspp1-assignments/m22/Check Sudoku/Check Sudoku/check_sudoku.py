@@ -17,7 +17,7 @@ def check_sudoku(sudoku):
     for i in range(10):
         for j in range(10):
             count_val=set(sudoku[i])
-        if count_val !=len(sudoku)
+        if count_val !=len(sudoku):
             return False
     for i in range(len(sudoku)):
         for j in range(len(sudoku[0])):
