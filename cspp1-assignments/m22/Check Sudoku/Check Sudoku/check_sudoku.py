@@ -24,8 +24,9 @@ def check_sudoku(sudoku):
         if count_val != len(sudoku):
             return False
 
-        
-        elif check != len(sudoku):
+        else:
+            return True        
+        if check != len(sudoku):
             return False
 
 
