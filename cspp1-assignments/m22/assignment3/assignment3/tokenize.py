@@ -24,7 +24,6 @@ def main():
     number_of_lines = int(input())
     for i in range(number_of_lines):
         string+=input()
-    print(string)
     string_words = " "
     string = string.replace('\"', "").strip()
     for i in string:
