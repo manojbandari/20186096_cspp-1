@@ -17,7 +17,7 @@ def check_sudoku(sudoku):
         for j in range(len(sudoku[0])):
             if sudoku[i][i] == sudoku[i][j]:
                 return False
-            elif sudoku[j][i] == sudoku[j][i]:
+            elif sudoku[i][i] == sudoku[j][i]:
                 return False
 
 def main():
