@@ -31,7 +31,7 @@ def main():
             string_new = string_new + i
         else:
             string_new = string_new+i
-    string.replace('\t"',"")
+    string.replace('\t"'," ")
     print(tokenize(string_new.split(" ")))
 
 if __name__ == '__main__':
