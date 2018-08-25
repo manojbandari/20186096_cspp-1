@@ -14,13 +14,12 @@ def tokenize(string):
         elif i in string_tokenize and len(i) > 0:
             string_tokenize[i] += 1
     return string_tokenize
-            
 def main():
     '''
     main function
     read inputs
     '''
-    string=" "
+    string = " "
     number_of_lines = int(input())
     for i in range(number_of_lines):
         string += input()
