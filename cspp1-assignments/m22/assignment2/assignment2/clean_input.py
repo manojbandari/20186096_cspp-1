@@ -12,7 +12,7 @@ def clean_string(string):
         if i in '!@#$%^&*().\t ':
             pass
         else:
-            string_new= string_new+i
+            string_new = string_new+i
     return string_new
 
 def main():
