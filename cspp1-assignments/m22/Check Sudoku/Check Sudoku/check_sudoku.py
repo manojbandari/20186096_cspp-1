@@ -21,14 +21,15 @@ def check_sudoku(sudoku):
             lis.append(sudoku[j][i])
         #if sudoku[i][0] == sudoku
         check = set(lis)
+        if check != len(sudoku):
+            return False
+        else:
+            return True  
         if count_val != len(sudoku):
             return False
 
-        else:
-            return True        
-        if check != len(sudoku):
-            return False
-
+              
+        
 
         return True
 def main():
