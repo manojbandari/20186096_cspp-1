@@ -10,9 +10,12 @@ def print_dictionary(dictionary):
     '''
     
     for key in sorted(dictionary):
-        print(key, "-", dictionary[key] )
+        print(key, "-", dictionary[key])
 
 def main():
+    '''
+    main function
+    '''
     dictionary = eval(input())
     print_dictionary(dictionary)
 
