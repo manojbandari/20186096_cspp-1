@@ -26,7 +26,7 @@ def main():
         string+=input()
     print(string)
     string_words = " "
-    string = string.replace('\"', "").strip()
+    string = string.replace('\"', "").rstrip()
     for i in string:
         if i in "!@#$%^&*()_+<>?:/,.;][1234567890":
             string_words = string_words+" "
