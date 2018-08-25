@@ -4,15 +4,21 @@ alphabets in both upper and lower case and numbers.
 '''
 
 def clean_string(string):
-    string_new=""
-    for i in range(len(string)):
-        if string[i] in '!@#$%^&*()\t ':
+    '''
+    clean a string without special characters
+    '''
+    string_new = ""
+    for i in string:
+        if i in '!@#$%^&*().\t ':
             pass
         else:
-            string_new= string_new+string[i]
+            string_new= string_new+i
     return string_new
 
 def main():
+    '''
+    read input 
+    '''
     string = input()
     print(clean_string(string))
 
