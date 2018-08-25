@@ -14,10 +14,13 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    for i in range(10): 
-        count_val=sudoku[0].count(i)
-        if count_val>1:
-            return False
+    for i in range(10):
+        for j in range(10) 
+            count_val=sudoku[i].count(j)
+            if count_val>1:
+                return False
+            else:
+                return True
     # for i in range(len(sudoku)):
     #     for j in range(len(sudoku[0])):
     #         if sudoku[i][i] == sudoku[i][j] :
