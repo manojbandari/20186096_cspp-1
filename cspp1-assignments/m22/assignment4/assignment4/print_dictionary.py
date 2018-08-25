@@ -8,7 +8,6 @@ def print_dictionary(dictionary):
     '''
     print dictionary with keys
     '''
-    
     for key in sorted(dictionary):
         print(key, "-", dictionary[key])
 
