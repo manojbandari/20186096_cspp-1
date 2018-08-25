@@ -20,10 +20,10 @@ def check_sudoku(sudoku):
             count_val = set(sudoku[i])
             lis.append(sudoku[j][i])
 
-        if count_val != len(sudoku):
+        if len(count_val) != len(sudoku):
             return False
         check = set(lis)
-        if check != len(sudoku):
+        if len(check) != len(sudoku):
             return False
 
 
