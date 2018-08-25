@@ -9,7 +9,7 @@ def tokenize(string):
     '''
     string_tokenize = {}
     for i in string:
-        if i not in string_tokenize:
+        if i not in string_tokenize and len(i)>0:
             string_tokenize[i] = 1
         else:
             string_tokenize[i] += 1
@@ -25,14 +25,14 @@ def main():
     for i in range(number_of_lines):
         string+=input()
     print(string)
-    string_new = ""
+    string_words = " "
+    string = string.replace('\"', "").strip()
     for i in string:
-        if i in '!@#$%.^&*;"\t().,':
-            string_new = string_new + i
+        if i in "!@#$%^&*()_+<>?:/,.;][1234567890":
+            string_words = string_words+" "
         else:
-            string_new = string_new+i
-    string.replace('\t"'," ")
-    print(tokenize(string_new.split(" ")))
+            string_words = string_words + i
+    print(tokenize(string_words.split(" ")))
 
 if __name__ == '__main__':
     main()
