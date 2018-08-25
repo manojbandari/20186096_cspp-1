@@ -7,7 +7,9 @@ def tokenize(string):
     pass
             
 def main():
-    pass
+    number_of_lines=input():
+    for i in range(number_of_lines):
+    	string = input()
 
 if __name__ == '__main__':
     main()
