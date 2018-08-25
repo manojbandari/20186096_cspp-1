@@ -15,7 +15,7 @@ def main():
         multiple_lines = multiple_lines+"0@"
     lis_output = multiple_lines.split("0@")
     for i in enumerate(lis_output):
-        print(lis_output[i].strip())
+        print(i[1].strip())
 
 
 if __name__ == '__main__':
