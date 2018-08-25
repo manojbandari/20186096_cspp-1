@@ -7,13 +7,16 @@ def frequency_graph(dictionary):
     '''
     frequency graph function
     '''
-     for key in sorted(dictionary):
-        for i in range(11):
+    for key in sorted(dictionary):
+        for i in range(20):
             if dictionary[key]==i:
                 dictionary[key] = i*'#'
         print(key, "-", dictionary[key])
 
 def main():
+    '''
+    main function
+    '''
     dictionary = eval(input())
     frequency_graph(dictionary)
 
