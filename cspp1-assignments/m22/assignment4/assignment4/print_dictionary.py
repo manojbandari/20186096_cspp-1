@@ -9,9 +9,10 @@ def print_dictionary(dictionary):
     '''
     print dictionary with keys
     '''
-    dictionary.sort()
-    for i in dictionary:
-        print(i, "-", dictionary[i] )
+    key_list = dictionary.keys()
+    key_list.sort()
+    for key in key_list:
+        print(key, "-", dictionary[key] )
 
 def main():
     dictionary = eval(input())
