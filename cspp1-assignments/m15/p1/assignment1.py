@@ -231,7 +231,7 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        Message.__init__(self,text)
+        Message.__init__(self, text)
         self.message_text = text
         self.valid_words = load_words("words.txt")[:]
         self.max_valid_words = 0
@@ -275,4 +275,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
