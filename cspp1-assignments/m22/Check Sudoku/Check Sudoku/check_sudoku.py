@@ -14,7 +14,7 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     for i in range(len(sudoku)):
-        for j in range(len(suduku[0])):
+        for j in range(len(sudoku[0])):
             if sudoku[i][i] == sudoku[i][j]:
                 return False
             elif sudoku[j][i] == sudoku[j][i]:
