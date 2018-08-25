@@ -9,7 +9,7 @@ def tokenize(string):
     '''
     string_tokenize = {}
     for i in string:
-        if i not in string_tokenize and len(i)!=' ':
+        if i not in string_tokenize and len(i) > 0:
             string_tokenize[i] = 1
         elif i in string_tokenize and len(i) > 0:
             string_tokenize[i] += 1
