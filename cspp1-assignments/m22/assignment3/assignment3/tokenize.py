@@ -7,6 +7,7 @@ def tokenize(string):
     '''
     tokenize the string
     '''
+    print(string)
     string_tokenize = {}
     for i in string:
         if i not in string_tokenize:
@@ -18,11 +19,13 @@ def tokenize(string):
 def main():
     '''
     main function
-    read the inputs
+    read inputs
     '''
+    string=" "
     number_of_lines = int(input())
     for i in range(number_of_lines):
-        string = input().split(" ")
+        string=input()
+
     print(tokenize(string))
 
 if __name__ == '__main__':
