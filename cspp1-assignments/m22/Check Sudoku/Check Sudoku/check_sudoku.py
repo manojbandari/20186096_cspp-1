@@ -14,6 +14,7 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
+    lis=[]
     for i in range(10):
         for j in range(10):
             count_val=set(sudoku[i])
@@ -21,10 +22,12 @@ def check_sudoku(sudoku):
             return False
     for i in range(len(sudoku)):
         for j in range(len(sudoku[0])):
-            if sudoku[i][i] == sudoku[j][i] :
-                return False
-            else:
-                return True
+            lis.append(sudoku[j][i])
+        check=set(lis)
+        if check !=len(sudoku):
+            return False
+    
+    return True
 def main():
     '''
         main function to read input sudoku from console
